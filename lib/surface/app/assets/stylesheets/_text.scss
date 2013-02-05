@@ -1,0 +1,74 @@
+.t-center {
+  text-align: center;
+}
+
+.t-left {
+  text-align: left;
+}
+
+//
+
+.t-bold {
+  font-weight: bold;
+}
+
+//
+
+.t-mono {
+  font-family: "Source Code Pro", monospace;
+}
+
+//
+
+.t-small {
+  @include adjust-font-size-to(modular-scale(-1));
+  line-height: 1em;
+}
+
+.t-smaller {
+  font-size: 12px;
+  line-height: 1em;
+}
+
+//
+
+.t-truncate {
+  @include ellipsis;
+}
+
+//
+
+.t-alert {
+  color: $centro-alert-1;
+}
+
+.t-delete {
+  @extend .t-lighter;
+}
+
+.t-delete:hover {
+  @extend .t-alert;
+}
+
+.t-regular {
+  color: $grayscale-5;
+}
+
+.t-light {
+  color: $grayscale-4;
+}
+
+.t-lighter {
+  color: $grayscale-3;
+}
+
+.t-lightest {
+  color: $grayscale-2;
+}
+
+//
+
+.t-nudge--right\(1\/4\) {
+  padding-right: $base-font-size / 4;
+}
+

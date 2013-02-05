@@ -1,0 +1,59 @@
+
+.d-campaign-filters__key {
+  position: relative;
+}
+
+.d-campaign-filters__key::before {
+  background-color:#FFF;
+  content: '';
+  height: 10px;
+  margin-top: -6px;
+  position: absolute;
+    left: 0;
+    top: 50%;
+  width: 10px;
+}
+
+.d-campaign-filters__key.completed::before {
+  background-color: gray;
+}
+
+.d-campaign-filters__key.live::before {
+  background-color: green;
+}
+
+.d-campaign-filters__key.issues::before {
+  background-color: $centro-alert-1;
+}
+
+.d-campaign-filters__key.upcoming::before {
+  background-color: orange;
+}
+
+.d-campaign-filters__key > a {
+  padding-left: 15px;
+}
+
+//
+
+.d-number span {
+  margin: 0 1px;
+}
+
+.d-status,
+.d-tab {
+  text-transform: capitalize;
+}
+
+.d-status.completed {
+  color: $grayscale-5;
+}
+
+.d-status.live {
+  color: green;
+}
+
+.d-status.upcoming {
+  color: orange;
+}
+
