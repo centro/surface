@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["rocketspops"]
   gem.email         = ["rocketspops@gmail.com"]
   gem.description   = %q{A centralized repository for (S)CSS used on the Centro Insight and Auth projects.}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.summary       = %q{Write a gem summary}
   gem.homepage      = "https://github.com/centro/surface"
 
   gem.files         = `git ls-files`.split($/)
