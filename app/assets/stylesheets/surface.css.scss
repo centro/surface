@@ -1,5 +1,5 @@
-#= require 'hashgrid'
-#= require 'antiscroll'
+//#= require 'hashgrid'
+//#= require 'antiscroll'
 
 //--------------------------------------------------------------------------------
 // Variables
@@ -59,13 +59,13 @@ $centro-confirm-1      : hsl(101, 48%, 69%);
 // Stylesheets
 //--------------------------------------------------------------------------------
 
-@import "reset";
-@import "base";
-@import "layout";
-@import "text";
-@import "module";
-@import "state";
-@import "data";
-@import "icon";
-@import "scratch";
+@import "surface/reset";
+@import "surface/base";
+@import "surface/layout";
+@import "surface/text";
+@import "surface/module";
+@import "surface/state";
+@import "surface/data";
+@import "surface/icon";
+@import "surface/scratch";
 
