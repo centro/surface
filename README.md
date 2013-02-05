@@ -1,6 +1,6 @@
 # Surface
 
-TODO: Write a gem description
+A centralized repository for (S)CSS used on the Centro Insight and Auth projects.
 
 ## Installation
 
