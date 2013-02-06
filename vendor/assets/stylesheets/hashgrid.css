@@ -1,0 +1,52 @@
+#grid {
+  height: 100%;
+  margin-left: -610px;
+  position: absolute;
+    top: 0;
+    left: 50%;
+  width: 1220px;
+}
+
+#grid * {
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#grid div.vert {
+  border: solid darkturquoise;
+  border-width: 0 1px;
+  margin-right: 20px;
+  width: 100px;
+}
+
+#grid div.vert.first-line{
+  margin-left: 20px;
+}
+
+#grid div.horiz{
+  border-bottom: 1px dotted darkgray;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Classes for multiple grids
+ *
+ * When using more than one grid, remember to set the numberOfGrids 
+ * option in the hashgrid.js file.
+ *
+ * #grid.grid-1 div.vert{
+ *   border-color: darkturquoise;
+ * }
+ * 
+ * #grid.grid-2{
+ *   padding: 0 160px;
+ *   width: 660px;
+ * }
+ * 
+ * #grid.grid-2 div.vert{
+ *   border-color: crimson;
+ * }
+ * 
+ */
