@@ -1,5 +1,3 @@
-#= require 'hashgrid'
-
 //--------------------------------------------------------------------------------
 // Variables
 //--------------------------------------------------------------------------------
@@ -63,9 +61,6 @@ $centro-confirm-1      : hsl(101, 48%, 69%);
 @import "surface/base";
 @import "surface/layout";
 @import "surface/text";
-@import "surface/module";
-@import "surface/state";
-@import "surface/data";
 @import "surface/icon";
-@import "surface/scratch";
+@import "surface/hashgrid";
 

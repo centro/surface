@@ -1,32 +1,30 @@
 #grid {
   height: 100%;
-  margin-left: -610px;
+  margin-left: - $container-width / 2;
   position: absolute;
     top: 0;
     left: 50%;
-  width: 1220px;
+  width: $container-width;
 }
 
 #grid * {
- -webkit-box-sizing: border-box;
- -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
 }
 
 #grid div.vert {
   border: solid darkturquoise;
   border-width: 0 1px;
-  margin-right: 20px;
-  width: 100px;
+  margin-right: $gutter-width;
+  width: $column-width;
 }
 
 #grid div.vert.first-line{
-  margin-left: 20px;
+  margin-left: $gutter-width;
 }
 
 #grid div.horiz{
   border-bottom: 1px dotted darkgray;
-  height: 24px;
+  height: $base-line-height;
   margin: 0;
   padding: 0;
 }
