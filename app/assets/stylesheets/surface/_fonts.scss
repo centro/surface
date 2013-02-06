@@ -1,0 +1,12 @@
+@include font-face("Hooge 0555", font-files("hooge/Hooge0555Web.woff", "hooge/Hooge0555Web.ttf"), "hooge/Hooge0555Web.eot", normal, normal);
+
+@include font-face("Klavika Web Basic", font-files("klavika/KlavikaWebBasicRegularSub.woff"), "klavika/KlavikaWebBasicRegularSub.eot", normal, normal);
+@include font-face("Klavika Web Basic", font-files("klavika/KlavikaWebBasicRegularItalicSub.woff"), "klavika/KlavikaWebBasicRegularItalicSub.eot", normal, italic);
+@include font-face("Klavika Web Basic", font-files("klavika/KlavikaWebBasicMediumSub.woff"), "klavika/KlavikaWebBasicMediumSub.eot", bold, normal);
+@include font-face("Klavika Web Basic", font-files("klavika/KlavikaWebBasicMediumItalicSub.woff"), "klavika/KlavikaWebBasicMediumItalicSub.eot", bold, italic);
+
+@include font-face("SS Standard", font-files("ss-standard/ss-standard.woff", "ss-standard/ss-standard.ttf"), "ss-standard/ss-standard.eot", normal, normal);
+
+
+@include font-face("Source Code Pro", font-files("source-code/SourceCodeProRegular.woff", "source-code/SourceCodeProRegular.ttf"), "source-code/SourceCodeProRegular.eot", normal, normal);
+@include font-face("Source Code Pro", font-files("source-code/SourceCodeProBold.woff", "source-code/SourceCodeProBold.ttf"), "source-code/SourceCodeProBold.eot", bold, normal);

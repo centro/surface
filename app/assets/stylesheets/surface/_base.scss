@@ -1,12 +1,3 @@
-@include font-face("Klavika Web Basic", font-files("KlavikaWebBasicRegularSub.woff"), "KlavikaWebBasicRegularSub.eot", normal, normal);
-@include font-face("Klavika Web Basic", font-files("KlavikaWebBasicRegularItalicSub.woff"), "KlavikaWebBasicRegularItalicSub.eot", normal, italic);
-@include font-face("Klavika Web Basic", font-files("KlavikaWebBasicMediumSub.woff"), "KlavikaWebBasicMediumSub.eot", bold, normal);
-@include font-face("Klavika Web Basic", font-files("KlavikaWebBasicMediumItalicSub.woff"), "KlavikaWebBasicMediumItalicSub.eot", bold, italic);
-@include font-face("SS Standard", font-files("ss-standard.woff", "ss-standard.ttf"), "ss-standard.eot", normal, normal);
-@include font-face("Hooge 0555", font-files("Hooge0555Web.woff", "Hooge0555Web.ttf"), "Hooge0555Web.eot", normal, normal);
-@include font-face("Source Code Pro", font-files("SourceCodeProRegular.woff", "SourceCodeProRegular.ttf"), "SourceCodeProRegular.eot", normal, normal);
-@include font-face("Source Code Pro", font-files("SourceCodeProBold.woff", "SourceCodeProBold.ttf"), "SourceCodeProBold.eot", bold, normal);
-
 @include border-box-sizing;
 @include establish-baseline;
 
