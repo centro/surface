@@ -1,3 +1,20 @@
+// ==========================================================================
+// Text Utilities 
+// ========================================================================== 
+
+// TOC:
+
+// ALIGNMENT
+// COLOR
+// SIZING
+// STYLE
+// TRUNCATION 
+
+// ========================================================================== 
+
+// ALIGNMENT
+// Module agnostic text alignment utilities. 
+
 .t-center {
   text-align: center;
 }
@@ -6,37 +23,12 @@
   text-align: left;
 }
 
-//
-
-.t-bold {
-  font-weight: bold;
+.t-right {
+  text-align: right;
 }
 
-//
-
-.t-mono {
-  font-family: "Source Code Pro", monospace;
-}
-
-//
-
-.t-small {
-  @include adjust-font-size-to(modular-scale(-1));
-  line-height: 1em;
-}
-
-.t-smaller {
-  font-size: 12px;
-  line-height: 1em;
-}
-
-//
-
-.t-truncate {
-  @include ellipsis;
-}
-
-//
+// COLOR
+// Adjust text color when not included as part of a module.
 
 .t-alert {
   color: $centro-alert-1;
@@ -66,9 +58,33 @@
   color: $grayscale-2;
 }
 
-//
+// SIZING
+// Override default text size inheritance for child elements.
 
-.t-nudge--right\(1\/4\) {
-  padding-right: $base-font-size / 4;
+.t-small {
+  font-size: modular-scale(-1);
+  line-height: 1em;
 }
 
+.t-smaller {
+  font-size: 12px;
+  line-height: 1em;
+}
+
+// STYLE
+// Change type style without the need for additional markup.
+
+.t-bold {
+  font-weight: bold;
+}
+
+.t-mono {
+  font-family: "Source Code Pro", monospace;
+}
+
+// TRUNCATION
+// Prevent text from wrapping and truncate with a CSS ellipsis.
+
+.t-truncate {
+  @include ellipsis;
+}
