@@ -1,6 +1,5 @@
 require "surface/version"
 require "compass-rails"
-require "normalize"
 require "susy"
 require "modular-scale"
 
