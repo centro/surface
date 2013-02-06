@@ -1,0 +1,31 @@
+// ==========================================================================
+// List  
+// ========================================================================== 
+
+// DESC:
+
+// This file contains generic utilities that can be used to alter the 
+// layout and stylistic treatment of lists.
+
+// TOC:
+
+// HORIZONTAL
+
+// ========================================================================== 
+
+// HORIZONTAL
+// Force list elements to render on a single horizontal line. 
+
+.l-list-horiz {
+  @include pie-clearfix;
+  white-space: nowrap;
+}
+
+.l-list-horiz > li {
+  float: left;
+  padding-right: $gutter-width;
+}
+
+.l-list-horiz li:last-child {
+  padding-right: 0;
+}

@@ -1,25 +1,69 @@
+// ==========================================================================
+// Layout 
+// ========================================================================== 
+
+// DESC:
+
+// This file contains generic utilities that can be used to affect the layout
+// and dimensions of elements on a page. When possible, roll these 
+// properties up into higher level modules to avoid "class-itis." 
+
+// TOC:
+
+// FLOATS
+// GRID
+// HEIGHT
+// WIDTH
+
+// ========================================================================== 
+
+// FLOATS
+// Float elements left or right without coupling to a module.
+
+.l-left {
+  float: left !important;
+}
+
+.l-right {
+  float: right !important;
+}
+
+// GRID
+// Instantiate a grid defined by Susy variables. 
+
 .l-grid {
   @include container;
 }
+
+// HEIGHT
+// Low level, module-agnostic classes used to manipulate element height.
 
 .l-height\(100\) {
   height: 100%;
 }
 
-//
+// WIDTH
+// Low level, module-agnostic classes that rely on Susy helpers used to 
+// manipulate element width. 
+
+// Root 3
 
 .l-width\(1of3\) {
   width: columns(1,3);
 }
 
-//
+.l-width\(2of3\) {
+  width: columns(2,3);
+}
+
+.l-width\(3of3\) {
+  width: columns(3,3);
+}
+
+// Root 10
 
 .l-width\(1of10\) {
   width: columns(1, 10);
-}
-
-.l-width\(1of10\+1g\) {
-  width: columns(1,10) + gutter(10);
 }
 
 .l-width\(2of10\) {
@@ -30,62 +74,68 @@
   width: columns(3,10);
 }
 
-.l-width\(3of10\+1g\) {
-  width: columns(3,10) + gutter(10);
-}
-
 .l-width\(4of10\) {
   width: columns(4,10);
-}
-
-.l-width\(4of10\+1g\) {
-  width: columns(4,10) + gutter(10);
 }
 
 .l-width\(5of10\) {
   width: columns(5,10);
 }
 
-.l-width\(5of10\+1g\) {
-  width: columns(5,10) + gutter(10);
-}
-
 .l-width\(6of10\) {
   width: columns(6,10);
-}
-
-.l-width\(6of10\+1g\) {
-  width: columns(6,10) + gutter(10);
 }
 
 .l-width\(7of10\) {
   width: columns(7,10);
 }
 
-//
-
-.l-list-horiz {
-  @include pie-clearfix;
-  white-space: nowrap;
+.l-width\(8of10\) {
+  width: columns(8,10);
 }
 
-.l-list-horiz li {
-  float: left;
-  padding-right: $gutter-width;
+.l-width\(9of10\) {
+  width: columns(9,10);
 }
 
-.l-list-horiz li:last-child {
-  padding-right: 0;
+.l-width\(10of10\) {
+  width: columns(10,10);
 }
 
-//
+// Root 10, with gutter
 
-.l-left {
-  float: left !important;
+.l-width\(1of10\+1g\) {
+  width: columns(1,10) + gutter(10);
 }
 
-.l-right {
-  float: right !important;
+.l-width\(2of10\+1g\) {
+  width: columns(2,10) + gutter(10);
 }
 
+.l-width\(3of10\+1g\) {
+  width: columns(3,10) + gutter(10);
+}
 
+.l-width\(4of10\+1g\) {
+  width: columns(4,10) + gutter(10);
+}
+
+.l-width\(5of10\+1g\) {
+  width: columns(5,10) + gutter(10);
+}
+
+.l-width\(6of10\+1g\) {
+  width: columns(6,10) + gutter(10);
+}
+
+.l-width\(7of10\+1g\) {
+  width: columns(7,10) + gutter(10);
+}
+
+.l-width\(8of10\+1g\) {
+  width: columns(8,10) + gutter(10);
+}
+
+.l-width\(9of10\+1g\) {
+  width: columns(9,10) + gutter(10);
+}

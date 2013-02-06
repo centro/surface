@@ -1,3 +1,24 @@
+// ==========================================================================
+// Hashgrid  
+// ========================================================================== 
+
+// DESC:
+
+// This file contains styles that are used to generate grid alignment  
+// guides in tandem with the hashgrid javascript plugin. MAKE CHANGES ONLY 
+// WITH GOOD REASON. 
+
+// TOC:
+
+// MAIN
+// MULTIPLE
+
+// ========================================================================== 
+
+// MAIN
+// These styles define the main grid and are accessed by pressing 'G + 
+// H' on the keyboard. 
+
 #grid {
   height: 100%;
   margin-left: - $container-width / 2;
@@ -11,6 +32,13 @@
   @include box-sizing(border-box);
 }
 
+#grid div.horiz {
+  border-bottom: 1px dotted darkgray;
+  height: $base-line-height;
+  margin: 0;
+  padding: 0;
+}
+
 #grid div.vert {
   border: solid darkturquoise;
   border-width: 0 1px;
@@ -18,33 +46,25 @@
   width: $column-width;
 }
 
-#grid div.vert.first-line{
+#grid div.vert.first-line {
   margin-left: $gutter-width;
 }
 
-#grid div.horiz{
-  border-bottom: 1px dotted darkgray;
-  height: $base-line-height;
-  margin: 0;
-  padding: 0;
-}
+// MULTIPLE
+// These can be used to define multiple grids. To turn it on,'G + J', and 
+// then toggle it by pressing 'G + H' on the keyboard.  When using more 
+// than one grid, remember to set the numberOfGrids variable in the
+// hashgrid.js file.
 
-/* Classes for multiple grids
- *
- * When using more than one grid, remember to set the numberOfGrids 
- * option in the hashgrid.js file.
- *
- * #grid.grid-1 div.vert{
- *   border-color: darkturquoise;
- * }
- * 
- * #grid.grid-2{
- *   padding: 0 160px;
- *   width: 660px;
- * }
- * 
- * #grid.grid-2 div.vert{
- *   border-color: crimson;
- * }
- * 
- */
+// #grid.grid-1 div.vert{
+//   border-color: darkturquoise;
+// }
+// 
+// #grid.grid-2 {
+//   padding: 0 160px;
+//   width: 660px;
+// }
+// 
+// #grid.grid-2 div.vert{
+//   border-color: crimson;
+// }
