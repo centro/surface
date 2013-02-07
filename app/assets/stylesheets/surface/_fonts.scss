@@ -4,20 +4,13 @@
 
 // TOC:
 
-// HOOGE
-// KLAVIKA
-// SS STANDARD
-// SOURCE CODE PRO
+// [?1] PRIMARY
+// [?2] ICON
+// [?3] ACCENTS 
 
 // ========================================================================== 
 
-// HOOGE
-// A tiny pixel font used to mark ad tags that have been mapped more 
-// than once. 
-
-@include font-face("Hooge 0555", font-files("Hooge0555Web.woff", "Hooge0555Web.ttf"), "Hooge0555Web.eot", normal, normal);
-
-// KLAVIKA
+// [?1] PRIMARY
 // The main workhorse typeface (used for headlines and body text) for Insight and Auth. 
 
 @include font-face("Klavika Web Basic", font-files("KlavikaWebBasicRegularSub.woff"), "KlavikaWebBasicRegularSub.eot", normal, normal);
@@ -25,13 +18,20 @@
 @include font-face("Klavika Web Basic", font-files("KlavikaWebBasicMediumSub.woff"), "KlavikaWebBasicMediumSub.eot", bold, normal);
 @include font-face("Klavika Web Basic", font-files("KlavikaWebBasicMediumItalicSub.woff"), "KlavikaWebBasicMediumItalicSub.eot", bold, italic);
 
-// SS STANDARD
+// [?2] ICON  
 // An icon font used for all the iconography throughout Insight and Auth. 
 
 @include font-face("SS Standard", font-files("ss-standard.woff", "ss-standard.ttf"), "ss-standard.eot", normal, normal);
 
-// SOURCE CODE PRO
-// A monospace typeface used to display campaign IDs. 
+// [?3] ACCENTS
+
+// Hooge is a tiny pixel font used to mark ad tags that have been mapped more 
+// than once. 
+
+@include font-face("Hooge 0555", font-files("Hooge0555Web.woff", "Hooge0555Web.ttf"), "Hooge0555Web.eot", normal, normal);
+
+// Source Code Pro is monospaced typeface used to display campaign IDs. 
+// The bold version shows up during searches.
 
 @include font-face("Source Code Pro", font-files("SourceCodeProRegular.woff", "SourceCodeProRegular.ttf"), "SourceCodeProRegular.eot", normal, normal);
 @include font-face("Source Code Pro", font-files("SourceCodeProBold.woff", "SourceCodeProBold.ttf"), "SourceCodeProBold.eot", bold, normal);

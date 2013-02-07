@@ -1,5 +1,30 @@
+// ==========================================================================
+// Base  
+// ========================================================================== 
+
+// DESC:
+
+// This file contains basic styles that provide supplemental, application 
+// specific defaults which are more useful than the generic browser 
+// defaults found in _reset.scss
+
+// TOC:
+
+// [?1] INITIALIZERS
+// [?2] ELEMENTS
+// [?3] PROPRIETARY
+
+// ========================================================================== 
+
+// [?1] INITIALIZERS
+// Just a little compass voodo to establish a consistent box model and a 
+// global line-height. 
+
 @include border-box-sizing;
 @include establish-baseline;
+
+// [?2] ELEMENTS
+// Supplemental overrides for generic browser defaults found in _reset.scss 
 
 a {
   outline: none;
@@ -15,11 +40,6 @@ body {
   font-family: "Klavika Web Basic", sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-}
-
-body > div,
-body > div > div {
-  height: 100%;
 }
 
 button {
@@ -73,7 +93,8 @@ ul {
   margin: 0;
 }
 
-//
+// [?3] PROPRIETARY
+// Browser specific overrides.  
 
 ::-webkit-input-placeholder {
   color: $grayscale-2;

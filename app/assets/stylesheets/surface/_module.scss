@@ -1,0 +1,63 @@
+// ==========================================================================
+// Module  
+// ========================================================================== 
+
+// DESC:
+
+// This file contains reusable "modules" that define functionally and 
+// stylistically related components that can be reused across pages and 
+// across applications. 
+
+// TOC:
+
+// [?1] LISTS
+// [?2] ICONS
+
+// ========================================================================== 
+
+// [?1] LISTS
+// Generic utilities that can be used to alter the layout and/or stylistic 
+// treatment of lists. 
+
+// Force list elements to render in a single horizontal line. 
+
+.l-list-horiz {
+  @include pie-clearfix;
+  white-space: nowrap;
+}
+
+.l-list-horiz > li {
+  float: left;
+  padding-right: $gutter-width;
+}
+
+.l-list-horiz li:last-child {
+  padding-right: 0;
+
+// [?2] ICONS
+// Classes used to render various and assorted semantic icons. 
+
+.i-icon {
+  @include transition(all 0.25s ease-in-out 0s);
+  cursor: pointer;
+  display: inline-block;
+  font-family: "SS Standard";
+  font-size: $base-font-size;
+  font-style: normal;
+  font-weight: normal;
+  height: 1em;
+  line-height: 1;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  width: 1em;
+
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+
+  -webkit-font-smoothing: antialiased;
+}

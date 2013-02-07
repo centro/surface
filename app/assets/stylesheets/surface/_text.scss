@@ -9,15 +9,15 @@
 
 // TOC:
 
-// ALIGNMENT
-// COLOR
-// SIZING
-// STYLE
-// TRUNCATION 
+// [?1] ALIGNMENT
+// [?2] COLOR
+// [?3] SIZING
+// [?4] STYLE
+// [?5] TRUNCATION 
 
 // ========================================================================== 
 
-// ALIGNMENT
+// [?1] ALIGNMENT
 // Module agnostic text alignment utilities. 
 
 .t-center {
@@ -32,7 +32,7 @@
   text-align: right;
 }
 
-// COLOR
+// [?2] COLOR
 // Adjust text color when not included as part of a module.
 
 .t-alert {
@@ -40,11 +40,11 @@
 }
 
 .t-delete {
-  @extend .t-lighter;
+  color: $grayscale-3;
 }
 
 .t-delete:hover {
-  @extend .t-alert;
+  color: $centro-alert-1;
 }
 
 .t-regular {
@@ -63,7 +63,7 @@
   color: $grayscale-2;
 }
 
-// SIZING
+// [?3] SIZING
 // Override default text size inheritance for child elements.
 
 .t-small {
@@ -76,7 +76,7 @@
   line-height: 1em;
 }
 
-// STYLE
+// [?4] STYLE
 // Change type style without the need for additional markup.
 
 .t-bold {
@@ -87,7 +87,7 @@
   font-family: "Source Code Pro", monospace;
 }
 
-// TRUNCATION
+// [?5] TRUNCATION
 // Prevent text from wrapping and truncate with a CSS ellipsis.
 
 .t-truncate {
