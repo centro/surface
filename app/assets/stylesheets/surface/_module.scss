@@ -10,12 +10,38 @@
 
 // TOC:
 
-// [?1] LISTS
-// [?2] ICONS
+// [?1] BUTTONS
+// [?2] LISTS
+// [?3] ICONS
 
 // ========================================================================== 
 
-// [?1] LISTS
+// [?1] BUTTONS
+
+.m-button {
+  @include background-image(linear-gradient(hsl(0, 0, 97%), $grayscale-0));
+  @include border-radius(5px);
+  @include box-shadow(0 0 2px white inset);
+  border: 1px solid $grayscale-2;
+  color: $grayscale-4;
+  display: inline-block;
+  font-size: modular-scale(-1);
+  height: $base-line-height + ($base-line-height / 6);
+  line-height: $base-line-height + ($base-line-height / 6);
+  padding: 0 8px;
+  text-decoration: none;
+}
+
+.m-button:hover {
+  @include background-image(linear-gradient(white, $grayscale-0));
+}
+
+.m-button:active {
+  @include background-image(none);
+  background-color: $grayscale-0;
+}
+
+// [?2] LISTS
 // Generic utilities that can be used to alter the layout and/or stylistic 
 // treatment of lists. 
 
@@ -35,7 +61,7 @@
   padding-right: 0;
 }
 
-// [?2] ICONS
+// [?3] ICONS
 // Classes used to render various and assorted semantic icons. 
 
 .i-icon {
