@@ -11,8 +11,11 @@
 // TOC:
 
 // [?1] BUTTONS
-// [?2] LISTS
-// [?3] ICONS
+// [?2] FOOTER
+// [?3] HEADER
+// [?4] ICONS
+// [?5] LISTS
+// [?6] NOTICES
 
 // ========================================================================== 
 
@@ -41,27 +44,35 @@
   background-color: $grayscale-0;
 }
 
-// [?2] LISTS
-// Generic utilities that can be used to alter the layout and/or stylistic 
-// treatment of lists. 
+// [?2] FOOTER
+// This implementation of the footer currently serves as a debugging 
+// line inside of insight. 
 
-// Force list elements to render in a single horizontal line. 
-
-.l-list-horiz {
-  @include pie-clearfix;
-  white-space: nowrap;
+.m-footer {
+  background: transparentize($grayscale-1, 0.5);
+  font-size: modular-scale(-1);
+  padding: 0 5px;
+  position:fixed;
+    bottom: 0;
+  text-align: right;
+  width: 100%;
 }
 
-.l-list-horiz > li {
-  float: left;
-  padding-right: $gutter-width;
+// [?3] HEADER
+
+.m-header {
+  @include adjust-leading-to(2);
+  @include trailer(2);
+  background: $grayscale-2;
+  border-bottom: 1px solid darken($grayscale-2, 15%);
+  height: $base-line-height * 2;
+  line-height: $base-line-height * 2;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
 }
 
-.l-list-horiz li:last-child {
-  padding-right: 0;
-}
-
-// [?3] ICONS
+// [?4] ICONS
 // Classes used to render various and assorted semantic icons. 
 
 .i-icon {
@@ -84,4 +95,114 @@
   font-feature-settings: "liga";
 
   -webkit-font-smoothing: antialiased;
+}
+
+// [?5] LISTS
+// Generic utilities that can be used to alter the layout and/or stylistic 
+// treatment of lists. 
+
+// Force list elements to render in a single horizontal line. 
+
+.l-list-horiz {
+  @include pie-clearfix;
+  white-space: nowrap;
+}
+
+.l-list-horiz > li {
+  float: left;
+  padding-right: $gutter-width;
+}
+
+.l-list-horiz li:last-child {
+  padding-right: 0;
+}
+
+// [?6] NOTICES
+// This classes provide styles for various types of global messages 
+// (alerts, confirmation messages, notices, etc.) 
+
+// Sets up a window for the notice to position itself inside of.
+
+.m-notice-window {
+  position: absolute;
+    top: 40px;
+  height: $base-line-height + ($base-line-height / 3);
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+// Default notice styles.
+
+.m-notice > p {
+  background: $centro-alert-2;
+  border: 1px solid darken($centro-alert-2, 25%);
+  display: inline-block;
+  font-size: modular-scale(-1);
+  height: $base-line-height + ($base-line-height / 3);
+  line-height: $base-line-height + ($base-line-height / 3);
+  overflow: hidden;
+  padding: 0 ($gutter-width / 2);
+  position: relative;
+}
+
+.m-notice > p::before {
+  @extend .i-icon;
+  display: none;
+  font-size: $base-font-size;
+  position: absolute;
+    left: 10px;
+    top: 1px;
+}
+
+.m-notice > p > a {
+  color: $grayscale-3;
+  display: none;
+  padding-left: $gutter-width / 2;
+}
+
+.m-notice > p > a:hover {
+  color: $grayscale-5;
+}
+
+// Custom notice styles.
+
+.m-notice--alert > p,
+.m-notice--confirm > p {
+  @extend .m-notice;
+  color: white;
+  padding-left: 36px;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.m-notice--alert > p::before,
+.m-notice--confirm > p::before {
+  display: block;
+}
+
+.m-notice--alert > p {
+  background: lighten($centro-alert-1, 5%);
+  border-color: darken($centro-alert-1, 20%);
+}
+
+.m-notice--alert > p::before  {
+  content: 'delete';
+}
+
+.m-notice--alert > p > a {
+  color: $grayscale-1;
+  display: inline;
+}
+
+.m-notice--alert > p > a:hover {
+  color: white; 
+}
+
+.m-notice--confirm > p {
+  background: darken($centro-confirm-1, 15%);
+  border-color: darken($centro-confirm-1, 30%);
+}
+
+.m-notice--confirm > p::before {
+  content: 'check';
 }
