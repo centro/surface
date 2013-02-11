@@ -63,16 +63,7 @@ $ss-pika-eot:  "ss-pika/ss-pika.eot";
 
 // [?3] ACCENTS
 
-// Hooge is a tiny pixel font used to mark ad tags that have been mapped more 
-// than once. 
-
-$hooge-0555-woff: "hooge/Hooge0555Web.woff";
-$hooge-0555-ttf:  "hooge/Hooge0555Web.ttf";
-$hooge-0555-eot:  "hooge/Hooge0555Web.eot";
-
-@include font-face("Hooge 0555", font-files($hooge-0555-woff, $hooge-0555-ttf), $hooge-0555-eot, normal, normal);
-
-// Source Code Pro is monospaced typeface used to display campaign IDs. 
+// Source Code is monospaced typeface used to display campaign IDs. 
 // The bold version shows up during searches.
 
 $source-code-regular-woff: "source-code/SourceCodeProRegular.woff";
