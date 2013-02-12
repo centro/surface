@@ -42,7 +42,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-button {
+button,
+input[type="submit"] {
   -webkit-font-smoothing: antialiased;
 }
 
@@ -97,13 +98,13 @@ ul {
 // Browser specific overrides.  
 
 ::-webkit-input-placeholder {
-  color: $grayscale-2;
+  color: $grayscale-3;
   font-style: italic;
   -webkit-font-smoothing: antialiased;
 }
 
 :-moz-placeholder,
 :focus:-moz-placeholder {
-  color: $grayscale-2 !important;
+  color: $grayscale-3 !important;
   font-style: italic;
 }

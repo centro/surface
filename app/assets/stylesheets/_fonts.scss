@@ -15,15 +15,15 @@
 
 // Light
 
-// $source-sans-light-woff:        "source-sans/SourceSansProLight.woff";
-// $source-sans-light-ttf:         "source-sans/SourceSansProLight.ttf";
-// $source-sans-light-eot:         "source-sans/SourceSansProLight.eot";
-// 
-// $source-sans-light-italic-woff: "source-sans/SourceSansProLightItalic.woff";
-// $source-sans-light-italic-ttf:  "source-sans/SourceSansProLightItalic.ttf";
-// $source-sans-light-italic-eot:  "source-sans/SourceSansProLightItalic.eot";
+$source-sans-light-woff:        "source-sans/SourceSansProLight.woff";
+$source-sans-light-ttf:         "source-sans/SourceSansProLight.ttf";
+$source-sans-light-eot:         "source-sans/SourceSansProLight.eot";
 
-// @include font-face("Source Sans Light", font-files($source-sans-light-woff, $source-sans-light-ttf), $source-sans-light-eot, normal, normal);
+$source-sans-light-italic-woff: "source-sans/SourceSansProLightItalic.woff";
+$source-sans-light-italic-ttf:  "source-sans/SourceSansProLightItalic.ttf";
+$source-sans-light-italic-eot:  "source-sans/SourceSansProLightItalic.eot";
+
+@include font-face("Source Sans Light", font-files($source-sans-light-woff, $source-sans-light-ttf), $source-sans-light-eot, normal, normal);
 // @include font-face("Source Sans Light", font-files($source-sans-light-italic-woff, $source-sans-light-italic-ttf), $source-sans-light-italic-eot, normal, italic);
 
 // Regular

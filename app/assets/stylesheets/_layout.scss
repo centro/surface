@@ -44,25 +44,35 @@
 }
 
 // [?4] MARGIN
-// Baseline units are based to margin classes as arguments, such that 
+// Baseline units are based to margin classes as arguments, such that
 // (1) equals a value of 24px, (1/2) 12px, and so on.
+
+// Alignment
+
+.l-mg-ctr {
+  margin: 0 auto;
+}
 
 // Bottom
 
+.l-mg-btm\(1\/2\) {
+  margin-bottom: $base-line-height / 2;
+}
+
 .l-mg-btm\(1\) {
-  margin-bottom: $base-line-height; 
+  margin-bottom: $base-line-height;
 }
 
 .l-mg-btm\(2\) {
-  margin-bottom: $base-line-height * 2; 
+  margin-bottom: $base-line-height * 2;
 }
 
 .l-mg-btm\(3\) {
-  margin-bottom: $base-line-height * 3; 
+  margin-bottom: $base-line-height * 3;
 }
 
 .l-mg-btm\(4\) {
-  margin-bottom: $base-line-height * 4; 
+  margin-bottom: $base-line-height * 4;
 }
 
 // [?5] WIDTH

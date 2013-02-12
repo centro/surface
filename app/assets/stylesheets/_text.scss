@@ -68,16 +68,19 @@
 
 .t-small {
   font-size: modular-scale(-1);
-  line-height: 1em;
 }
 
 .t-smaller {
   font-size: 12px;
-  line-height: 1em;
 }
 
 // [?4] STYLE
 // Change type style without the need for additional markup.
+
+.t-light {
+  font-family: "Source Sans Light", sans-serif;
+  font-weight: normal;
+}
 
 .t-bold {
   font-weight: bold;
