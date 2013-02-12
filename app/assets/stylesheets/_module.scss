@@ -62,7 +62,6 @@
 
 .m-header {
   @include adjust-leading-to(2);
-  @include trailer(2);
   background: $grayscale-2;
   border-bottom: 1px solid darken($grayscale-2, 15%);
   height: $base-line-height * 2;

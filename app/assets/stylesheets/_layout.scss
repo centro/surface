@@ -13,7 +13,8 @@
 // [?1] FLOATS
 // [?2] GRID
 // [?3] HEIGHT
-// [?4] WIDTH
+// [?4] MARGIN
+// [?5] WIDTH
 
 // ========================================================================== 
 
@@ -42,7 +43,29 @@
   height: 100%;
 }
 
-// [?4] WIDTH
+// [?4] MARGIN
+// Baseline units are based to margin classes as arguments, such that 
+// (1) equals a value of 24px, (1/2) 12px, and so on.
+
+// Bottom
+
+.l-mg-btm\(1\) {
+  margin-bottom: $base-line-height; 
+}
+
+.l-mg-btm\(2\) {
+  margin-bottom: $base-line-height * 2; 
+}
+
+.l-mg-btm\(3\) {
+  margin-bottom: $base-line-height * 3; 
+}
+
+.l-mg-btm\(4\) {
+  margin-bottom: $base-line-height * 4; 
+}
+
+// [?5] WIDTH
 // Low level, module-agnostic classes that rely on Susy helpers used to 
 // manipulate element width. 
 
