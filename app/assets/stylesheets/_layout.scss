@@ -14,7 +14,8 @@
 // [?2] GRID
 // [?3] HEIGHT
 // [?4] MARGIN
-// [?5] WIDTH
+// [?5] PADDING
+// [?6] WIDTH
 
 // ========================================================================== 
 
@@ -44,7 +45,7 @@
 }
 
 // [?4] MARGIN
-// Baseline units are based to margin classes as arguments, such that
+// Baseline units are passed to margin classes as arguments, such that
 // (1) equals a value of 24px, (1/2) 12px, and so on.
 
 // Alignment
@@ -75,7 +76,16 @@
   margin-bottom: $base-line-height * 4;
 }
 
-// [?5] WIDTH
+// [?5] PADDING
+// Baseline/Gutter units are passed to padding classes as arguments, such that
+// (1) equals a value of 24/20px, (1/2) 12/10px and so on.
+// Horizontal 
+
+.l-pd-horiz\(1\/4\) {
+  padding: 0 ($gutter-width / 4);
+}
+
+// [?6] WIDTH
 // Low level, module-agnostic classes that rely on Susy helpers used to 
 // manipulate element width. 
 

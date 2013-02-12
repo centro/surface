@@ -60,6 +60,10 @@
   margin-bottom: $base-line-height;
 }
 
+.m-form__field > * {
+  line-height: inherit;
+}
+
 .m-form__input {
   @include box-sizing(border-box);
   border: 1px solid $grayscale-2;
