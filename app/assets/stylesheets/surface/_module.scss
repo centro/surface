@@ -72,6 +72,21 @@
   z-index: 10;
 }
 
+.m-header ul {
+  @extend .l-list-horiz;
+}
+
+.m-header ul > li {
+  padding: 0 !important;
+}
+
+.m-header a {
+  @include link-colors(white);
+  display: block;
+  text-decoration: none;
+  padding: 0 $gutter-width !important;
+}
+
 // [?4] ICONS
 // Classes used to render various and assorted semantic icons. 
 
