@@ -33,10 +33,20 @@
 }
 
 #grid div.horiz {
-  border-bottom: 1px dotted darkgray;
+  border-bottom: 1px solid darkgray;
   height: $base-line-height;
   margin: 0;
   padding: 0;
+  position: relative;
+}
+
+#grid div.horiz::after {
+  border-bottom: 1px dotted darkgray;
+  content: '';
+  height: 0;
+  position: absolute;
+    top: 11px;
+  width: 100%;
 }
 
 #grid div.vert {
