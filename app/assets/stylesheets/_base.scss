@@ -28,6 +28,12 @@
 
 a {
   outline: none;
+  color: $centro-brand-2b;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px dotted;
 }
 
 body,
@@ -44,6 +50,7 @@ body {
 
 button,
 input[type="submit"] {
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -103,8 +110,15 @@ ul {
   -webkit-font-smoothing: antialiased;
 }
 
-:-moz-placeholder,
-:focus:-moz-placeholder {
+:-moz-placeholder {  
   color: $grayscale-3 !important;
   font-style: italic;
+}
+
+:focus::-webkit-input-placeholder {
+  color: $grayscale-2;
+}
+
+:focus:-moz-placeholder {
+  color: $grayscale-2;
 }
