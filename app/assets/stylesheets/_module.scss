@@ -16,7 +16,8 @@
 // [?4] HEADER
 // [?5] ICONS
 // [?6] LISTS
-// [?7] NOTICES
+// [?7] NAVIGATION
+// [?8] NOTICES
 
 // ========================================================================== 
 
@@ -57,10 +58,8 @@
 
 // Colors
 
-$centro-confirm-2: #00a93f;
-
 .m-button--primary {
-  @include background-image(linear-gradient(lighten($centro-confirm-2, 5%), $centro-confirm-2));
+  @include background-image(linear-gradient(lighten($centro-confirm-2, 8%), $centro-confirm-2));
   @include box-shadow(0 0 2px rgba(white,0.6) inset);
   border-color:  darken($centro-confirm-2, 5%);
   color: white;
@@ -68,11 +67,11 @@ $centro-confirm-2: #00a93f;
 }
 
 .m-button--primary:hover {
-  @include background-image(linear-gradient(lighten($centro-confirm-2, 10%), $centro-confirm-2));
+  @include background-image(linear-gradient(lighten($centro-confirm-2, 12%), $centro-confirm-2));
 }
 
 .m-button--primary:active {
-  @include background-image(linear-gradient($centro-confirm-2, lighten($centro-confirm-2, 5%)));
+  @include background-image(linear-gradient($centro-confirm-2, lighten($centro-confirm-2, 8%)));
 }
 
 // [?2] FORMS
@@ -106,17 +105,26 @@ $centro-confirm-2: #00a93f;
 }
 
 // [?3] FOOTER
-// This implementation of the footer currently serves as a debugging 
-// line inside of insight. 
+// This implementation of the footer currently serves as a debugging
+// line inside of insight.
 
 .m-footer {
-  background: transparentize($grayscale-1, 0.5);
+  color: $grayscale-1;
   font-size: modular-scale(-1);
-  padding: 0 5px;
-  position:fixed;
+  padding: 0 8px;
+  position: fixed;
     bottom: 0;
   text-align: right;
   width: 100%;
+}
+
+// Debug footer is used for programmatic output in local and staging 
+// modes. 
+
+.m-footer--debug {
+  @extend .m-footer;
+  background: transparentize($grayscale-1, 0.5);
+  color: $grayscale-5;
 }
 
 // [?4] HEADER
@@ -132,19 +140,10 @@ $centro-confirm-2: #00a93f;
   z-index: 10;
 }
 
-.m-header ul {
-  @extend .l-list-horiz;
-}
-
-.m-header ul > li {
-  padding: 0 !important;
-}
-
 .m-header a {
   @include link-colors(white);
-  display: block;
   text-decoration: none;
-  padding: 0 $gutter-width;
+  text-shadow: 0 1px 2px rgba(black, 0.3);
 }
 
 .m-logo {
@@ -171,6 +170,7 @@ $centro-confirm-2: #00a93f;
   text-decoration: none;
   text-rendering: optimizeLegibility;
   white-space: nowrap;
+  padding-top: 2px !important; // Align to vertical middle.
 
   -webkit-font-feature-settings: "liga";
   -moz-font-feature-settings: "liga=1";
@@ -202,7 +202,30 @@ $centro-confirm-2: #00a93f;
   padding-right: 0;
 }
 
-// [?7] NOTICES
+// [?7] NAVIGATION
+
+.m-nav {
+  @extend .l-list-horiz;
+  line-height: $base-line-height * 2;
+  height: $base-line-height * 2;
+  overflow: hidden;
+}
+
+.m-nav > li {
+  border-left: 1px solid darken($centro-brand-1a, 5%);
+  padding: 0 !important;
+}
+
+.m-nav > li > a {
+  display: block;
+  padding: 0 $gutter-width;
+}
+
+.m-nav > li > a:hover {
+  background: darken($centro-brand-1a, 2.5%);
+}
+
+// [?8] NOTICES
 // This classes provide styles for various types of global messages 
 // (alerts, confirmation messages, notices, etc.) 
 

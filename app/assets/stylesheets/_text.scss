@@ -66,13 +66,17 @@
 // [?3] SIZING
 // Override default text size inheritance for child elements.
 
+.t-large {
+  font-size: modular-scale(1) !important;
+}
+
 .t-small {
-  font-size: modular-scale(-1);
+  font-size: modular-scale(-1) !important;
   line-height: 1em;
 }
 
 .t-smaller {
-  font-size: 12px;
+  font-size: 12px !important;
   line-height: 1em;
 }
 
