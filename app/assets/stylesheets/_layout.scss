@@ -57,8 +57,16 @@
 
 // Bottom
 
+.l-mg-btm\(1\/4\) {
+  margin-bottom: $base-line-height / 4;
+}
+
 .l-mg-btm\(1\/2\) {
   margin-bottom: $base-line-height / 2;
+}
+
+.l-mg-btm\(3\/4\) {
+  margin-bottom: $base-line-height * 0.75;
 }
 
 .l-mg-btm\(1\) {

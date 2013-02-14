@@ -11,9 +11,10 @@
 
 // [?1] ALIGNMENT
 // [?2] COLOR
-// [?3] SIZING
-// [?4] STYLE
-// [?5] TRUNCATION 
+// [?3] LINE-HEIGHT
+// [?4] SIZING
+// [?5] STYLE
+// [?6] TRUNCATION 
 
 // ========================================================================== 
 
@@ -63,7 +64,13 @@
   color: $grayscale-2;
 }
 
-// [?3] SIZING
+// [?3] LINE-HEIGHT
+
+.t-body-text {
+  line-height: 21px;
+}
+
+// [?4] SIZING
 // Override default text size inheritance for child elements.
 
 .t-large {
@@ -80,7 +87,7 @@
   line-height: 1em;
 }
 
-// [?4] STYLE
+// [?5] STYLE
 // Change type style without the need for additional markup.
 
 .t-thin {
@@ -96,7 +103,7 @@
   font-family: "Source Code", monospace;
 }
 
-// [?5] TRUNCATION
+// [?6] TRUNCATION
 // Prevent text from wrapping and truncate with a CSS ellipsis.
 
 .t-truncate {
