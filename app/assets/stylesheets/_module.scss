@@ -131,10 +131,6 @@
   z-index: 10;
 }
 
-.m-header > a:hover {
-  border-bottom: none;
-}
-
 .m-logo {
   background: image-url("logo.svg") no-repeat left 7px;
   background-size: contain;
@@ -217,7 +213,6 @@
 
 .m-nav > li > a:hover {
   background: darken($centro-brand-1a, 2.5%);
-  border-bottom: none;
 }
 
 .m-nav > li > a::before {
@@ -230,11 +225,8 @@
 
 .m-nav__sub-menu {
   position: absolute;
+    right: -17px;
     top: 66px;
-}
-
-.m-nav__sub-menu.settings {
-    right: -18px;
   width: ($column-width * 2) + $gutter-width;
 }
 
