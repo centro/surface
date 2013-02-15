@@ -18,6 +18,7 @@
 // [?6] LISTS
 // [?7] NAVIGATION
 // [?8] NOTICES
+// [?9] UTILITIES
 
 // ========================================================================== 
 
@@ -126,9 +127,12 @@
   border-bottom: 1px solid darken($centro-brand-1a, 5%);
   height: $base-line-height * 2;
   line-height: $base-line-height * 2;
-  overflow: hidden;
   position: relative;
   z-index: 10;
+}
+
+.m-header > a:hover {
+  border-bottom: none;
 }
 
 .m-logo {
@@ -194,25 +198,26 @@
   @extend .l-list-horiz;
   line-height: $base-line-height * 2;
   height: $base-line-height * 2;
-  overflow: hidden;
 }
 
 .m-nav > li {
-  border-left: 1px solid darken($centro-brand-1a, 5%);
   padding: 0 !important;
+  position: relative;
 }
 
 .m-nav > li > a {
   @include link-colors(white);
-  @include transition(all, 0.1s);
+  @include transition(all 0.1s 0.1s);
+  border-left: 1px solid darken($centro-brand-1a, 5%);
   display: block;
+  height: $base-line-height * 2;
   padding: 0 $gutter-width;
-  text-decoration: none;
   text-shadow: 0 1px 2px rgba(black, 0.3);
 }
 
 .m-nav > li > a:hover {
   background: darken($centro-brand-1a, 2.5%);
+  border-bottom: none;
 }
 
 .m-nav > li > a::before {
@@ -221,6 +226,28 @@
   padding-right: 8px;
   position: relative;
   vertical-align: middle;
+}
+
+.m-nav__sub-menu {
+  position: absolute;
+    top: 66px;
+}
+
+.m-nav__sub-menu.settings {
+    right: -18px;
+  width: ($column-width * 2) + $gutter-width;
+}
+
+// Account for :hover gap between trigger and target.
+
+.m-nav__sub-menu > li:first-child::before {
+ content: '';
+ height: 50%;
+ position: absolute;
+  left: 0;
+  top: -20px;
+ width: 100%;
+ z-index: -1;
 }
 
 // [?8] NOTICES
@@ -311,4 +338,74 @@
 
 .m-notice--confirm > p::before {
   content: 'check';
+}
+
+// [?8] UTILITIES
+
+// Tooltip
+
+.m-tooltip {
+  @include box-shadow(0 3px 6px rgba(black, 0.1));
+  @include opacity(0);
+  @include transition(all ease 0.1s 0.1s);
+  background: white;
+  border: 1px solid $grayscale-1;
+  visibility: hidden;
+  z-index: 99;
+}
+
+.m-trigger:hover .m-tooltip,
+.m-tooltip:hover {
+  @include opacity(1);
+  visibility: visible;
+}
+
+.m-tooltip > li {
+  border-bottom: 1px solid $grayscale-0;
+  line-height: 1em;
+  padding: ($gutter-width / 2);
+}
+
+.m-tooltip > li:last-child {
+  border-bottom: none;
+}
+
+.m-tooltip::after {
+  content: "";
+  display: block;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid darken($grayscale-1, 6%);
+  height: 0;
+  margin-left: -12px;
+  position: absolute;
+    top: -12px;
+    left: 50%;
+  width: 0;
+  z-index: 100;
+}
+
+.m-tooltip::before {
+  content: "";
+  display: block;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 11px solid white;
+  height: 0;
+  margin-left: -11px;
+  position: absolute;
+    top: -11px;
+    left: 50%;
+  width: 0;
+  z-index: 101;
+}
+
+// Triggers
+
+.m-nav .m-trigger > a {
+  cursor: pointer;
+}
+
+.m-nav .m-trigger:hover > a {
+  background: darken($centro-brand-1a, 2.5%);
 }
