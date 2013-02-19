@@ -42,6 +42,7 @@
 
 .m-button:hover {
   @include background-image(linear-gradient(white, $grayscale-0));
+  color: $grayscale-4;
 }
 
 .m-button:active {
@@ -174,30 +175,29 @@
 
 // Force list elements to render in a single horizontal line. 
 
-.l-list-horiz {
+.m-list-horiz {
   @include pie-clearfix;
-  white-space: nowrap;
 }
 
-.l-list-horiz > li {
+.m-list-horiz > li {
   float: left;
-  padding-right: $gutter-width;
+  margin-right: $gutter-width;
 }
 
-.l-list-horiz li:last-child {
-  padding-right: 0;
+.m-list-horiz li:last-child {
+  margin-right: 0;
 }
 
 // [?7] NAVIGATION
 
 .m-nav {
-  @extend .l-list-horiz;
+  @extend .m-list-horiz;
   line-height: $base-line-height * 2;
   height: $base-line-height * 2;
 }
 
 .m-nav > li {
-  padding: 0 !important;
+  margin: 0 !important;
   position: relative;
 }
 
@@ -333,6 +333,50 @@
 }
 
 // [?8] UTILITIES
+
+// Card
+
+.m-card {
+  @include background-image(linear-gradient(white, hsl(0, 0, 96%)));
+  @include border-radius(5px);
+  @include box-shadow(0 0 2px white inset, 0 1px 3px rgba(black, 0.1));
+  border: 1px solid $grayscale-1;
+  padding: $gutter-width !important;
+  margin-right: $gutter-width;
+  position: relative;
+  text-shadow: 0 1px 0px white;
+  width: 100%;
+}
+
+.m-card:hover {
+  @include background-image(linear-gradient(white, hsl(0, 0, 98%)));
+  cursor: pointer;
+}
+
+.m-card:active {
+  @include background-image(linear-gradient(hsl(0, 0, 97%), white));
+}
+
+.m-card > a {
+  color: $grayscale-5;
+  height: 100%;
+  position: absolute;
+    left: 0;
+    top: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.m-card > a > span {
+  @extend .t-thin;
+  font-size: modular-scale(6);
+  line-height: 1em;
+  margin-top: -0.4em;
+  position: absolute;
+    left: 0;
+    top: 50%;
+  width: 100%;
+}
 
 // Tooltip
 

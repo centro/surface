@@ -48,8 +48,8 @@
   color: $centro-alert-1;
 }
 
-.t-regular {
-  color: $grayscale-5;
+.t-hot {
+ color: $centro-brand-3c;
 }
 
 .t-light {
@@ -64,10 +64,18 @@
   color: $grayscale-2;
 }
 
+.t-regular {
+  color: $grayscale-5;
+}
+
 // [?3] LINE-HEIGHT
 
 .t-body-text {
-  line-height: 21px;
+  line-height: 21px !important;
+}
+
+.t-caption-text {
+  line-height: 18px !important;
 }
 
 // [?4] SIZING
