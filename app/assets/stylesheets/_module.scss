@@ -102,6 +102,44 @@
   outline: 0;
 }
 
+.m-form__field--error {
+  @extend .m-form__field;
+  position: relative;
+}
+
+.m-form__field--error > .m-form__input {
+  border-color: lighten($centro-alert-1, 10%);
+}
+
+// The input error itself.
+
+.m-form__input__error {
+ @extend .m-tooltip;
+ @include opacity(0);
+ color: $centro-alert-1;
+ font-size: modular-scale(-1);
+ line-height: $base-line-height + 4px;
+ height: $base-line-height + 4px;
+ padding: 0 $gutter-width / 2;
+ position: absolute;
+  left: -8px;
+  bottom: -32px;
+}
+
+.m-form__input__error::after {
+  margin-left: 13px !important;
+  left: 0 !important;
+}
+
+.m-form__input__error::before {
+  margin-left: 14px !important;
+  left: 0 !important;
+}
+
+.m-form__field--error > .m-form__input:focus + .m-form__input__error {
+  @include opacity(1);
+}
+
 .m-form__label--hidden {
   position: absolute;
   visibility: hidden;
@@ -228,9 +266,11 @@
 }
 
 .m-nav__sub-menu {
+  @include opacity(0);
   position: absolute;
     right: -17px;
     top: 66px;
+    visibility: hidden;
   width: ($column-width * 2) + $gutter-width;
 }
 
@@ -386,16 +426,13 @@
 
 .m-tooltip {
   @include box-shadow(0 3px 6px rgba(black, 0.1));
-  @include opacity(0);
   @include transition(all ease 0.1s 0.1s);
   background: white;
   border: 1px solid $grayscale-1;
-  visibility: hidden;
   z-index: 99;
 }
 
-.m-trigger:hover .m-tooltip,
-.m-tooltip:hover {
+.m-trigger:hover .m-tooltip {
   @include opacity(1);
   visibility: visible;
 }
@@ -413,13 +450,13 @@
 .m-tooltip::after {
   content: "";
   display: block;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-bottom: 12px solid darken($grayscale-1, 6%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid darken($grayscale-1, 6%);
   height: 0;
-  margin-left: -12px;
+  margin-left: -10px;
   position: absolute;
-    top: -12px;
+    top: -10px;
     left: 50%;
   width: 0;
   z-index: 100;
@@ -428,13 +465,13 @@
 .m-tooltip::before {
   content: "";
   display: block;
-  border-left: 11px solid transparent;
-  border-right: 11px solid transparent;
-  border-bottom: 11px solid white;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid white;
   height: 0;
-  margin-left: -11px;
+  margin-left: -9px;
   position: absolute;
-    top: -11px;
+    top: -9px;
     left: 50%;
   width: 0;
   z-index: 101;
