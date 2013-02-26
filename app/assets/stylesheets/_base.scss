@@ -106,12 +106,14 @@ ul {
 
 ::-webkit-input-placeholder {
   color: $grayscale-3;
+  font-size: modular-scale(0);
   font-style: italic;
   -webkit-font-smoothing: antialiased;
 }
 
 :-moz-placeholder {  
   color: $grayscale-3 !important;
+  font-size: modular-scale(0);
   font-style: italic;
 }
 

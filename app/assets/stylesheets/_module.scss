@@ -79,8 +79,10 @@
 // [?2] FORMS
 
 .m-form__field {
+  height: $base-line-height * 1.5;
   line-height: $base-line-height * 1.5;
   margin-bottom: $base-line-height;
+  position: relative;
 }
 
 .m-form__field > * {
@@ -91,6 +93,7 @@
   @include box-shadow(inset 0 1px 4px rgba(black, 0.125));
   @include transition(all 0.1s 0s);
   border: 1px solid $grayscale-2;
+  font-size: modular-scale(0);
   height: $base-line-height * 1.5;
   line-height: $base-line-height; 
   padding: 2px ($gutter-width / 2) 0;
@@ -100,6 +103,21 @@
 .m-form__input:focus {
   border-color: $centro-brand-2b; 
   outline: 0;
+}
+
+.m-form__input[type="password"] {
+  font-size: $base-line-height;
+}
+
+.m-form__input--password {
+  @extend .m-form__input;
+}
+
+.m-form__input-toggle {
+  font-size: modular-scale(-1);
+  position: absolute;
+    top: 2px;
+    right: $gutter-width / 2;
 }
 
 .m-form__field--error {
