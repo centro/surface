@@ -38,6 +38,11 @@
   min-width: $container-min-width; 
 }
 
+.l-grid--narrow {
+ @extend .l-grid;
+ min-width: 980px;
+}
+
 // [?3] HEIGHT
 // Low level, module-agnostic classes used to manipulate element height.
 
