@@ -19,7 +19,7 @@ $(function() {
 var unmaskPassword = function () {
 
   $('.m-form__input--password').attr('type', 'text');
-  $('.js-masking-toggle').text("Hide")
+  $('.js-masking-toggle').text("Hide").attr('tabindex','-1');
 
   $('.js-masking-toggle').click(function() {
 
@@ -41,6 +41,8 @@ var unmaskPassword = function () {
     } else {
       $('.js-masking-toggle').text("Hide");
     }
+
+    return false;
 
   }); 
 }
