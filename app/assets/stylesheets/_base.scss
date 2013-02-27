@@ -26,7 +26,8 @@
 // [?2] ELEMENTS
 // Supplemental overrides for generic browser defaults found in _reset.scss 
 
-a {
+a:link,
+a:visited {
   outline: none;
   color: $centro-brand-2a;
   text-decoration: none;
