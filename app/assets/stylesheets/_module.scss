@@ -123,6 +123,7 @@
 
 .m-form__field--error {
   @extend .m-form__field;
+  color: $centro-alert-1;
   position: relative;
 }
 
@@ -135,7 +136,6 @@
 .m-form__input__error {
  @extend .m-tooltip;
  @include opacity(0);
- color: $centro-alert-1;
  font-size: modular-scale(-1);
  line-height: $base-line-height + 4px;
  height: $base-line-height + 4px;

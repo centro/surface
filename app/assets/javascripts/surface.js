@@ -18,10 +18,12 @@ $(function() {
 
 var unmaskPassword = function () {
 
-  $('.m-form__input--password').attr('type', 'text');
-  $('.js-masking-toggle').text("Hide").attr('tabindex','-1');
+  var maskingToggle =  $('.js-masking-toggle');
 
-  $('.js-masking-toggle').click(function() {
+  maskingToggle.prev('input').attr('type', 'text');
+  maskingToggle.attr('tabindex','-1');
+
+  maskingToggle.click(function() {
 
     var input = $(this).prev('input');
     var inputType = $(this).prev('input').attr('type');
@@ -34,16 +36,43 @@ var unmaskPassword = function () {
 
     // Change link text.
 
-    var linkText = $('.js-masking-toggle').text();
+    var linkText = maskingToggle.text();
 
     if (linkText === 'Hide') {
-      $('.js-masking-toggle').text("Show");
+      maskingToggle.text("Show");
     } else {
-      $('.js-masking-toggle').text("Hide");
+      maskingToggle.text("Hide");
     }
 
     return false;
 
   }); 
+
+  var maskingToggleErrorMsg = $('.js-masking-toggle--error-msg');
+  
+  maskingToggleErrorMsg.click(function() {
+
+    var input = $(this).parent().prev('input');
+    var inputType = $(this).parent().prev('input').attr('type');
+
+    if (inputType === 'text') {
+      input.attr('type', 'password');
+    } else {
+      input.attr('type', 'text');
+    }
+
+     // Change link text.
+
+    var linkText = maskingToggleErrorMsg.text();
+
+    if (linkText === 'Show characters?') {
+      maskingToggleErrorMsg.text("Hide characters?");
+    } else {
+      maskingToggleErrorMsg.text("Show characters?");
+    }
+
+    return false;
+
+  });
 }
 
