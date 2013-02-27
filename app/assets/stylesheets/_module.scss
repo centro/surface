@@ -74,7 +74,7 @@
 }
 
 .m-button--primary:active {
-  @include background-image(linear-gradient($centro-confirm-2, lighten($centro-confirm-2, 3%)));
+  @include background-image(linear-gradient($centro-confirm-2, lighten($centro-confirm-2, 6%)));
 }
 
 // [?2] FORMS
@@ -155,7 +155,9 @@
   left: 0 !important;
 }
 
-.m-form__field--error > .m-form__input:focus + .m-form__input__error {
+.m-form__field--error > .m-form__input:focus + .m-form__input__error,
+.m-form__field--error:hover > .m-form__input__error
+{
   @include opacity(1);
 }
 
