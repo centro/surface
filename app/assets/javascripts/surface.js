@@ -11,8 +11,17 @@ $(function() {
 
   // Function calls.
   
+  // Toggle masked or plain text passwords. 
+  
   unmaskPassword();
-  $("label").inFieldLabels({labelClass: "m-form__label--infield", fadeDuration: 100});
+
+  // HTML 5 Placeholder polyfill. 
+
+  if (!$.support.opacity) {
+    $("label").inFieldLabels({labelClass: "m-form__label--infield", fadeDuration: 100, fadeOpacity: 1});
+  } else {
+    $("label").inFieldLabels({labelClass: "m-form__label--infield", fadeDuration: 100});
+  }
 
  });
 

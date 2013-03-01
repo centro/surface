@@ -99,9 +99,14 @@
   border: 1px solid $grayscale-2;
   font-size: modular-scale(0);
   height: $base-line-height * 1.5;
-  line-height: $base-line-height; 
+  line-height: 1em; 
   padding: 2px ($gutter-width / 2) 0;
   width: 100%;
+}
+
+.ie8 .m-form__input {
+  line-height: 1em;
+  padding-top: 10px;
 }
 
 .m-form__input:focus {
@@ -151,13 +156,13 @@
  padding: 0 $gutter-width / 2;
 }
 
-.m-form__input__error > span::after {
+.m-form__input__error > span:before {
   margin-left: 13px !important;
   left: 0 !important;
   top: -4px !important;
 }
 
-.m-form__input__error > span::before {
+.m-form__input__error > span:after {
   margin-left: 14px !important;
   left: 0 !important;
   top: -3px !important;
@@ -175,11 +180,6 @@
   cursor: text;
   font-style: italic;
   padding: 1px 0 0 10px;
-}
-
-.m-form__label--hidden {
-  position: absolute;
-  visibility: hidden;
 }
 
 // [?3] FOOTER
@@ -220,6 +220,10 @@
 
   -webkit-filter: drop-shadow( 0 1px 2px rgba(black, 0.25));
   -webkit-transform: translateZ(0); // Prevent filter from rasterizing img
+}
+
+.ie8 .m-logo {
+  background: image-url("logo.png") no-repeat left -2px;
 }
 
 // [?5] ICONS
@@ -294,7 +298,7 @@
   background: darken($centro-brand-1a, 2.5%);
 }
 
-.m-nav > li > a::before {
+.m-nav > li > a:before {
   @extend .i-icon;
   content: attr(data-icon);
   padding-right: 8px;
@@ -313,7 +317,7 @@
 
 // Account for :hover gap between trigger and target.
 
-.m-nav__sub-menu > li:first-child::before {
+.m-nav__sub-menu > li:first-child:before {
  content: '';
  height: 50%;
  position: absolute;
@@ -354,7 +358,7 @@
 
 // Adds the header's subtle dark blue border around the notice box. 
 
-.m-notice::after {
+.m-notice:after {
   @include border-radius(4px 4px 0 0);
   @include box-sizing(content-box);
   border-color: darken($centro-brand-1a, 6%);
@@ -382,7 +386,7 @@
   position: relative;
 }
 
-.m-notice > p::before {
+.m-notice > p:before {
   @extend .i-icon;
   display: none;
   font-size: $base-font-size;
@@ -416,8 +420,8 @@
   text-shadow: 0 1px 2px rgba(black, 0.2);
 }
 
-.m-notice--alert > p::before,
-.m-notice--confirm > p::before {
+.m-notice--alert > p:before,
+.m-notice--confirm > p:before {
   display: block;
 }
 
@@ -426,7 +430,7 @@
   border-color: darken($centro-alert-1, 10%); 
 }
 
-.m-notice--alert > p::before  {
+.m-notice--alert > p:before  {
   content: 'alert';
 }
 
@@ -444,7 +448,7 @@
   border-color: darken($centro-confirm-2, 2%); 
 }
 
-.m-notice--confirm > p::before {
+.m-notice--confirm > p:before {
   content: 'check';
 }
 
@@ -517,7 +521,11 @@
   border-bottom: none;
 }
 
-.m-tooltip::after {
+.m-tooltip > li.last {
+  border-bottom: none;
+}
+
+.m-tooltip:before {
   content: "";
   display: block;
   border-left: 10px solid transparent;
@@ -532,7 +540,7 @@
   z-index: 101;
 }
 
-.m-tooltip::before {
+.m-tooltip:after {
   content: "";
   display: block;
   border-left: 9px solid transparent;
