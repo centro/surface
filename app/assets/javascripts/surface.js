@@ -1,4 +1,5 @@
 //= require hashgrid 
+//= require placeholder
 
 $(function() {
 
@@ -10,6 +11,7 @@ $(function() {
 
   // Function calls.
   
+  Placeholders.init();
   unmaskPassword();
 
  });
@@ -49,6 +51,7 @@ var unmaskPassword = function () {
   }); 
 
   var maskingToggleErrorMsg = $('.js-masking-toggle--error-msg');
+  maskingToggleErrorMsg.parent().prev('input').attr('type', 'password');
   
   maskingToggleErrorMsg.click(function() {
 
