@@ -1,5 +1,5 @@
 //= require hashgrid 
-//= require placeholder
+//= require jquery.infieldlabel
 
 $(function() {
 
@@ -11,8 +11,8 @@ $(function() {
 
   // Function calls.
   
-  Placeholders.init();
   unmaskPassword();
+  $("label").inFieldLabels({labelClass: "m-form__label--infield", fadeDuration: 100});
 
  });
 
@@ -51,12 +51,12 @@ var unmaskPassword = function () {
   }); 
 
   var maskingToggleErrorMsg = $('.js-masking-toggle--error-msg');
-  maskingToggleErrorMsg.parent().prev('input').attr('type', 'password');
+  maskingToggleErrorMsg.parents(".m-form__input__error").prev('input').attr('type', 'password');
   
   maskingToggleErrorMsg.click(function() {
 
-    var input = $(this).parent().prev('input');
-    var inputType = $(this).parent().prev('input').attr('type');
+    var input = $(this).parents(".m-form__input__error").prev('input');
+    var inputType = $(this).parents(".m-form__input__error").prev('input').attr('type');
 
     if (inputType === 'text') {
       input.attr('type', 'password');
