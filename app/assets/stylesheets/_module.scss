@@ -27,6 +27,7 @@
 // Defaults
 
 .m-button {
+  background: $grayscale-0; // Fallback for older browsers.
   @include background-image(linear-gradient(hsl(0, 0, 97%), $grayscale-0));
   @include border-radius(4px);
   border: 1px solid $grayscale-2;
@@ -60,6 +61,7 @@
 // Colors
 
 .m-button--primary {
+  background: lighten($centro-confirm-2, 2%);
   @include background-image(linear-gradient(lighten($centro-confirm-2, 6%), $centro-confirm-2));
   border-color:  darken($centro-confirm-2, 3%);
   color: white;
@@ -67,6 +69,7 @@
 }
 
 .m-button--primary:hover {
+  background: lighten($centro-confirm-2, 4%);
   @include background-image(linear-gradient(lighten($centro-confirm-2, 8%), $centro-confirm-2));
   @include box-shadow(0 1px 2px rgba(black, 0.2));
   border-color:  darken($centro-confirm-2, 5%);
@@ -104,10 +107,6 @@
 .m-form__input:focus {
   border-color: $centro-brand-2b; 
   outline: 0;
-}
-
-.m-form__input[type="password"] {
-  font-size: $base-line-height;
 }
 
 .m-form__input--password {
