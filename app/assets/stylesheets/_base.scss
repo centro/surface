@@ -1,11 +1,11 @@
 // ==========================================================================
-// Base  
-// ========================================================================== 
+// Base
+// ==========================================================================
 
 // DESC:
 
-// This file contains basic styles that provide supplemental, application 
-// specific defaults which are more useful than the generic browser 
+// This file contains basic styles that provide supplemental, application
+// specific defaults which are more useful than the generic browser
 // defaults found in _reset.scss
 
 // TOC:
@@ -14,17 +14,17 @@
 // [?2] ELEMENTS
 // [?3] PROPRIETARY
 
-// ========================================================================== 
+// ==========================================================================
 
 // [?1] INITIALIZERS
-// Just a little compass voodo to establish a consistent box model and a 
-// global line-height. 
+// Just a little compass voodo to establish a consistent box model and a
+// global line-height.
 
 @include border-box-sizing;
 @include establish-baseline;
 
 // [?2] ELEMENTS
-// Supplemental overrides for generic browser defaults found in _reset.scss 
+// Supplemental overrides for generic browser defaults found in _reset.scss
 
 a:link,
 a:visited {
@@ -89,7 +89,7 @@ h4 {
 mark {
   background: transparent;
   color: $grayscale-5;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 p {
@@ -103,19 +103,32 @@ ul {
 }
 
 // [?3] PROPRIETARY
-// Browser specific overrides.  
+// Browser specific overrides.
+
+@mixin placeholder-text {
+  color: $grayscale-3 !important;
+  font-style: italic;
+}
+
+.placeholder {
+  @include placeholder-text;
+}
 
 ::-webkit-input-placeholder {
-  color: $grayscale-3;
-  font-size: modular-scale(0);
-  font-style: italic;
+  @include placeholder-text;
   -webkit-font-smoothing: antialiased;
 }
 
-:-moz-placeholder {  
-  color: $grayscale-3 !important;
-  font-size: modular-scale(0);
-  font-style: italic;
+:-moz-placeholder {
+  @include placeholder-text;
+}
+
+:-ms-input-placeholder {
+  @include placeholder-text;
+}
+
+.placeholder:focus {
+  color: $grayscale-2 !important;
 }
 
 :focus::-webkit-input-placeholder {
@@ -124,4 +137,15 @@ ul {
 
 :focus:-moz-placeholder {
   color: $grayscale-2;
+}
+
+:focus:-ms-input-placeholder {
+  color: $grayscale-2;
+}
+
+// Remove IE10 input icons.
+
+::-ms-clear,
+::-ms-reveal {
+  display: none;
 }
