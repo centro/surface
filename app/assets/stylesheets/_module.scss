@@ -133,26 +133,34 @@
 // The input error itself.
 
 .m-form__input__error {
- @extend .m-tooltip;
  @include opacity(0);
- font-size: modular-scale(-1);
- line-height: $base-line-height + 4px;
- height: $base-line-height + 4px;
- padding: 0 $gutter-width / 2;
+ padding: 5px 0 0 0;
  position: absolute;
   left: -8px;
   bottom: -32px;
  visibility: hidden;
+ z-index: 100;
 }
 
-.m-form__input__error::after {
+.m-form__input__error > span {
+ @extend .m-tooltip;
+ display: block;
+ font-size: modular-scale(-1);
+ line-height: $base-line-height + 4px;
+ height: $base-line-height + 4px;
+ padding: 0 $gutter-width / 2;
+}
+
+.m-form__input__error > span::after {
   margin-left: 13px !important;
   left: 0 !important;
+  top: -4px !important;
 }
 
-.m-form__input__error::before {
+.m-form__input__error > span::before {
   margin-left: 14px !important;
   left: 0 !important;
+  top: -3px !important;
 }
 
 .m-form__field--error > .m-form__input:focus + .m-form__input__error,
@@ -160,6 +168,13 @@
 {
   @include opacity(1);
   visibility: visible;
+}
+
+.m-form__label--infield {
+  color: $grayscale-3; 
+  cursor: text;
+  font-style: italic;
+  padding: 1px 0 0 10px;
 }
 
 .m-form__label--hidden {

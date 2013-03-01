@@ -105,44 +105,6 @@ ul {
 // [?3] PROPRIETARY
 // Browser specific overrides.
 
-@mixin placeholder-text {
-  color: $grayscale-3 !important;
-  font-style: italic;
-}
-
-.placeholder {
-  @include placeholder-text;
-}
-
-::-webkit-input-placeholder {
-  @include placeholder-text;
-  -webkit-font-smoothing: antialiased;
-}
-
-:-moz-placeholder {
-  @include placeholder-text;
-}
-
-:-ms-input-placeholder {
-  @include placeholder-text;
-}
-
-.placeholder:focus {
-  color: $grayscale-2 !important;
-}
-
-:focus::-webkit-input-placeholder {
-  color: $grayscale-2;
-}
-
-:focus:-moz-placeholder {
-  color: $grayscale-2;
-}
-
-:focus:-ms-input-placeholder {
-  color: $grayscale-2;
-}
-
 // Remove IE10 input icons.
 
 ::-ms-clear,
