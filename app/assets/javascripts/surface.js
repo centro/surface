@@ -4,23 +4,21 @@
 $(function() {
 
   // Focus first form field with an error on it.
-  $(".m-form__field--error").first().children("input").focus();
+
+  $('.m-form__field--error').first().children('input').focus();
 
   // Fade out notice after 10 seconds.
-  $(".m-notice--confirm, .m-notice--notice").delay(10000).fadeOut("slow");
+
+  $('.m-notice--confirm, .m-notice--notice').delay(10000).fadeOut('slow');
 
   // Function calls.
-  
-  // Toggle masked or plain text passwords. 
-  
-  unmaskPassword();
-
-  // HTML 5 Placeholder polyfill. 
 
   if (!$.support.opacity) {
-    $("label").inFieldLabels({labelClass: "m-form__label--infield", fadeDuration: 100, fadeOpacity: 1});
+    $('label').inFieldLabels({labelClass: 'm-form__label--infield', fadeDuration: 100, fadeOpacity: 1});
+    hideMaskingToggles();
   } else {
-    $("label").inFieldLabels({labelClass: "m-form__label--infield", fadeDuration: 100});
+    $('label').inFieldLabels({labelClass: 'm-form__label--infield', fadeDuration: 100});
+    unmaskPassword();
   }
 
  });
@@ -30,19 +28,20 @@ $(function() {
 var unmaskPassword = function () {
 
   var maskingToggle =  $('.js-masking-toggle');
+  var maskingToggleErrorMsg = $('.js-masking-toggle--error-msg');
 
-  maskingToggle.prev('input').attr('type', 'text');
-  maskingToggle.attr('tabindex','-1');
+  maskingToggle.siblings('.m-form__input--password').prop('type', 'text');
+  maskingToggle.prop('tabindex','-1');
 
   maskingToggle.click(function() {
 
-    var input = $(this).prev('input');
-    var inputType = $(this).prev('input').attr('type');
+    var input = $(this).siblings('.m-form__input--password');
+    var inputType = $(this).siblings('.m-form__input--password').prop('type');
 
     if (inputType === 'text') {
-      input.attr('type', 'password');
+      input.prop('type', 'password');
     } else {
-      input.attr('type', 'text');
+      input.prop('type', 'text');
     }
 
     // Change link text.
@@ -50,27 +49,26 @@ var unmaskPassword = function () {
     var linkText = maskingToggle.text();
 
     if (linkText === 'Hide') {
-      maskingToggle.text("Show");
+      maskingToggle.text('Show');
     } else {
-      maskingToggle.text("Hide");
+      maskingToggle.text('Hide');
     }
 
-    return false;
+    event.preventDefault();
 
   }); 
 
-  var maskingToggleErrorMsg = $('.js-masking-toggle--error-msg');
-  maskingToggleErrorMsg.parents(".m-form__input__error").prev('input').attr('type', 'password');
+  maskingToggleErrorMsg.parents('.m-form__input__error').siblings('input').prop('type', 'password');
   
   maskingToggleErrorMsg.click(function() {
 
-    var input = $(this).parents(".m-form__input__error").prev('input');
-    var inputType = $(this).parents(".m-form__input__error").prev('input').attr('type');
+    var input = $(this).parents('.m-form__input__error').siblings('input');
+    var inputType = $(this).parents('.m-form__input__error').siblings('input').prop('type');
 
     if (inputType === 'text') {
-      input.attr('type', 'password');
+      input.prop('type', 'password');
     } else {
-      input.attr('type', 'text');
+      input.prop('type', 'text');
     }
 
      // Change link text.
@@ -78,13 +76,25 @@ var unmaskPassword = function () {
     var linkText = maskingToggleErrorMsg.text();
 
     if (linkText === 'Show characters?') {
-      maskingToggleErrorMsg.text("Hide characters?");
+      maskingToggleErrorMsg.text('Hide characters?');
     } else {
-      maskingToggleErrorMsg.text("Show characters?");
+      maskingToggleErrorMsg.text('Show characters?');
     }
 
-    return false;
+    event.preventDefault();
 
   });
 }
 
+// IE8 prevents us from changing input types, so we hide
+// the links that trigger the mask/unmask password functionality.
+
+var hideMaskingToggles = function () {
+
+  var maskingToggle =  $('.js-masking-toggle');
+  var maskingToggleErrorMsg = $('.js-masking-toggle--error-msg');
+
+  maskingToggle.hide();
+  maskingToggleErrorMsg.hide();
+
+}
