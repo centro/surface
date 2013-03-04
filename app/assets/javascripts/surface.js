@@ -16,10 +16,10 @@ $(function() {
   // Function calls.
 
   if (!$.support.opacity) {
-    $('label').inFieldLabels({labelClass: 'm-form__label--infield', fadeDuration: 100, fadeOpacity: 1});
+    $('.m-form__label--infield').inFieldLabels({labelClass: '', fadeDuration: 100, fadeOpacity: 1});
     hideMaskingToggles();
   } else {
-    $('label').inFieldLabels({labelClass: 'm-form__label--infield', fadeDuration: 100});
+    $('.m-form__label--infield').inFieldLabels({labelClass: '', fadeDuration: 100});
     unmaskPassword();
   }
 
