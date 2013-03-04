@@ -7,7 +7,7 @@ $(function() {
 
   // Focus first form field with an error on it.
 
-  $('.m-form__field--error').first().children('input').focus();
+  $('.m-form__field--error, .m-form__infield--error').first().children('input').focus();
 
   // Fade out notice after 10 seconds.
 
