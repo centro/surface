@@ -83,14 +83,29 @@
 // [?2] FORMS
 
 .m-form__field {
-  height: $base-line-height * 1.5;
-  line-height: $base-line-height * 1.5;
   margin-bottom: $base-line-height;
   position: relative;
 }
 
 .m-form__field > * {
   line-height: inherit;
+}
+
+.m-form__infield {
+  @extend .m-form__field;
+  height: $base-line-height * 1.5;
+  line-height: $base-line-height * 1.5;
+}
+
+.m-form__field--error {
+  @extend .m-form__field;
+  color: $centro-alert-1;
+  position: relative;
+}
+
+.m-form__infield--error {
+  @extend .m-form__field--error;
+  @extend .m-form__infield;
 }
 
 .m-form__input {
@@ -123,12 +138,6 @@
   position: absolute;
     top: 2px;
     right: $gutter-width / 2;
-}
-
-.m-form__field--error {
-  @extend .m-form__field;
-  color: $centro-alert-1;
-  position: relative;
 }
 
 .m-form__field--error > .m-form__input {
