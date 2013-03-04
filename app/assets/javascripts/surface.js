@@ -3,6 +3,8 @@
 
 $(function() {
 
+  $('html').removeClass('no-js');
+
   // Focus first form field with an error on it.
 
   $('.m-form__field--error').first().children('input').focus();
