@@ -91,7 +91,8 @@
   line-height: inherit;
 }
 
-.m-form__infield {
+.m-form__infield,
+.m-form__controls {
   @extend .m-form__field;
   height: $base-line-height * 1.5;
   line-height: $base-line-height * 1.5;
@@ -140,8 +141,27 @@
     right: $gutter-width / 2;
 }
 
+.m-form__input-toggle--visible-label {
+  @extend .m-form__input-toggle;
+  top: 32px;
+}
+
 .m-form__field--error > .m-form__input {
   border-color: lighten($centro-alert-1, 10%);
+}
+
+.m-form__legend {
+  @include pie-clearfix;
+  border-top: 1px solid $grayscale-0;
+  color: $centro-brand-3c;
+  margin-bottom: $base-line-height;
+  padding-top: $base-line-height / 3;
+}
+
+.m-form__legend > span {
+  color: $grayscale-2;
+  font-size: modular-scale(-1);
+  float: right;
 }
 
 // The input error itself.
@@ -177,11 +197,25 @@
   top: -3px !important;
 }
 
+.m-form__input--select {
+  width: 100%;
+}
+
 .m-form__field--error > .m-form__input:focus + .m-form__input__error,
 .m-form__field--error:hover > .m-form__input__error
 {
   @include opacity(1);
   visibility: visible;
+}
+
+.m-form__label {
+  cursor: pointer;
+  display: block;
+}
+
+.m-form__label--inline {
+  cursor: pointer;
+  display: inline-block;
 }
 
 .m-form__label--infield {

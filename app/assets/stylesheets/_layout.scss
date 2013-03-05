@@ -26,8 +26,20 @@
   float: left !important;
 }
 
+.l-clr-left {
+  clear: left; 
+}
+
 .l-right {
   float: right !important;
+}
+
+.l-clr-right {
+  clear: right; 
+}
+
+.l-clearfix {
+  @include pie-clearfix
 }
 
 // [?2] GRID
@@ -82,12 +94,24 @@
   margin-bottom: $base-line-height * 0.75;
 }
 
+//
+
 .l-mg-btm\(1\) {
   margin-bottom: $base-line-height;
 }
 
+.l-mg-btm\(1\+1\/4\) {
+  margin-bottom: $base-line-height * 1.25;
+}
+
+.l-mg-btm\(1\+1\/2\) {
+  margin-bottom: $base-line-height * 1.5;
+}
+
+//
+
 .l-mg-btm\(2\) {
-  margin-bottom: $base-line-height * 2;
+  margin-bottom: $base-line-height * 2 !important;
 }
 
 .l-mg-btm\(3\) {
@@ -106,6 +130,24 @@
 
 .l-mg-left\(1\/2\) {
   margin-left: $gutter-width / 2;
+}
+
+.l-mg-left\(1\) {
+  margin-left: $gutter-width;
+}
+
+// Right
+
+.l-mg-right\(1\/4\) {
+  margin-right: $gutter-width / 4;
+}
+
+.l-mg-right\(1\/2\) {
+  margin-right: $gutter-width / 2;
+}
+
+.l-mg-right\(1\) {
+  margin-right: $gutter-width;
 }
 
 // [?5] PADDING
@@ -137,6 +179,24 @@
 
 .l-width\(3of3\) {
   width: columns(3,3);
+}
+
+// Root 4
+
+.l-width\(1of4\) {
+  width: columns(1,4);
+}
+
+.l-width\(2of4\) {
+  width: columns(2,4);
+}
+
+.l-width\(3of4\) {
+  width: columns(3,4);
+}
+
+.l-width\(4of4\) {
+  width: columns(4,4);
 }
 
 // Root 6
