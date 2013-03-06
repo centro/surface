@@ -555,17 +555,12 @@
 }
 
 .m-tooltip > li {
-  border-bottom: 1px solid $grayscale-0;
   line-height: 1em;
   padding: ($gutter-width / 2);
 }
 
-.m-tooltip > li:last-child {
-  border-bottom: none;
-}
-
-.m-tooltip > li.last {
-  border-bottom: none;
+.m-tooltip > li:first-child {
+  border-bottom: 1px solid $grayscale-0;
 }
 
 .m-tooltip:before {
