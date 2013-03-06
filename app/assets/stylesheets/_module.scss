@@ -565,6 +565,7 @@
 
 .m-tooltip > li:first-child {
   border-bottom: 1px solid $grayscale-0;
+  margin-bottom: ($gutter-width / 2);
 }
 
 .m-tooltip:before {
