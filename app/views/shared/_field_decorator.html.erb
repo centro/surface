@@ -1,4 +1,7 @@
 <%= tag("div", options, true) %>
 <% block.call %>
+<% if !error_messages.nil? %>
+<div class="m-form__input__error"><span><%=error_messages.join(". ")%></span></div>
+<% end %>
 </div>
 
