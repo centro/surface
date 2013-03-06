@@ -559,6 +559,10 @@
   padding: ($gutter-width / 2);
 }
 
+.m-tooltip > li + li {
+  padding-top: 0;
+}
+
 .m-tooltip > li:first-child {
   border-bottom: 1px solid $grayscale-0;
 }
