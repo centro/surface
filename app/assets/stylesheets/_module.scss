@@ -98,6 +98,13 @@
   line-height: $base-line-height * 1.5;
 }
 
+.m-form__controls > p {
+  color: $grayscale-3;
+  display: inline-block;
+  font-size: modular-scale(-1);
+  padding-top: 2px;
+}
+
 .m-form__field--error {
   @extend .m-form__field;
   color: $centro-alert-1;
