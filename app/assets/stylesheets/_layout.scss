@@ -26,12 +26,12 @@
   float: left !important;
 }
 
-.l-clr-left {
-  clear: left; 
-}
-
 .l-right {
   float: right !important;
+}
+
+.l-clr-left {
+  clear: left; 
 }
 
 .l-clr-right {
@@ -148,6 +148,10 @@
 
 .l-mg-right\(1\) {
   margin-right: $gutter-width;
+}
+
+.l-mg-right\(1of4\) {
+  margin-right: gutter(4);
 }
 
 // [?5] PADDING
