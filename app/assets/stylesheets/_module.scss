@@ -108,7 +108,7 @@
 
 .m-form__field--error {
   @extend .m-form__field;
-  color: $centro-brand-3c;
+  color: $centro-alert-1;
   position: relative;
 }
 
@@ -155,13 +155,13 @@
 }
 
 .m-form__field--error > .m-form__input {
-  border-color: lighten($centro-brand-3b, 10%);
+  border-color: lighten($centro-alert-1, 5%);
 }
 
 .m-form__legend {
   @include pie-clearfix;
   border-top: 1px solid $grayscale-0;
-  color: $centro-brand-3b;
+  color: $centro-brand-3c;
   margin-bottom: $base-line-height;
   padding-top: $base-line-height / 3;
 }
