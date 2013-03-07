@@ -224,6 +224,7 @@
 .m-form__label {
   cursor: pointer;
   display: block;
+  white-space: nowrap;
 }
 
 .m-form__label--inline {
