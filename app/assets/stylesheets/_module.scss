@@ -144,7 +144,31 @@
 
 .m-form__input--search {
   @extend .m-form__input;
-  padding-left: 30px;
+  padding-left: 32px;
+}
+
+.m-form__input--search__icon {
+  @include transition(none !important);
+  @extend .i-icon;
+  color: $grayscale-3;
+  cursor: pointer;
+  font-size: 14px;
+  position: absolute;
+    left: 10px;
+    top: 6px;
+  text-align: center;
+  z-index: 10;
+}
+
+.m-form__input--search__icon img {
+  height: 16px;
+  position: relative;
+    top: 0px;
+  width: 16px;
+}
+
+.m-form__input--search:focus + .m-form__input--search__icon {
+  @include opacity(0.5);
 }
 
 .m-form__input-toggle {
@@ -242,6 +266,15 @@
   cursor: text;
   font-style: italic;
   padding: 1px 0 0 10px;
+}
+
+::-webkit-input-placeholder {
+  @extend .m-form__label--infield;
+  padding: 0;
+}
+
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
 }
 
 // [?3] FOOTER
