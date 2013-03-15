@@ -142,6 +142,11 @@
   @extend .m-form__input;
 }
 
+.m-form__input--search {
+  @extend .m-form__input;
+  padding-left: 30px;
+}
+
 .m-form__input-toggle {
   font-size: modular-scale(-1);
   position: absolute;
