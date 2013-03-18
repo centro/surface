@@ -296,9 +296,9 @@
 .m-header {
   @include adjust-leading-to(2);
   background: $centro-brand-1a;
-  border-bottom: 1px solid darken($centro-brand-1a, 6%);
-  height: $base-line-height * 2;
-  line-height: $base-line-height * 2;
+  border-bottom: 1px solid darken($centro-brand-1a, 5%);
+  height: $base-line-height * 1.5;
+  line-height: $base-line-height * 1.5;
   position: relative;
   z-index: 100;
 }
@@ -310,8 +310,8 @@
   height: 0;
   overflow: hidden;
   margin-left: $gutter-width;
-  padding: ($base-line-height * 2) 0 0 0 !important;
-  width: 120px;
+  padding: ($base-line-height * 1.5) 0 0 0 !important;
+  width: 84px;
 
   -webkit-filter: drop-shadow( 0 1px 2px rgba(black, 0.25));
   -webkit-transform: translateZ(0); // Prevent filter from rasterizing img
@@ -370,8 +370,8 @@
 
 .m-nav {
   @extend .m-list-horiz;
-  line-height: $base-line-height * 2;
-  height: $base-line-height * 2;
+  line-height: $base-line-height * 1.5;
+  height: $base-line-height * 1.5 
 }
 
 .m-nav > li {
@@ -384,7 +384,8 @@
   @include transition(all 0.1s 0.1s);
   border-left: 1px solid darken($centro-brand-1a, 5%);
   display: block;
-  height: $base-line-height * 2;
+  font-size: modular-scale(-1);
+  height: $base-line-height * 1.5;
   padding: 0 $gutter-width;
   text-shadow: 0 1px 2px rgba(black, 0.25);
 }
@@ -396,6 +397,7 @@
 .m-nav > li > a:before {
   @extend .i-icon;
   content: attr(data-icon);
+  font-size: inherit;
   padding-right: 8px;
   position: relative;
   vertical-align: middle;
