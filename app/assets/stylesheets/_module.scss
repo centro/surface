@@ -31,7 +31,7 @@
   @include background-image(linear-gradient(hsl(0, 0, 97%), $grayscale-0));
   @include border-radius(4px);
   border: 1px solid $grayscale-2;
-  color: $grayscale-4;
+  color: $grayscale-4 !important;
   display: inline-block;
   font-size: modular-scale(-1);
   height: $base-line-height + ($base-line-height / 6);
