@@ -64,7 +64,7 @@
   background: lighten($centro-confirm-2, 2%);
   @include background-image(linear-gradient(lighten($centro-confirm-2, 6%), $centro-confirm-2));
   border-color:  darken($centro-confirm-2, 3%);
-  color: white;
+  color: white !important;
   text-shadow: 0 1px 1px rgba(black, 0.2);
 }
 
@@ -73,7 +73,7 @@
   @include background-image(linear-gradient(lighten($centro-confirm-2, 8%), $centro-confirm-2));
   @include box-shadow(0 1px 2px rgba(black, 0.2));
   border-color:  darken($centro-confirm-2, 5%);
-  color: white;
+  color: white !important;
 }
 
 .m-button--primary:active {
@@ -406,9 +406,7 @@
 .m-nav__sub-menu {
   @include opacity(0);
   position: absolute;
-    right: -17px;
-    top: 66px;
-    visibility: hidden;
+  visibility: hidden;
   width: ($column-width * 2) + $gutter-width;
 }
 
@@ -450,7 +448,7 @@
   display: inline-block;
   line-height: 0;
   position: relative;
-    top: -14px;
+    top: -26px;
 }
 
 // Adds the header's subtle dark blue border around the notice box. 
