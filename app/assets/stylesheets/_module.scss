@@ -652,6 +652,10 @@
 
 // Triggers
 
+.m-trigger {
+  position: relative;
+}
+
 .m-nav .m-trigger > a {
   cursor: pointer;
 }
