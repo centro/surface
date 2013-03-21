@@ -359,7 +359,7 @@
 
 .m-list-horiz > li {
   float: left;
-  margin-right: $gutter-width;
+  margin-right: $gutter-width * 0.75;
 }
 
 .m-list-horiz li:last-child {
@@ -648,6 +648,15 @@
     left: 50%;
   width: 0;
   z-index: 102;
+}
+
+.m-tooltip--left-arrow {
+  @extend .m-tooltip;
+}
+
+.m-tooltip--left-arrow:before,
+.m-tooltip--left-arrow:after {
+  left: 20px;
 }
 
 // Triggers
