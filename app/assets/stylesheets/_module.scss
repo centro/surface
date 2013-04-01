@@ -603,6 +603,7 @@
   @include transition(all ease 0.1s 0.1s);
   background: white;
   border: 1px solid $grayscale-1;
+  position: absolute;
   z-index: 100;
 }
 
