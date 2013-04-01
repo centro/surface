@@ -606,7 +606,7 @@
   z-index: 100;
 }
 
-.m-trigger > a:hover + .m-tooltip,
+.m-trigger:hover > .m-tooltip,
 .m-tooltip:hover {
   @include opacity(1);
   visibility: visible;
