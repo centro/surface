@@ -626,9 +626,8 @@
 }
 
 .m-tooltip > li:first-child:before {
-  background: red;
  content: '';
- height: 50%;
+ height: 20px;
  position: absolute;
   left: 0;
   top: -19px;
