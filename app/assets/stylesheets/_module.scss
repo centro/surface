@@ -600,10 +600,12 @@
 
 .m-tooltip {
   @include box-shadow(0 3px 6px rgba(black, 0.1));
+  @include opacity(0);
   @include transition(all ease 0.1s 0.1s);
   background: white;
   border: 1px solid $grayscale-1;
   position: absolute;
+  visibility: hidden;
   z-index: 100;
 }
 
