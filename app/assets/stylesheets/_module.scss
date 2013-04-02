@@ -671,7 +671,11 @@
 
 .m-tooltip--condensed > li {
   border: none;
-  padding: ($gutter-width / 4) ($gutter-width / 2);
+  padding: ($gutter-width / 2) ($gutter-width / 2) 0;
+}
+
+.m-tooltip--condensed > li:last-child {
+  padding-bottom: ($gutter-width / 2);
 }
 
 .m-tooltip--left-arrow {
