@@ -665,6 +665,15 @@
   z-index: 102;
 }
 
+.m-tooltip--condensed {
+  @extend .m-tooltip;
+}
+
+.m-tooltip--condensed > li {
+  border: none;
+  padding: ($gutter-width / 4) ($gutter-width / 2);
+}
+
 .m-tooltip--left-arrow {
   @extend .m-tooltip;
 }
