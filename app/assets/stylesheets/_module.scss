@@ -679,13 +679,19 @@
   padding-bottom: 8px;
 }
 
-.m-tooltip--left-arrow {
+.m-tooltip--left-arrow,
+.m-tooltip--right-arrow {
   @extend .m-tooltip;
 }
 
 .m-tooltip--left-arrow:before,
 .m-tooltip--left-arrow:after {
   left: 20px;
+}
+
+.m-tooltip--right-arrow:before,
+.m-tooltip--right-arrow:after { 
+  right: 20px;
 }
 
 // Triggers
