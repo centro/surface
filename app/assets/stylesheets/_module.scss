@@ -686,12 +686,13 @@
 
 .m-tooltip--left-arrow:before,
 .m-tooltip--left-arrow:after {
-  left: 20px !important;
+  left: 20px;
 }
 
 .m-tooltip--right-arrow:before,
 .m-tooltip--right-arrow:after { 
-  right: 20px !important;
+  left: auto;
+  right: 20px;
 }
 
 // Triggers
