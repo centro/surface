@@ -85,6 +85,10 @@
 // [?4] SIZING
 // Override default text size inheritance for child elements.
 
+.t-default {
+  font-size: modular-scale(0);
+}
+
 .t-large {
   font-size: modular-scale(1) !important;
 }
