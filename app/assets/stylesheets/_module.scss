@@ -686,15 +686,29 @@
 
 .m-tooltip--left-arrow:before,
 .m-tooltip--left-arrow:after {
+  margin: 0;
+}
+
+.m-tooltip--left-arrow:before {
   left: 20px;
 }
 
+.m-tooltip--left-arrow:after {
+  left: 19px;
+}
+
 .m-tooltip--right-arrow:before,
-.m-tooltip--right-arrow:after { 
-  margin-left: 0;
-  margin-right: -10px;
+.m-tooltip--right-arrow:after {
   left: auto;
+  margin: 0;
+}
+
+.m-tooltip--right-arrow:before {
   right: 20px;
+}
+
+.m-tooltip--right-arrow:after {
+  right: 19px;
 }
 
 // Triggers
