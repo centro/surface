@@ -442,7 +442,7 @@
   height: 42px;
   text-align: center;
   width: 100%;
-  z-index: 99;
+  z-index: 100;
 }
 
 // Default notice styles.
@@ -607,7 +607,7 @@
   color: $grayscale-3;
   position: absolute;
   visibility: hidden;
-  z-index: 100;
+  z-index: 101;
 }
 
 .m-trigger:hover > .m-tooltip,
