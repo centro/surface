@@ -691,6 +691,8 @@
 
 .m-tooltip--right-arrow:before,
 .m-tooltip--right-arrow:after { 
+  margin-left: 0;
+  margin-right: -10px;
   left: auto;
   right: 20px;
 }
