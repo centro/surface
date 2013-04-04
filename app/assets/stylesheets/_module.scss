@@ -523,7 +523,8 @@
 // Custom notice styles.
 
 .m-notice--alert,
-.m-notice--confirm  {
+.m-notice--confirm,
+.m-notice--tinted {
   @extend .m-notice;
 }
 
@@ -564,6 +565,11 @@
 
 .m-notice--confirm > p:before {
   content: 'check';
+}
+
+.m-notice--tinted {
+  background-color: lighten($grayscale-0, 6%);
+  border-color: lighten($grayscale-0, 6%);;
 }
 
 // [?8] UTILITIES
