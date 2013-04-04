@@ -56,7 +56,7 @@ var unmaskPassword = function () {
       maskingToggle.text('Hide');
     }
 
-    event.preventDefault();
+    return false;
 
   }); 
 
