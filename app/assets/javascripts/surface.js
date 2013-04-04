@@ -83,7 +83,7 @@ var unmaskPassword = function () {
       maskingToggleErrorMsg.text('Show characters?');
     }
 
-    event.preventDefault();
+    return false;
 
   });
 }
