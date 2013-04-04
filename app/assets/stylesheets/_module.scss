@@ -278,11 +278,24 @@
 }
 
 ::-webkit-input-placeholder {
-  @extend .m-form__label--infield;
+  color: $grayscale-3; 
+  cursor: text;
+  font-style: italic;
   padding: 0;
 }
 
 :focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+::-moz-input-placeholder {
+  color: $grayscale-3; 
+  cursor: text;
+  font-style: italic;
+  padding: 0;
+}
+
+:focus::-moz-input-placeholder {
   opacity: 0.5;
 }
 
