@@ -69,8 +69,10 @@ var unmaskPassword = function () {
 
     if (inputType === 'text') {
       input.prop('type', 'password');
+      input.prop('autocomplete', 'on');
     } else {
       input.prop('type', 'text');
+      input.prop('autocomplete', 'off');
     }
 
      // Change link text.
