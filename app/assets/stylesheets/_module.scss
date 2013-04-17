@@ -273,8 +273,8 @@
   width: 100%;
 }
 
-[class$="--error"] > .m-form__input:focus + .m-form__input__error,
-[class$="--error"]:hover > .m-form__input__error {
+[class*="--error"] > .m-form__input:focus + .m-form__input__error,
+[class*="--error"]:hover > .m-form__input__error {
   @include opacity(1);
   visibility: visible;
 }
