@@ -89,6 +89,13 @@
   @include background-image(linear-gradient($centro-confirm-2, lighten($centro-confirm-2, 6%)));
 }
 
+// State
+
+.m-button[disabled] {
+  color: $grayscale-3 !important;
+  cursor: not-allowed !important;
+}
+
 // [?2] FORMS
 
 .m-form__field {
