@@ -69,7 +69,7 @@
 
 // Colors
 
-.m-button--primary {
+.m-button--primary:not([disabled]) {
   background: lighten($centro-confirm-2, 2%);
   @include background-image(linear-gradient(lighten($centro-confirm-2, 6%), $centro-confirm-2));
   border-color:  darken($centro-confirm-2, 3%);
@@ -77,7 +77,7 @@
   text-shadow: 0 1px 1px rgba(black, 0.2);
 }
 
-.m-button--primary:hover {
+.m-button--primary:hover:not([disabled]) {
   background: lighten($centro-confirm-2, 4%);
   @include background-image(linear-gradient(lighten($centro-confirm-2, 8%), $centro-confirm-2));
   @include box-shadow(0 1px 2px rgba(black, 0.2));
@@ -85,7 +85,7 @@
   color: white !important;
 }
 
-.m-button--primary:active {
+.m-button--primary:active:not([disabled]) {
   @include background-image(linear-gradient($centro-confirm-2, lighten($centro-confirm-2, 6%)));
 }
 
