@@ -52,7 +52,7 @@
 
 .m-button--large {
   @extend .m-button;
-  font-size: modular-scale(1) !important;
+  font-size: modular-scale(0) !important;
   height: $base-line-height + ($base-line-height / 2);
   line-height: $base-line-height + ($base-line-height / 2);
   padding: 0 $gutter-width * 0.75;
@@ -92,6 +92,7 @@
 // State
 
 .m-button[disabled] {
+  @extend .m-button !important;
   color: $grayscale-3 !important;
   cursor: not-allowed !important;
 }
