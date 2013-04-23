@@ -421,12 +421,14 @@
   margin-right: 0;
 }
 
+// Strip out line height for control of vertical <li> spacing.
+
 .m-list--compressed {
   line-height: 1;
 }
 
 .m-list--compressed > li {
-  margin-bottom: $base-line-height / 4;
+  margin-bottom: $base-line-height / 6;
 }
 
 .m-list--compressed > li:last-child {
