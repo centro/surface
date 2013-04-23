@@ -95,6 +95,14 @@
   @extend .m-button;
   color: $grayscale-3 !important;
   cursor: not-allowed !important;
+  text-shadow: none;
+}
+
+.m-button--large[disabled] {
+  @extend .m-button--large;
+  color: $grayscale-3 !important;
+  cursor: not-allowed !important;
+  text-shadow: none;
 }
 
 // [?2] FORMS
