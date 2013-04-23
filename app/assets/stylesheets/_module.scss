@@ -92,7 +92,7 @@
 // State
 
 .m-button[disabled] {
-  @extend .m-button !important;
+  @extend .m-button;
   color: $grayscale-3 !important;
   cursor: not-allowed !important;
 }
