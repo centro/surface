@@ -46,7 +46,7 @@
 }
 
 .m-button:focus {
-  @include box-shadow(0 0 4px white) inset;
+  @include box-shadow(0 0 4px white inset);
   outline: none;
 }
 
