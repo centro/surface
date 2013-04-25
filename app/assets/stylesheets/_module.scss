@@ -45,6 +45,10 @@
   color: $grayscale-4;
 }
 
+.m-button:focus {
+  border-color: $centro-brand-2b; 
+}
+
 .m-button:active {
   @include background-image(none);
   background-color: $grayscale-0;
