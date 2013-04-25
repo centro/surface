@@ -40,16 +40,19 @@
   text-decoration: none;
 }
 
-.m-button:hover,
-.m-button:focus {
+.m-button:hover {
   @include background-image(linear-gradient(white, $grayscale-0));
   color: $grayscale-4;
+}
+
+.m-button:focus {
+  @include box-shadow(0 0 2px white);
+  outline: none;
 }
 
 .m-button:active {
   @include background-image(none);
   background-color: $grayscale-0;
-  outline: none;
 }
 
 .m-button--large {
