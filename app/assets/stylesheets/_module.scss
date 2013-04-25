@@ -40,12 +40,12 @@
   text-decoration: none;
 }
 
-.m-button:hover {
+.m-button:hover,
+.m-button:focus {
   @include background-image(linear-gradient(white, $grayscale-0));
   color: $grayscale-4;
 }
 
-.m-button:focus,
 .m-button:active {
   @include background-image(none);
   background-color: $grayscale-0;
