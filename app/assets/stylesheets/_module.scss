@@ -26,6 +26,18 @@
 
 // Defaults
 
+
+// A button suitable for giving stars to someone.
+//
+// :hover             - Subtle hover highlight.
+// :active            - Subtle hover highlight.
+// .m-button--large   - whatevs
+// .m-button--square  - whatevs
+// .m-button--primary  - whatevs
+// .m-button--primary:hover  - whatevs
+// .m-button--primary:active  - whatevs
+//
+// Styleguide 1.1
 .m-button {
   background: $grayscale-0; // Fallback for older browsers.
   @include background-image(linear-gradient(hsl(0, 0, 97%), $grayscale-0));
@@ -90,7 +102,7 @@
 }
 
 // [?2] FORMS
-
+// Styleguide 2.1.
 .m-form__field {
   margin-bottom: $base-line-height;
   position: relative;
@@ -322,7 +334,7 @@
 // [?3] FOOTER
 // This implementation of the footer currently serves as a debugging
 // line inside of insight.
-
+// Styleguide 3.1.
 .m-footer {
   color: $grayscale-1;
   font-size: modular-scale(-1);
@@ -334,7 +346,7 @@
 }
 
 // [?4] HEADER
-
+// Styleguide 4.1.
 .m-header {
   @include adjust-leading-to(2);
   background: $centro-brand-1a;
@@ -362,7 +374,7 @@
 
 // [?5] ICONS
 // Classes used to render various and assorted semantic icons. 
-
+// Styleguide 5.1
 .i-icon {
   @include transition(all 0.25s ease-in-out 0s);
   cursor: pointer;
@@ -388,10 +400,9 @@
 
 // [?6] LISTS
 // Generic utilities that can be used to alter the layout and/or stylistic 
-// treatment of lists. 
-
+// treatment of lists.
 // Force list elements to render in a single horizontal line. 
-
+// Styleguide 6.1
 .m-list-horiz {
   @include pie-clearfix;
 }
@@ -406,7 +417,7 @@
 }
 
 // [?7] NAVIGATION
-
+// Styleguide 7.1
 .m-nav {
   @extend .m-list-horiz;
   line-height: $base-line-height * 1.5;
@@ -466,7 +477,7 @@
 // (alerts, confirmation messages, notices, etc.) 
 
 // Sets up a window for the notice to position itself inside of.
-
+// Styleguide 8.1.
 .m-notice-window {
   position: absolute;
     left: 0;
@@ -592,10 +603,10 @@
   border-color: lighten($grayscale-0, 6%);;
 }
 
-// [?8] UTILITIES
+// [?9] UTILITIES
 
 // Card
-
+// Styleguide 9.1
 .m-card {
   @include background-image(linear-gradient(white, hsl(0, 0, 98%)));
   @include border-radius(5px);
@@ -636,7 +647,7 @@
 }
 
 // Tooltip
-
+// Styleguide 9.2.
 .m-tooltip {
   @include box-shadow(0 3px 6px rgba(black, 0.1));
   @include opacity(0);

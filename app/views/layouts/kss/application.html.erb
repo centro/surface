@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>KSS Styleguide</title>
+    <%= stylesheet_link_tag 'kss' %>
+    <%= stylesheet_link_tag 'surface' %>
+    <%= stylesheet_link_tag 'blackboard' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body class="kss-body">
+    <header class="kss-header">
+      KSS Styleguide Example
+    </header>
+
+    <div id="kss_wrapper">
+      <nav role="main" class="kss-nav">
+        <ul>
+          <!-- <li><%= link_to 'Styleguide', kss.styleguide_path %></li> -->
+          <!-- 0. Overview -->
+          <li><%= link_to 'Overview', kss.root_path %></li>
+          <!-- 1. Buttons -->
+          <li><%= link_to 'Buttons', kss.root_path %></li>
+          <!-- 2. Forms -->
+          <li><%= link_to 'Forms', kss.root_path %></li>
+          <!-- 3. Header -->
+          <li><%= link_to 'Header', kss.root_path %></li>
+          <!-- 4. Footer -->
+          <li><%= link_to 'Footer', kss.root_path %></li>
+          <!-- 5. Icons -->
+          <li><%= link_to 'Icons', kss.root_path %></li>
+          <!-- 6. Listings -->
+          <li><%= link_to 'Listings', kss.root_path %></li>
+          <!-- 7. Navigation -->
+          <li><%= link_to 'Navigation', kss.root_path %></li>
+          <!-- 8. Notices -->
+          <li><%= link_to 'Notices', kss.root_path %></li>
+          <!-- 9. Utilities -->
+          <li><%= link_to 'Utilities', kss.root_path %></li>
+          <!-- 10. Discussion -->
+          <li><%= link_to 'Discussion', kss.root_path %></li>
+          <!-- 11. Colors -->
+          <li><%= link_to 'Colors', kss.root_path %></li>
+          <!-- 12. Animations -->
+          <li><%= link_to 'Animations', kss.root_path %></li>
+          <!-- 13. Select Menu -->
+          <li><%= link_to 'Select Menu', kss.root_path %></li>
+        </ul>
+      </nav>
+
+      <%= yield %>
+    </div><!-- /#wrapper -->
+    
+    <%= javascript_include_tag 'kss' %>
+    <%= javascript_include_tag 'rainbow' %>
+  </body>
+</html>
