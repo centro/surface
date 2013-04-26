@@ -20,6 +20,10 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
+## Styleguide
+
+To view a live styleguide, start up your rails application in the development environment and navigate to /styleguide. Viola!
+
 ## Contributing
 
 1. Fork it
