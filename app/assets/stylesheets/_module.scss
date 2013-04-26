@@ -102,7 +102,7 @@
 }
 
 // [?2] FORMS
-// Styleguide 2.1.
+// Styleguide 2.1
 .m-form__field {
   margin-bottom: $base-line-height;
   position: relative;
@@ -334,7 +334,7 @@
 // [?3] FOOTER
 // This implementation of the footer currently serves as a debugging
 // line inside of insight.
-// Styleguide 3.1.
+// Styleguide 3.1
 .m-footer {
   color: $grayscale-1;
   font-size: modular-scale(-1);
@@ -346,7 +346,7 @@
 }
 
 // [?4] HEADER
-// Styleguide 4.1.
+// Styleguide 4.1
 .m-header {
   @include adjust-leading-to(2);
   background: $centro-brand-1a;
@@ -477,7 +477,7 @@
 // (alerts, confirmation messages, notices, etc.) 
 
 // Sets up a window for the notice to position itself inside of.
-// Styleguide 8.1.
+// Styleguide 8.1
 .m-notice-window {
   position: absolute;
     left: 0;
