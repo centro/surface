@@ -19,12 +19,7 @@ $source-sans-light-woff:        "source-sans/SourceSansProLight.woff";
 $source-sans-light-ttf:         "source-sans/SourceSansProLight.ttf";
 $source-sans-light-eot:         "source-sans/SourceSansProLight.eot";
 
-$source-sans-light-italic-woff: "source-sans/SourceSansProLightItalic.woff";
-$source-sans-light-italic-ttf:  "source-sans/SourceSansProLightItalic.ttf";
-$source-sans-light-italic-eot:  "source-sans/SourceSansProLightItalic.eot";
-
 @include font-face("Source Sans Light", font-files($source-sans-light-woff, $source-sans-light-ttf), $source-sans-light-eot, normal, normal);
-// @include font-face("Source Sans Light", font-files($source-sans-light-italic-woff, $source-sans-light-italic-ttf), $source-sans-light-italic-eot, normal, italic);
 
 // Regular
 
@@ -32,12 +27,7 @@ $source-sans-regular-woff: "source-sans/SourceSansProRegular.woff";
 $source-sans-regular-ttf:  "source-sans/SourceSansProRegular.ttf";
 $source-sans-regular-eot:  "source-sans/SourceSansProRegular.eot";
 
-$source-sans-italic-woff:  "source-sans/SourceSansProItalic.woff";
-$source-sans-italic-ttf:   "source-sans/SourceSansProItalic.ttf";
-$source-sans-italic-eot:   "source-sans/SourceSansProItalic.eot";
-
 @include font-face("Source Sans", font-files($source-sans-regular-woff, $source-sans-regular-ttf), $source-sans-regular-eot, normal, normal);
-@include font-face("Source Sans", font-files($source-sans-italic-woff, $source-sans-italic-ttf), $source-sans-italic-eot, normal, italic);
 
 // Bold
 
@@ -45,12 +35,7 @@ $source-sans-bold-woff:         "source-sans/SourceSansProBold.woff";
 $source-sans-bold-ttf:          "source-sans/SourceSansProBold.ttf";
 $source-sans-bold-eot:          "source-sans/SourceSansProBold.eot";
 
-$source-sans-bold-italic-woff:  "source-sans/SourceSansProBoldItalic.woff";
-$source-sans-bold-italic-ttf:   "source-sans/SourceSansProBoldItalic.ttf";
-$source-sans-bold-italic-eot:   "source-sans/SourceSansProBoldItalic.eot";
-
 @include font-face("Source Sans", font-files($source-sans-bold-woff, $source-sans-bold-ttf), $source-sans-bold-eot, bold, normal);
-@include font-face("Source Sans", font-files($source-sans-bold-italic-woff, $source-sans-bold-italic-ttf), $source-sans-bold-italic-eot, bold, italic);
 
 // [?2] ICON  
 // An icon font used for all the iconography throughout Insight and Auth. 

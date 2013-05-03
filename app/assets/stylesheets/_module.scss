@@ -29,7 +29,7 @@
 .m-button {
   background: $grayscale-0; // Fallback for older browsers.
   @include background-image(linear-gradient(hsl(0, 0, 97%), $grayscale-0));
-  @include border-radius(4px);
+  @include border-radius(3px);
   border: 1px solid $grayscale-2;
   color: $grayscale-5 !important;
   display: inline-block;
@@ -61,6 +61,12 @@
   height: $base-line-height + ($base-line-height / 2);
   line-height: $base-line-height + ($base-line-height / 2);
   padding: 0 $gutter-width * 0.75;
+}
+
+.m-button--small {
+  @extend .m-button;
+  height: $base-line-height;
+  line-height: $base-line-height;
 }
 
 .m-button--square {
@@ -152,8 +158,7 @@
 .m-form__dropdown {
   @include transition(none !important);
   @include box-shadow(inset 0 1px 4px rgba(black, 0.125));
-  @include border-radius(4px);
-  border: 1px solid $grayscale-2;
+  border: 1px solid $grayscale-1;
   background: white;
   line-height: 24px;
   height: 24px;
@@ -183,7 +188,6 @@
 }
 
 .m-form__dropdown > ul {
-  @include border-radius(0 0 4px 4px);
   @include box-shadow(0 2px 4px rgba(black, 0.1));
   background: white;
   border: 1px solid $grayscale-1;
@@ -221,7 +225,6 @@
 }
 
 .m-form__dropdown:hover {
-  @include border-radius(4px 4px 0 0);
   border-color: $centro-brand-2b;
   cursor: pointer;
 }
@@ -409,7 +412,6 @@
 ::-webkit-input-placeholder {
   color: $grayscale-3; 
   cursor: text;
-  font-style: italic;
   padding: 0;
 }
 
@@ -420,7 +422,6 @@
 ::-moz-input-placeholder {
   color: $grayscale-3; 
   cursor: text;
-  font-style: italic;
   padding: 0;
 }
 
@@ -445,7 +446,6 @@
 // [?4] HEADER
 
 .m-header {
-  @include adjust-leading-to(2);
   background: $centro-brand-1a;
   border-bottom: 1px solid darken($centro-brand-1a, 5%);
   height: $base-line-height * 1.5;
@@ -506,7 +506,7 @@
 
 .m-list-horiz > li {
   float: left;
-  margin-right: $gutter-width * 0.75;
+  margin-right: $gutter-width;
 }
 
 .m-list-horiz li:last-child {

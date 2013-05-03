@@ -168,6 +168,10 @@
   padding-left: ($gutter-width / 2);
 }
 
+.l-pd-left\(1\) {
+  padding-left: $gutter-width !important;
+}
+
 // Horizontal 
 
 .l-pd-horiz\(1\/4\) {
