@@ -73,6 +73,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: 600;
   margin: 0;
 }
 
@@ -82,12 +83,12 @@ h1 {
 
 h3 {
   @include adjust-font-size-to(modular-scale(2), 1);
-  font-weight: normal;
+  font-weight: 400;
 }
 
 h4 {
   font-size: modular-scale(-1);
-  font-weight: normal;
+  font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
