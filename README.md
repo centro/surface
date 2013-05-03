@@ -8,7 +8,7 @@ Add this line to your application's Gemfile:
 
     gem 'surface'
     
-**For Rails, be sure surace is NOT included in the assets section.  It needs to be along side the other "general" gems
+**For Rails, be sure surface is NOT included in the assets section.  It needs to be along side the other "general" gems
 because surface includes helper methods and other non-asset code.**
 
 And then execute:
