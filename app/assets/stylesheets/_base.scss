@@ -29,12 +29,12 @@
 a:link,
 a:visited {
   outline: none;
-  color: $centro-brand-2a;
+  color: $centro-brand-2b;
   text-decoration: none;
 }
 
 a:hover {
-  color: $centro-brand-2b;
+  color: $centro-brand-2a;
 }
 
 body,
@@ -100,7 +100,7 @@ input[disabled] {
 mark {
   background: transparent;
   color: $centro-brand-2b;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 p {

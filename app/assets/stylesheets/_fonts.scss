@@ -15,25 +15,25 @@
 
 // Light
 
-$source-sans-light-woff:        "source-sans/SourceSansProLight.woff";
-$source-sans-light-ttf:         "source-sans/SourceSansProLight.ttf";
-$source-sans-light-eot:         "source-sans/SourceSansProLight.eot";
+$source-sans-light-woff: "source-sans/SourceSansProLight.woff";
+$source-sans-light-ttf: "source-sans/SourceSansProLight.ttf";
+$source-sans-light-eot: "source-sans/SourceSansProLight.eot";
 
 @include font-face("Source Sans", font-files($source-sans-light-woff, $source-sans-light-ttf), $source-sans-light-eot, 300, normal);
 
 // Regular
 
 $source-sans-regular-woff: "source-sans/SourceSansProRegular.woff";
-$source-sans-regular-ttf:  "source-sans/SourceSansProRegular.ttf";
-$source-sans-regular-eot:  "source-sans/SourceSansProRegular.eot";
+$source-sans-regular-ttf: "source-sans/SourceSansProRegular.ttf";
+$source-sans-regular-eot: "source-sans/SourceSansProRegular.eot";
 
 @include font-face("Source Sans", font-files($source-sans-regular-woff, $source-sans-regular-ttf), $source-sans-regular-eot, 400, normal);
 
 // Bold
 
-$source-sans-semibold-woff:         "source-sans/SourceSansProSemibold.woff";
-$source-sans-semibold-ttf:          "source-sans/SourceSansProSemibold.ttf";
-$source-sans-semibold-eot:          "source-sans/SourceSansProSemibold.eot";
+$source-sans-semibold-woff: "source-sans/SourceSansProSemibold.woff";
+$source-sans-semibold-ttf: "source-sans/SourceSansProSemibold.ttf";
+$source-sans-semibold-eot: "source-sans/SourceSansProSemibold.eot";
 
 @include font-face("Source Sans", font-files($source-sans-semibold-woff, $source-sans-semibold-ttf), $source-sans-semibold-eot, 600, normal);
 
@@ -41,8 +41,8 @@ $source-sans-semibold-eot:          "source-sans/SourceSansProSemibold.eot";
 // An icon font used for all the iconography throughout Insight and Auth. 
 
 $ss-pika-woff: "ss-pika/ss-pika.woff";
-$ss-pika-ttf:  "ss-pika/ss-pika.ttf";
-$ss-pika-eot:  "ss-pika/ss-pika.eot";
+$ss-pika-ttf: "ss-pika/ss-pika.ttf";
+$ss-pika-eot: "ss-pika/ss-pika.eot";
 
 @include font-face("SS Pika", font-files($ss-pika-woff, $ss-pika-ttf), $ss-pika-eot, normal, normal);
 
@@ -52,12 +52,12 @@ $ss-pika-eot:  "ss-pika/ss-pika.eot";
 // The bold version shows up during searches.
 
 $source-code-regular-woff: "source-code/SourceCodeProRegular.woff";
-$source-code-regular-ttf:  "source-code/SourceCodeProRegular.ttf";
-$source-code-regular-eot:  "source-code/SourceCodeProRegular.eot";
+$source-code-regular-ttf: "source-code/SourceCodeProRegular.ttf";
+$source-code-regular-eot: "source-code/SourceCodeProRegular.eot";
 
-$source-code-bold-woff:    "source-code/SourceCodeProBold.woff";
-$source-code-bold-ttf:     "source-code/SourceCodeProBold.ttf";
-$source-code-bold-eot:     "source-code/SourceCodeProBold.eot";
+$source-code-semibold-woff: "source-code/SourceCodeProSemibold.woff";
+$source-code-semibold-ttf: "source-code/SourceCodeProSemibold.ttf";
+$source-code-semibold-eot: "source-code/SourceCodeProSemibold.eot";
 
 @include font-face("Source Code", font-files($source-code-regular-woff, $source-code-regular-ttf), $source-code-regular-eot, 400, normal);
-@include font-face("Source Code", font-files($source-code-bold-woff, $source-code-bold-ttf), $source-code-bold-eot, 700, normal);
+@include font-face("Source Code", font-files($source-code-semibold-woff, $source-code-semibold-ttf), $source-code-semibold-eot, 600, normal);
