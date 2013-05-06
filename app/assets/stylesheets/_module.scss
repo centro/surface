@@ -665,8 +665,7 @@
 // Custom notice styles.
 
 .m-notice--alert,
-.m-notice--confirm,
-.m-notice--tinted {
+.m-notice--confirm {
   @extend .m-notice;
 }
 
@@ -707,11 +706,6 @@
 
 .m-notice--confirm > p:before {
   content: 'check';
-}
-
-.m-notice--tinted {
-  background-color: lighten($grayscale-0, 6%);
-  border-color: lighten($grayscale-0, 6%);;
 }
 
 // Overlay

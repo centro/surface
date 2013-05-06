@@ -154,8 +154,18 @@
   margin-right: $gutter-width;
 }
 
-.l-mg-right\(1of4\) {
-  margin-right: gutter(4);
+// Top
+
+.l-mg-top\(1\/4\) {
+  margin-top: $gutter-width / 4;
+}
+
+.l-mg-top\(1\/2\) {
+  margin-top: $gutter-width / 2;
+}
+
+.l-mg-top\(1\) {
+  margin-top: $gutter-width;
 }
 
 // [?5] PADDING
