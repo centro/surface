@@ -359,3 +359,9 @@
 .l-width\(9of10\+1g\) {
   width: columns(9,10) + gutter(10);
 }
+
+// Percentages
+
+.l-width\(100\) {
+  width: 100p% !important;
+}
