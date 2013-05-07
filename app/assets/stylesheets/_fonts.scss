@@ -40,11 +40,11 @@ $source-sans-semibold-eot: "source-sans/SourceSansProSemibold.eot";
 // [?2] ICON  
 // An icon font used for all the iconography throughout Insight and Auth. 
 
-$ss-pika-woff: "ss-pika/ss-pika.woff";
-$ss-pika-ttf: "ss-pika/ss-pika.ttf";
-$ss-pika-eot: "ss-pika/ss-pika.eot";
+$ss-standard-woff: "ss-standard/ss-standard.woff";
+$ss-standard-ttf: "ss-standard/ss-standard.ttf";
+$ss-standard-eot: "ss-standard/ss-standard.eot";
 
-@include font-face("SS Pika", font-files($ss-pika-woff, $ss-pika-ttf), $ss-pika-eot, normal, normal);
+@include font-face("SS Standard", font-files($ss-standard-woff, $ss-standard-ttf), $ss-standard-eot, normal, normal);
 
 // [?3] ACCENTS
 
