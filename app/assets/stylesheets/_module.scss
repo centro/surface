@@ -158,7 +158,7 @@
 .m-form__dropdown {
   @include transition(none !important);
   @include box-shadow(inset 0 1px 4px rgba(black, 0.125));
-  border: 1px solid $grayscale-1;
+  border: 1px solid $grayscale-2;
   background: white;
   line-height: 28px;
   height: 28px;
