@@ -209,13 +209,12 @@
 }
 
 .m-form__dropdown > ul li a {
-  color: $grayscale-5;
+  @include link-colors($grayscale-4, $grayscale-5);
   display: block;
   padding: 0 6px; 
   position: relative;
 }
 
-.m-form__dropdown > ul li a:hover,
 .m-form__dropdown > ul li a.s-is-active {
   background: $centro-brand-2b;
   color: white;
