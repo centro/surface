@@ -451,22 +451,26 @@
 
 .m-header {
   background: $centro-brand-1a;
-  border-bottom: 1px solid darken($centro-brand-1a, 5%);
-  height: $base-line-height * 1.5;
-  line-height: $base-line-height * 1.5;
+  border-bottom: none;
+  height: $base-line-height + 6px;
+  line-height: $base-line-height + 6px;
   position: relative;
   z-index: 100;
 }
 
 .m-logo {
-  background: image-url("logo.svg") no-repeat left 7px;
+  background: transparent image-url("logo.svg") no-repeat left 4px;
   background-size: contain;
   display: inline-block;
   height: 0;
   overflow: hidden;
-  margin-left: $gutter-width;
-  padding: ($base-line-height * 1.5) 0 0 0 !important;
-  width: 84px;
+  margin-left: $gutter-width / 2;
+  padding: ($base-line-height + 6px) 0 0 0 !important;
+  width: 80px;
+}
+
+.m-logo:hover {
+  background-color: transparent !important;
 }
 
 .ie8 .m-logo {
@@ -533,39 +537,37 @@
 
 // [?7] NAVIGATION
 
-.m-nav {
+.m-nav  {
   @extend .m-list-horiz;
-  line-height: $base-line-height * 1.5;
-  height: $base-line-height * 1.5 
+  line-height: $base-line-height + 6;
+  height: $base-line-height + 6;
 }
 
 .m-nav > li {
+  line-height: $base-line-height + 6;
+  height: $base-line-height + 6;
   margin: 0 !important;
   position: relative;
 }
 
+.m-nav.l-left > li:not(:last-child) {
+  border-right: 1px solid hsl(195, 40%, 40%);
+}
+
+.m-nav.l-right > li {
+  border-left: 1px solid hsl(195, 40%, 40%);
+}
+
 .m-nav > li > a {
   @include link-colors(white);
-  @include transition(all 0.1s 0.1s);
-  border-left: 1px solid darken($centro-brand-1a, 5%);
   display: block;
   font-size: modular-scale(-1);
-  height: $base-line-height * 1.5;
-  padding: 0 $gutter-width;
-  text-shadow: 0 1px 2px rgba(black, 0.25);
+  height: $base-line-height + 6;
+  padding: 0 $gutter-width / 2;
 }
 
 .m-nav > li > a:hover {
-  background: darken($centro-brand-1a, 2.5%);
-}
-
-.m-nav > li > a:before {
-  @extend .i-icon;
-  content: attr(data-icon);
-  font-size: inherit;
-  padding-right: 8px;
-  position: relative;
-  vertical-align: middle;
+   background-color: hsl(195, 90%, 25%);
 }
 
 .m-nav__sub-menu {

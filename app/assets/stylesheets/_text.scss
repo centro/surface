@@ -15,6 +15,7 @@
 // [?4] SIZING
 // [?5] STYLE
 // [?6] TRUNCATION
+// [?7] SPECIAL
 
 // ========================================================================== 
 
@@ -141,4 +142,12 @@
 
 .t-truncate {
   @include ellipsis;
+}
+
+// [?7] SPECIAL
+
+.t-screen-reader-text {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }
