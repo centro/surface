@@ -81,23 +81,24 @@
 // Colors
 
 .m-button--primary:not([disabled]) {
-  background: lighten($centro-confirm-2, 2%);
-  @include background-image(linear-gradient(lighten($centro-confirm-2, 6%), $centro-confirm-2));
-  border-color:  darken($centro-confirm-2, 3%);
+  background: lighten($centro-brand-2b, 2%);
+  @include background-image(linear-gradient(lighten($centro-brand-2b, 6%), $centro-brand-2b));
+  border-color:  darken($centro-brand-2b, 4%);
   color: white !important;
+  font-weight: 600;
   text-shadow: 0 1px 1px rgba(black, 0.2);
 }
 
 .m-button--primary:hover:not([disabled]) {
-  background: lighten($centro-confirm-2, 4%);
-  @include background-image(linear-gradient(lighten($centro-confirm-2, 8%), $centro-confirm-2));
+  background: lighten($centro-brand-2b, 4%);
+  @include background-image(linear-gradient(lighten($centro-brand-2b, 8%), $centro-brand-2b));
   @include box-shadow(0 1px 2px rgba(black, 0.2));
-  border-color:  darken($centro-confirm-2, 5%);
+  border-color:  darken($centro-brand-2b, 6%);
   color: white !important;
 }
 
 .m-button--primary:active:not([disabled]) {
-  @include background-image(linear-gradient($centro-confirm-2, lighten($centro-confirm-2, 6%)));
+  @include background-image(linear-gradient($centro-brand-2b, lighten($centro-brand-2b, 6%)));
 }
 
 // State
@@ -574,7 +575,7 @@
 .m-notice-window {
   position: absolute;
     left: 0;
-    top: 36px;
+    top: 30px;
   line-height: 0;
   height: 0;
   text-align: center;
@@ -591,24 +592,7 @@
   display: inline-block;
   line-height: 0;
   position: relative;
-    top: -14px;
-}
-
-// Adds the header's subtle dark blue border around the notice box. 
-
-.m-notice:after {
-  @include border-radius(4px 4px 0 0);
-  @include box-sizing(content-box);
-  border-color: darken($centro-brand-1a, 6%);
-  border-style: solid;
-  border-width: 1px 1px 0 1px;
-  content: "";
-  padding: 5px 5px 0 5px;
-  position: absolute; 
-    left: -6px;
-    top: -6px;
-  height: 9px;
-  width: 100%;
+    top: -18px;
 }
 
 .m-notice > p {
@@ -617,8 +601,8 @@
   border: 1px solid darken($centro-alert-2, 10%);
   display: inline-block;
   font-size: modular-scale(-1);
-  height: $base-line-height + ($base-line-height / 3);
-  line-height: $base-line-height + ($base-line-height / 3);
+  height: $base-line-height + 6;
+  line-height: $base-line-height + 6;
   overflow: hidden;
   padding: 0 ($gutter-width / 2);
   position: relative;
