@@ -178,6 +178,10 @@
   padding-left: ($gutter-width / 2);
 }
 
+.l-pd-left\(3\/4\) {
+  padding-left: $gutter-width * 0.75 !important;
+}
+
 .l-pd-left\(1\) {
   padding-left: $gutter-width !important;
 }

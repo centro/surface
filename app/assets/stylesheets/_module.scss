@@ -512,6 +512,64 @@
   margin-bottom: 0;
 }
 
+// Tabs
+
+.m-tabs {
+  @extend .m-list-horiz;
+}
+
+.m-tabs > li {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 1px;
+  color: $grayscale-3;
+  cursor: pointer;
+  margin: 0 !important;
+  position: relative;
+  white-space: nowrap;
+}
+
+.m-tabs > li a {
+  @include link-colors($grayscale-3, $grayscale-5);
+  display: inline-block;
+  line-height: $base-line-height * 2;
+  padding: 0 ($gutter-width * 0.75);
+}
+
+.m-tabs > li.s-is-active {
+  background: transparent;
+  border-color: $grayscale-0;
+  color: $grayscale-5;
+  &:first-child { 
+    border-left-color: transparent;
+  }
+}
+
+.m-tabs > li.s-is-active:after {
+  content: "";
+  width: 100%;
+  border-bottom: 1px solid white;
+  position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+
+.m-tabs > li.s-is-active a {
+  color: $grayscale-5;
+}
+
+.m-tabs--shaded {
+  @extend .m-tabs;
+}
+
+.m-tabs--shaded li.s-is-active {
+  background-color: lighten($grayscale-0, 5%);
+}
+
+.m-tabs--shaded > li.s-is-active:after {
+  border-color: lighten($grayscale-0, 5%);
+}
+
 // [?7] NAVIGATION
 
 .m-nav  {
@@ -732,8 +790,8 @@
   @extend .t-delete;
   @extend .i-icon;
   position: absolute;
-    right: 8px;
-    top: 4px;
+    right: 9px;
+    top: 6px;
 }
 
 // [?9] UTILITIES
