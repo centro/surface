@@ -34,8 +34,8 @@
   color: $grayscale-5 !important;
   display: inline-block;
   font-size: modular-scale(-1);
-  height: $base-line-height + ($base-line-height / 6);
-  line-height: $base-line-height + ($base-line-height / 6);
+  height: $base-line-height + 6;
+  line-height: $base-line-height + 6;
   padding: 0 8px;
   text-decoration: none;
 }
@@ -158,21 +158,22 @@
 
 .m-form__dropdown {
   @include transition(none !important);
-  @include box-shadow(inset 0 1px 4px rgba(black, 0.125));
+  @include box-shadow(inset 0 1px 2px rgba(black, 0.1));
   border: 1px solid $grayscale-1;
   background: white;
-  line-height: 28px;
-  height: 28px;
+  display: inline-block;
+  line-height: $base-line-height + 6;
+  height: $base-line-height + 6;
   padding: 0 6px;
   position: relative;
-  top:  9px;
+  vertical-align: middle;
   width: 110px;
 }
 
 .m-form__dropdown > span:after {
   @extend .i-icon;
   color: $grayscale-1;
-  content: "\25BE;";
+  content: "\25BE";
   font-size: 8px;
   position: absolute;
   top: -2px;
@@ -189,7 +190,7 @@
 }
 
 .m-form__dropdown > ul {
-  @include box-shadow(0 1px 3px rgba(black, 0.2));
+  @include box-shadow(0 1px 2px rgba(black, 0.2));
   background: white;
   border: 1px solid $centro-brand-2b;
   border-top: none;
@@ -198,19 +199,19 @@
   position: absolute;
     left: -1px;
     right: -1px;
-    top: 27px;
+    top: 28px;
   visibility: hidden;
   line-height: 1em;
 }
 
 .m-form__dropdown > ul li {
-  height: 28px;
-  line-height: 30px;
+  height: $base-line-height + 6;
+  line-height: 32px;
   overflow: hidden;
 }
 
 .m-form__dropdown > ul li a {
-  @include link-colors($grayscale-4, $grayscale-5);
+  @include link-colors($grayscale-3, $grayscale-5);
   display: block;
   padding: 0 6px; 
   position: relative;
@@ -232,7 +233,7 @@
 }
 
 .m-form__input {
-  @include box-shadow(inset 0 1px 4px rgba(black, 0.125));
+  @include box-shadow(inset 0 1px 2px rgba(black, 0.1));
   @include transition(all 0.1s 0s);
   border: 1px solid $grayscale-1;
   font-size: modular-scale(0);
@@ -245,8 +246,8 @@
 .m-form__input--narrow {
   @extend .m-form__input;
   font-size: modular-scale(-1);
-  height: $base-line-height + 4px;
-  padding: 0 ($gutter-width / 4);
+  height: $base-line-height + 6px;
+  padding: 0 6px;
 }
 
 .ie8 .m-form__input {
