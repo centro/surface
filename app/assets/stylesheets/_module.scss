@@ -401,13 +401,23 @@
   opacity: 0.5;
 }
 
-::-moz-input-placeholder {
+:-moz-placeholder {
   color: $grayscale-3; 
   cursor: text;
   padding: 0;
 }
 
-:focus::-moz-input-placeholder {
+::-moz-placeholder {
+  color: $grayscale-3; 
+  cursor: text;
+  padding: 0;
+}
+
+:focus:-moz-placeholder {
+  opacity: 0.5;
+}
+
+:focus::-moz-placeholder {
   opacity: 0.5;
 }
 
