@@ -35,7 +35,7 @@
   display: inline-block;
   font-size: modular-scale(-1);
   height: $base-line-height + 6;
-  line-height: $base-line-height + 6;
+  line-height: $base-line-height + 4;
   padding: 0 8px;
   text-decoration: none;
 }
@@ -59,7 +59,7 @@
   @extend .m-button;
   font-size: modular-scale(0) !important;
   height: $base-line-height + ($base-line-height / 2);
-  line-height: $base-line-height + ($base-line-height / 2);
+  line-height: $base-line-height + ($base-line-height / 2) - 2;
   padding: 0 $gutter-width * 0.75;
 }
 
@@ -162,11 +162,15 @@
   border: 1px solid $grayscale-1;
   background: white;
   display: inline-block;
-  line-height: $base-line-height + 6;
+  line-height: $base-line-height + 4;
   height: $base-line-height + 6;
   padding: 0 6px;
   position: relative;
   width: 110px;
+}
+
+.m-form__dropdown:hover {
+  @include box-shadow(none);
 }
 
 .m-form__dropdown > span:after {
@@ -175,7 +179,7 @@
   content: "\25BE";
   font-size: 8px;
   position: absolute;
-  top: -2px;
+  top: 0;
   right: 0;
 }
 
@@ -189,7 +193,7 @@
 }
 
 .m-form__dropdown > ul {
-  @include box-shadow(0 1px 2px rgba(black, 0.2));
+  @include box-shadow(0 4px 2px -2px rgba(black, 0.1));
   background: white;
   border: 1px solid $centro-brand-2b;
   border-top: none;
@@ -393,7 +397,9 @@
 ::-webkit-input-placeholder {
   color: $grayscale-3; 
   cursor: text;
-  padding: 1px 0 0 0;
+}
+.m-form__input::-webkit-input-placeholder {
+    padding-top: 2px;
 }
 
 :focus::-webkit-input-placeholder {
@@ -860,7 +866,7 @@
   z-index: 100;
 }
 
-.m-trigger:hover > .m-tooltip,
+.m-trigger:hover .m-tooltip,
 .m-tooltip:hover {
   @include opacity(1);
   visibility: visible;
@@ -926,11 +932,12 @@
 }
 
 .m-tooltip--condensed > li:last-child {
-  padding-bottom: 8px;
+  padding-bottom: 10px;
 }
 
 .m-tooltip--left-arrow,
-.m-tooltip--right-arrow {
+.m-tooltip--right-arrow,
+.m-tooltip--no-arrow {
   @extend .m-tooltip;
 }
 
@@ -959,6 +966,11 @@
 
 .m-tooltip--right-arrow:after {
   right: 21px;
+}
+
+.m-tooltip--no-arrow:before,
+.m-tooltip--no-arrow:after {
+  display: none; 
 }
 
 // Triggers
