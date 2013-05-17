@@ -29,7 +29,7 @@ $source-sans-regular-eot: "source-sans/sourcesanspro-regular.eot";
 
 @include font-face("Source Sans", font-files($source-sans-regular-woff, $source-sans-regular-ttf), $source-sans-regular-eot, 400, normal);
 
-// Bold
+// Semibold
 
 $source-sans-semibold-woff: "source-sans/sourcesanspro-semibold.woff";
 $source-sans-semibold-ttf: "source-sans/sourcesanspro-semibold.ttf";
@@ -51,13 +51,18 @@ $ss-standard-eot: "ss-standard/ss-standard.eot";
 // Source Code is monospaced typeface used to display campaign IDs. 
 // The bold version shows up during searches.
 
-$source-code-regular-woff: "source-code/SourceCodeProRegular.woff";
-$source-code-regular-ttf: "source-code/SourceCodeProRegular.ttf";
-$source-code-regular-eot: "source-code/SourceCodeProRegular.eot";
+// Regular
 
-$source-code-semibold-woff: "source-code/SourceCodeProSemibold.woff";
-$source-code-semibold-ttf: "source-code/SourceCodeProSemibold.ttf";
-$source-code-semibold-eot: "source-code/SourceCodeProSemibold.eot";
+$source-code-regular-woff: "source-code/sourcecodepro-regular.woff";
+$source-code-regular-ttf: "source-code/sourcecodepro-regular.ttf";
+$source-code-regular-eot: "source-code/sourcecodepro-regular.eot";
 
 @include font-face("Source Code", font-files($source-code-regular-woff, $source-code-regular-ttf), $source-code-regular-eot, 400, normal);
+
+// Semibold
+
+$source-code-semibold-woff: "source-code/sourcecodepro-semibold.woff";
+$source-code-semibold-ttf: "source-code/sourcecodepro-semibold.ttf";
+$source-code-semibold-eot: "source-code/sourcecodepro-semibold.eot";
+
 @include font-face("Source Code", font-files($source-code-semibold-woff, $source-code-semibold-ttf), $source-code-semibold-eot, 600, normal);
