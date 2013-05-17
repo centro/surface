@@ -15,25 +15,25 @@
 
 // Light
 
-$source-sans-light-woff: "source-sans/SourceSansProLight.woff";
-$source-sans-light-ttf: "source-sans/SourceSansProLight.ttf";
-$source-sans-light-eot: "source-sans/SourceSansProLight.eot";
+$source-sans-light-woff: "source-sans/sourcesanspro-light.woff";
+$source-sans-light-ttf: "source-sans/sourcesanspro-light.ttf";
+$source-sans-light-eot: "source-sans/sourcesanspro-light.eot";
 
 @include font-face("Source Sans", font-files($source-sans-light-woff, $source-sans-light-ttf), $source-sans-light-eot, 300, normal);
 
 // Regular
 
-$source-sans-regular-woff: "source-sans/SourceSansProRegular.woff";
-$source-sans-regular-ttf: "source-sans/SourceSansProRegular.ttf";
-$source-sans-regular-eot: "source-sans/SourceSansProRegular.eot";
+$source-sans-regular-woff: "source-sans/sourcesanspro-regular.woff";
+$source-sans-regular-ttf: "source-sans/sourcesanspro-regular.ttf";
+$source-sans-regular-eot: "source-sans/sourcesanspro-regular.eot";
 
 @include font-face("Source Sans", font-files($source-sans-regular-woff, $source-sans-regular-ttf), $source-sans-regular-eot, 400, normal);
 
 // Bold
 
-$source-sans-semibold-woff: "source-sans/SourceSansProSemibold.woff";
-$source-sans-semibold-ttf: "source-sans/SourceSansProSemibold.ttf";
-$source-sans-semibold-eot: "source-sans/SourceSansProSemibold.eot";
+$source-sans-semibold-woff: "source-sans/sourcesanspro-semibold.woff";
+$source-sans-semibold-ttf: "source-sans/sourcesanspro-semibold.ttf";
+$source-sans-semibold-eot: "source-sans/sourcesanspro-semibold.eot";
 
 @include font-face("Source Sans", font-files($source-sans-semibold-woff, $source-sans-semibold-ttf), $source-sans-semibold-eot, 600, normal);
 
