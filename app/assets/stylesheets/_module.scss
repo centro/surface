@@ -166,7 +166,7 @@
   height: $base-line-height + 6;
   padding: 0 6px;
   position: relative;
-  width: 110px;
+  width: 100px;
 }
 
 .m-form__dropdown:hover {
@@ -251,6 +251,10 @@
   font-size: modular-scale(-1);
   height: $base-line-height + 6px;
   padding: 0 6px;
+}
+
+.m-form__input--inline {
+  display: inline-block;
 }
 
 .ie8 .m-form__input {
