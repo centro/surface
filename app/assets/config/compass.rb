@@ -10,7 +10,7 @@ environment = :development
 line_comments = false
 
 http_path = "/"
-css_dir = "/styleguide"
+css_dir = "/styleguide/css"
 sass_dir = "/stylesheets"
 images_dir = "/images"
 javascripts_dir = "/javascripts"
