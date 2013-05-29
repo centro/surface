@@ -78,6 +78,10 @@
 
 // Bottom
 
+.l-mg-btm\(0\) {
+  margin-bottom: 0 !important;
+}
+
 .l-mg-btm\(1\/6\) {
   margin-bottom: $base-line-height / 6;
 }
@@ -365,6 +369,11 @@
 }
 
 // Percentages
+
+
+.l-width\(50\) {
+  width: 50% !important;
+}
 
 .l-width\(100\) {
   width: 100% !important;

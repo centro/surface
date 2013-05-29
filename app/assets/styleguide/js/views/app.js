@@ -3,7 +3,7 @@ define([
   'underscore',
   'backbone',
   'vm',
-	'events',
+  'events',
   'text!templates/layout.html'
 ], function($, _, Backbone, Vm, Events, layoutTemplate){
   var AppView = Backbone.View.extend({

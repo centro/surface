@@ -135,12 +135,19 @@ body {
 }
 
 .kalei-comments > h2,
-.kalei-comments > p {
+.kalei-comments > p,
+.kalei-comments> ol {
   padding: 0 0 15px 0;
 }
 
 .kalei-comments > h2 {
   line-height: 1em;
+}
+
+.kalei-comments > p,
+.kalei-comments> ol {
+  line-height: 1.5;
+  width: 50%;
 }
 
 .kalei-comments > pre + p {

@@ -10,7 +10,9 @@ define([
 'libs/highlight/highlight',
 'libs/parseuri/parseuri',
 'libs/waypoints/waypoints',
-'libs/less/less-1.3.3.min'
+'libs/less/less-1.3.3.min',
+'libs/jquery/infield-label',
+'libs/jquery/surface-styleguide',
 ],
 function($, _, Backbone, marked, stylePageTemplate, config, jscssp, Pagedown, hljs, parseuri, waypoints){
     var that = null;

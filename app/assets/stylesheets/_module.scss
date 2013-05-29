@@ -10,31 +10,31 @@
 
 // TOC:
 
-// [?1] BUTTONS
-// [?2] FORMS
-// [?3] FOOTER
-// [?4] HEADER
-// [?5] ICONS
-// [?6] LISTS
-// [?7] NAVIGATION
-// [?8] NOTICES
-// [?9] UTILITIES
+// Buttons
+// Forms
+// FOOTER
+// HEADER
+// ICONS
+// LISTS
+// NAVIGATION
+// NOTICES
+// UTILITIES
 
 // ========================================================================== 
 
 /*
 ## Buttons
-Interact with buttons to view their various states (:hover, :focus, :active).
+Interact with buttons to view their various states (:hover, :focus, :active):
 ```
 <a class="m-button l-mg-right(1/4)">Default</a>
 <a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
-<a class="m-button m-button--primary" disabled="disabled">Disabled</a>
+<a class="m-button" disabled="disabled">Disabled</a>
 ```
 If even greater emphasis is needed, button’s size can be increased: 
 ```
 <a class="m-button--large l-mg-right(1/4)">Large</a>
 <a class="m-button--large m-button--primary l-mg-right(1/4)">Large + Primary</a>
-<a class="m-button--large m-button--primary" disabled="disabled">Disabled</a>
+<a class="m-button--large" disabled="disabled">Disabled</a>
 ```
 */
 
@@ -103,7 +103,50 @@ If even greater emphasis is needed, button’s size can be increased:
   @include background-image(linear-gradient($centro-brand-2b, lighten($centro-brand-2b, 6%)));
 }
 
-// [?2] FORMS
+/*
+## Forms
+The most basic form element consists of a top aligned label and a 
+corresponding text input:
+```
+<div class="m-form__field l-mg-btm(0) l-width(50)">
+  <label class="m-form__label" for="label">Label</label>
+  <input class="m-form__input" id="label" type="text">
+</div>
+```
+Form errors are triggered differently by each application, but they 
+should be marked up consistently:
+```
+<div class="m-form__field--error l-mg-btm(0) l-width(50)">
+  <label class="m-form__label" for="error">Label</label>
+  <input class="m-form__input" id="error" type="text">
+  <div class="m-form__input__error">
+    <span>This is an error message.</span>
+  </div>
+</div>
+```
+Depending on space constraints it may be desirable to use infield 
+labels. In Surface, there are two ways to implement this:
+
+1. Use the browser’s native placeholder attribute (not supported in IE8)
+2. If IE8 support is required, use a JavaScript plug-in like [infield-label.js](/js/libs/jquery/infield-label.js) 
+
+Examples of both implementations are provided below:
+
+```
+<!-- Native browser implementation with placeholder attribute -->
+
+<div class="m-form__infield l-width(50)">
+  <input class="m-form__input" placeholder="Placeholder Label" type="text">
+</div>
+
+<!-- JavaScript implementation using infield-label.js -->
+
+<div class="m-form__infield l-mg-btm(0) l-width(50)">
+  <label class="m-form__label--infield" for="js">JavaScript Label</label>
+  <input class="m-form__input" id="js" type="text">
+</div>
+```
+*/
 
 .m-form__field {
   margin-bottom: $base-line-height;
@@ -114,11 +157,22 @@ If even greater emphasis is needed, button’s size can be increased:
   line-height: inherit;
 }
 
+.m-form__field--error {
+  @extend .m-form__field;
+  color: $centro-alert-1;
+  position: relative;
+}
+
 .m-form__infield,
 .m-form__controls {
   @extend .m-form__field;
   height: $base-line-height * 1.5;
   line-height: $base-line-height * 1.5;
+}
+
+.m-form__infield--error {
+  @extend .m-form__field--error;
+  @extend .m-form__infield;
 }
 
 .m-form__controls > p {
@@ -127,17 +181,6 @@ If even greater emphasis is needed, button’s size can be increased:
   font-size: modular-scale(-1);
   padding-top: 2px;
   white-space: nowrap;
-}
-
-.m-form__field--error {
-  @extend .m-form__field;
-  color: $centro-alert-1;
-  position: relative;
-}
-
-.m-form__infield--error {
-  @extend .m-form__field--error;
-  @extend .m-form__infield;
 }
 
 // Inputs
@@ -369,6 +412,8 @@ If even greater emphasis is needed, button’s size can be increased:
 .m-form__label {
   cursor: pointer;
   display: block;
+  line-height: 1;
+  padding-bottom: $base-line-height / 4;
   white-space: nowrap;
 }
 
@@ -380,8 +425,8 @@ If even greater emphasis is needed, button’s size can be increased:
 .m-form__label--infield {
   color: $grayscale-3; 
   cursor: text;
-  font-style: italic;
-  padding: 1px 0 0 10px;
+  padding-left: 10px;
+  position: absolute;
 }
 
 ::-webkit-input-placeholder {
