@@ -22,9 +22,22 @@
 
 // ========================================================================== 
 
-// [?1] BUTTONS
+/*
+## Buttons
+Interact with buttons to view their various states (:hover, :focus, :active).
+```
+<a class="m-button l-mg-right(1/4)">Default</a>
+<a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
+<a class="m-button m-button--primary" disabled="disabled">Disabled</a>
+```
+If even greater emphasis is needed, button size can be increased: 
+```
+<a class="m-button--large l-mg-right(1/4)">Large</a>
+<a class="m-button--large m-button--primary l-mg-right(1/4)">Large + Primary</a>
+<a class="m-button--large m-button--primary" disabled="disabled">Disabled</a>
+```
 
-// Defaults
+*/
 
 .m-button {
   background: $grayscale-0; // Fallback for older browsers.
@@ -32,6 +45,7 @@
   @include border-radius(3px);
   border: 1px solid $grayscale-1;
   color: $grayscale-5 !important;
+  cursor: pointer;
   display: inline-block;
   font-size: modular-scale(-1);
   height: $base-line-height + 6;
@@ -55,6 +69,13 @@
   background-color: $grayscale-0;
 }
 
+.m-button[disabled] {
+  @extend .m-button;
+  color: $grayscale-3 !important;
+  cursor: not-allowed !important;
+  text-shadow: none;
+}
+
 .m-button--large {
   @extend .m-button;
   font-size: modular-scale(0) !important;
@@ -62,23 +83,6 @@
   line-height: $base-line-height + ($base-line-height / 2) - 2;
   padding: 0 $gutter-width * 0.75;
 }
-
-.m-button--small {
-  @extend .m-button;
-  height: $base-line-height;
-  line-height: $base-line-height;
-}
-
-.m-button--square {
-  line-height: 2em;
-  height: 2em;
-  padding-left: 0;
-  padding-right: 0;
-  text-align: center;
-  width: 2em;
-}
-
-// Colors
 
 .m-button--primary:not([disabled]) {
   background: lighten($centro-brand-2b, 2%);
@@ -99,22 +103,6 @@
 
 .m-button--primary:active:not([disabled]) {
   @include background-image(linear-gradient($centro-brand-2b, lighten($centro-brand-2b, 6%)));
-}
-
-// State
-
-.m-button[disabled] {
-  @extend .m-button;
-  color: $grayscale-3 !important;
-  cursor: not-allowed !important;
-  text-shadow: none;
-}
-
-.m-button--large[disabled] {
-  @extend .m-button--large;
-  color: $grayscale-3 !important;
-  cursor: not-allowed !important;
-  text-shadow: none;
 }
 
 // [?2] FORMS

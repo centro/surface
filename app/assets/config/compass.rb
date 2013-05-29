@@ -10,11 +10,11 @@ environment = :development
 line_comments = false
 
 http_path = "/"
-css_dir = "/styleguide/css"
-sass_dir = "/stylesheets"
-images_dir = "/images"
-javascripts_dir = "/javascripts"
-fonts_dir = "/fonts"
+css_dir = "styleguide/css"
+sass_dir = "stylesheets"
+images_dir = "images"
+javascripts_dir = "javascripts"
+fonts_dir = "fonts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 

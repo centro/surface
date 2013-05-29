@@ -356,48 +356,48 @@ ul {
 
 @font-face {
   font-family: "Source Sans";
-  src: url('//fonts/source-sans/sourcesanspro-light.eot');
-  src: url('//fonts/source-sans/sourcesanspro-light.eot?#iefix') format('eot'), url('//fonts/source-sans/sourcesanspro-light.woff') format('woff'), url('//fonts/source-sans/sourcesanspro-light.ttf') format('truetype');
+  src: url('/fonts/source-sans/sourcesanspro-light.eot');
+  src: url('/fonts/source-sans/sourcesanspro-light.eot?#iefix') format('eot'), url('/fonts/source-sans/sourcesanspro-light.woff') format('woff'), url('/fonts/source-sans/sourcesanspro-light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Source Sans";
-  src: url('//fonts/source-sans/sourcesanspro-regular.eot');
-  src: url('//fonts/source-sans/sourcesanspro-regular.eot?#iefix') format('eot'), url('//fonts/source-sans/sourcesanspro-regular.woff') format('woff'), url('//fonts/source-sans/sourcesanspro-regular.ttf') format('truetype');
+  src: url('/fonts/source-sans/sourcesanspro-regular.eot');
+  src: url('/fonts/source-sans/sourcesanspro-regular.eot?#iefix') format('eot'), url('/fonts/source-sans/sourcesanspro-regular.woff') format('woff'), url('/fonts/source-sans/sourcesanspro-regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Source Sans";
-  src: url('//fonts/source-sans/sourcesanspro-semibold.eot');
-  src: url('//fonts/source-sans/sourcesanspro-semibold.eot?#iefix') format('eot'), url('//fonts/source-sans/sourcesanspro-semibold.woff') format('woff'), url('//fonts/source-sans/sourcesanspro-semibold.ttf') format('truetype');
+  src: url('/fonts/source-sans/sourcesanspro-semibold.eot');
+  src: url('/fonts/source-sans/sourcesanspro-semibold.eot?#iefix') format('eot'), url('/fonts/source-sans/sourcesanspro-semibold.woff') format('woff'), url('/fonts/source-sans/sourcesanspro-semibold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SS Standard";
-  src: url('//fonts/ss-standard/ss-standard.eot');
-  src: url('//fonts/ss-standard/ss-standard.eot?#iefix') format('eot'), url('//fonts/ss-standard/ss-standard.woff') format('woff'), url('//fonts/ss-standard/ss-standard.ttf') format('truetype');
+  src: url('/fonts/ss-standard/ss-standard.eot');
+  src: url('/fonts/ss-standard/ss-standard.eot?#iefix') format('eot'), url('/fonts/ss-standard/ss-standard.woff') format('woff'), url('/fonts/ss-standard/ss-standard.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Source Code";
-  src: url('//fonts/source-code/sourcecodepro-regular.eot');
-  src: url('//fonts/source-code/sourcecodepro-regular.eot?#iefix') format('eot'), url('//fonts/source-code/sourcecodepro-regular.woff') format('woff'), url('//fonts/source-code/sourcecodepro-regular.ttf') format('truetype');
+  src: url('/fonts/source-code/sourcecodepro-regular.eot');
+  src: url('/fonts/source-code/sourcecodepro-regular.eot?#iefix') format('eot'), url('/fonts/source-code/sourcecodepro-regular.woff') format('woff'), url('/fonts/source-code/sourcecodepro-regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Source Code";
-  src: url('//fonts/source-code/sourcecodepro-semibold.eot');
-  src: url('//fonts/source-code/sourcecodepro-semibold.eot?#iefix') format('eot'), url('//fonts/source-code/sourcecodepro-semibold.woff') format('woff'), url('//fonts/source-code/sourcecodepro-semibold.ttf') format('truetype');
+  src: url('/fonts/source-code/sourcecodepro-semibold.eot');
+  src: url('/fonts/source-code/sourcecodepro-semibold.eot?#iefix') format('eot'), url('/fonts/source-code/sourcecodepro-semibold.woff') format('woff'), url('/fonts/source-code/sourcecodepro-semibold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
@@ -827,7 +827,23 @@ ul {
   left: -9999px;
 }
 
-.m-button, .m-button--large, .m-button--small, .m-button[disabled] {
+/*
+## Buttons
+Interact with buttons to view their various states (:hover, :focus, :active).
+```
+<a class="m-button l-mg-right(1/4)">Default</a>
+<a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
+<a class="m-button m-button--primary" disabled="disabled">Disabled</a>
+```
+If even greater emphasis is needed, button size can be increased: 
+```
+<a class="m-button--large l-mg-right(1/4)">Large</a>
+<a class="m-button--large m-button--primary l-mg-right(1/4)">Large + Primary</a>
+<a class="m-button--large m-button--primary" disabled="disabled">Disabled</a>
+```
+
+*/
+.m-button, .m-button[disabled], .m-button--large {
   background: #e2e7e9;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2UyZTdlOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -843,6 +859,7 @@ ul {
   border-radius: 3px;
   border: 1px solid #c4d0d4;
   color: #032530 !important;
+  cursor: pointer;
   display: inline-block;
   font-size: 14px;
   height: 30px;
@@ -851,7 +868,7 @@ ul {
   text-decoration: none;
 }
 
-.m-button:hover, .m-button--large:hover, .m-button--small:hover {
+.m-button:hover, .m-button--large:hover {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2UyZTdlOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e2e7e9));
@@ -862,37 +879,29 @@ ul {
   color: #415258;
 }
 
-.m-button:focus, .m-button--large:focus, .m-button--small:focus {
+.m-button:focus, .m-button--large:focus {
   -webkit-box-shadow: 0 0 4px white inset;
   -moz-box-shadow: 0 0 4px white inset;
   box-shadow: 0 0 4px white inset;
   outline: none;
 }
 
-.m-button:active, .m-button--large:active, .m-button--small:active {
+.m-button:active, .m-button--large:active {
   background-image: none;
   background-color: #e2e7e9;
 }
 
-.m-button--large, .m-button--large[disabled] {
+[disabled].m-button, [disabled].m-button--large {
+  color: #6c8993 !important;
+  cursor: not-allowed !important;
+  text-shadow: none;
+}
+
+.m-button--large {
   font-size: 16px !important;
   height: 36px;
   line-height: 34px;
   padding: 0 15px;
-}
-
-.m-button--small {
-  height: 24px;
-  line-height: 24px;
-}
-
-.m-button--square {
-  line-height: 2em;
-  height: 2em;
-  padding-left: 0;
-  padding-right: 0;
-  text-align: center;
-  width: 2em;
 }
 
 .m-button--primary:not([disabled]) {
@@ -934,18 +943,6 @@ ul {
   background-image: -moz-linear-gradient(#00a4db, #00bbfa);
   background-image: -o-linear-gradient(#00a4db, #00bbfa);
   background-image: linear-gradient(#00a4db, #00bbfa);
-}
-
-[disabled].m-button--large, [disabled].m-button--small, [disabled].m-button {
-  color: #6c8993 !important;
-  cursor: not-allowed !important;
-  text-shadow: none;
-}
-
-[disabled].m-button--large {
-  color: #6c8993 !important;
-  cursor: not-allowed !important;
-  text-shadow: none;
 }
 
 .m-form__field, .m-form__infield, .m-form__infield--error,
@@ -1288,7 +1285,7 @@ ul {
 }
 
 .m-logo {
-  background: transparent url('//images/logo.svg?1361311979') no-repeat left 4px;
+  background: transparent url('/images/logo.svg?1361311979') no-repeat left 4px;
   background-size: contain;
   display: inline-block;
   height: 0;
@@ -1303,7 +1300,7 @@ ul {
 }
 
 .ie8 .m-logo {
-  background: url('//images/logo.png?1362177039') no-repeat left -2px;
+  background: url('/images/logo.png?1362177039') no-repeat left -2px;
 }
 
 .i-icon, .m-form__dropdown > span:after, .m-notice > p:before, .m-notice--alert > p:before,
