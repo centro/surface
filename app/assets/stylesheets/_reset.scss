@@ -291,5 +291,121 @@ table {
 }
 
 // ===========================================================================
-// Surface specific overrides of normalize.css
+// Overrides of normalize.css
 // ===========================================================================
+
+// DESC:
+
+// This file contains basic styles that provide supplemental, application
+// specific defaults that override some of the normalize defaults. 
+
+// TOC:
+
+// INITIALIZERS
+// ELEMENTS
+// PROPRIETARY
+
+// ==========================================================================
+
+// INITIALIZERS
+
+@include border-box-sizing;
+@include establish-baseline;
+
+// ELEMENTS
+
+a:link,
+a:visited {
+  outline: none;
+  color: $centro-brand-2b;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $centro-brand-2a;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  color: $grayscale-5;
+  font-family: "Source Sans", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+dl,
+dd,
+dt {
+  margin: 0;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+g
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin: 0;
+}
+
+h1 {
+  @include adjust-font-size-to(modular-scale(6), 2);
+}
+
+h3 {
+  @include adjust-font-size-to(modular-scale(2), 1);
+  font-weight: 400;
+}
+
+h4 {
+  font-size: modular-scale(-1);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+input[disabled] {
+  cursor: not-allowed;
+}
+
+mark {
+  background: transparent;
+  color: $centro-brand-2b;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+// PROPRIETARY
+
+// Remove IE10 input icons.
+
+::-ms-clear,
+::-ms-reveal {
+  display: none;
+}
