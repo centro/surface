@@ -1,82 +1,11 @@
-// ==========================================================================
-// Variables  
-// ========================================================================== 
-
-// Compass default settings
-
-$legacy-support-for-ie        : false;
-$experimental-support-for-svg : true;
-
-// Compass Vertical Rhythm Module default settings
-
-$base-font-size        : 16px;
-$base-line-height      : 24px;
-$relative-font-sizing  : false;
-
-// Modular Scale default settings 
-
-$ratio                 : major_second();
-$base-size             : $base-font-size;
-$round_pixels          : true;
-
-// Susy default settings
-
-$container-style       : fluid;
-$container-width       : 1220px;
-$container-min-width   : 1220px;
-$total-columns         : 10;
-$column-width          : 100px;
-$gutter-width          : 20px;
-$grid-unit-width       : $column-width + $gutter-width;
-$grid-padding          : $gutter-width;
-
-// Colors
-
-$grayscale-0           : hsl(195, 15%, 90%);
-$grayscale-1           : hsl(195, 15%, 80%);
-$grayscale-2           : hsl(195, 15%, 70%);
-$grayscale-3           : hsl(195, 15%, 50%);
-$grayscale-4           : hsl(195, 15%, 30%);
-$grayscale-5           : hsl(195, 90%, 10%);
-
-$centro-alert-1        : rgb(251, 69,79);
-$centro-alert-2        : rgb(250, 231, 172);
-
-$centro-brand-1a       : hsl(195, 90%, 28%);
-$centro-brand-1b       : hsl(192, 100%, 28%);
-$centro-brand-1c       : hsl(191, 59%, 80%);
-
-$centro-brand-2a       : hsl(195, 100%, 29%);
-$centro-brand-2b       : hsl(195, 100%, 43%);
-$centro-brand-2c       : hsl(195, 75%, 70%);
-
-$centro-brand-3a       : hsl(323, 100%, 30%);
-$centro-brand-3b       : hsl(320, 84%, 42%);
-$centro-brand-3c       : hsl(329, 82%, 59%);
-
-$centro-brand-4a       : hsl(16, 2%, 50%);
-$centro-brand-4b       : hsl(216, 3%, 63%);
-$centro-brand-4c       : hsl(220, 3%, 78%);
-
-$centro-confirm-1      : hsl(101, 48%, 69%);
-$centro-confirm-2      : rgb(0, 183, 111);
-
-// ========================================================================== 
-// Plugins
-// ========================================================================== 
-
-@import "compass";
-@import "susy";
-@import "modular-scale";
-
 // ========================================================================== 
 // Stylesheets
 // ========================================================================== 
 
+@import "base";
 @import "reset";
 @import "hashgrid";
 @import "fonts";
-@import "base";
 @import "layout";
 @import "text";
 @import "module";
