@@ -258,7 +258,6 @@ fieldset {
   padding: 0;
 }
 
-g
 h1,
 h2,
 h3,
@@ -842,7 +841,6 @@ If even greater emphasis is needed, button’s size can be increased:
 <a class="m-button--large m-button--primary l-mg-right(1/4)">Large + Primary</a>
 <a class="m-button--large m-button--primary" disabled="disabled">Disabled</a>
 ```
-
 */
 .m-button, .m-button[disabled], .m-button--large {
   background: #e2e7e9;
