@@ -63,13 +63,12 @@ implementing styles within your application. Inside the Living Style Guide you
 will find HTML examples of how to build the various components that 
 Surface is responsible for styling. As new styles are authored or 
 changed, these examples are automatically updated such that the Living Style 
-Guide is (or should be, anyway) always up to date. Information about the 
+Guide is (or should be) always up to date. Information about the 
 program used to generate the guide can be found here: [Kalei Style Guide](http://kaleistyleguide.com/).
 
 #### How to view the Living Style Guide
 
-Viewing the guide is actually quite simple. Navigate to the `styleguide` 
-directory: 
+Navigate to the `styleguide` directory: 
 
     $ cd app/assets/styleguide
 
@@ -93,6 +92,100 @@ address:
     http://localhost:8080
 
 You should now be able view the Living Style Guide.
+
+####  Contributing to the Living Style Guide
+
+If you don’t already have it installed, you’ll need to install Compass:
+
+    $ gem install compass
+
+Once Compass is installed, navigate to the `assets` directory: 
+
+    $ cd app/assets
+
+Then, execute:
+
+    $ compass watch
+
+If you were successful, you should see the following message in your 
+terminal prompt:
+
+    >>> Compass is watching for changes. Press Ctrl-C to Stop.
+
+The program we use to generate the Living Style Guide relies on the 
+CSS stylesheet that Compass automatically compiles when it runs. By running `compass 
+watch` we can ensure that Compass will compile every time we make a 
+change to our SCSS files. For example, if you were to navigate to the 
+`stylesheets` directory: 
+
+    $ cd app/assets/stylesheets
+
+And then make a change to `_module.scss`, you should see the following 
+message appear in your terminal prompt: 
+
+    overwrite styleguide/css/surface.css 
+    >>> Change detected at 11:28:17 to: _module.scss
+
+Compass compiles the changes you make in each of the individual SCSS partials into 
+a large CSS file named `surface.css` that lives in `app/assets/styleguide/css`.
+The style guide generator then uses this file to build the Living Style 
+Guide. 
+
+So, to actually contribute to the Living Style Guide, you’ll need to add 
+your styles to the appropriate SCSS partial inside the 
+`app/assets/stylesheets` directory along with a Markdown structured CSS 
+comment. For example, this bit of markup inside `_module.scss`:
+
+    /*
+    ## Buttons
+    Interact with buttons to view their various states (:hover, :focus, :active):
+    ```
+    <a class="m-button l-mg-right(1/4)">Default</a>
+    <a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
+    <a class="m-button" disabled="disabled">Disabled</a>
+ 
+    */
+    
+    .m-button {
+      background: $grayscale-0; // Fallback for older browsers.
+      @include background-image(linear-gradient(hsl(0, 0, 97%), $grayscale-0));
+      @include border-radius(3px);
+      border: 1px solid $grayscale-1;
+      color: $grayscale-5 !important;
+      cursor: pointer;
+      display: inline-block;
+      font-size: modular-scale(-1);
+      height: $base-line-height + 6;
+      line-height: $base-line-height + 4;
+      padding: 0 8px;
+      text-decoration: none;
+    }
+    
+    .m-button:hover {
+      @include background-image(linear-gradient(white, $grayscale-0));
+      color: $grayscale-4;
+    }
+    
+    .m-button:focus {
+      @include box-shadow(0 0 4px white inset);
+      outline: none;
+    }
+    
+    .m-button:active {
+      @include background-image(none);
+      background-color: $grayscale-0;
+    }
+
+Will appear like this when you view the Living Style Guide in your 
+browser:
+
+![Example of CSS buttons rendered by the Kalei Style Guide engine](/readme-images/kalei-example.png)
+
+You should feel free to contribute to Surface, but please understand the 
+we are trying to maintain a high degree of consistency in the way we 
+write our CSS. If you’re unsure of if you have questions, please talk to 
+Billy Whited ([billy.whited@centro.net](mailto:billy.whited@centro.net)
+
 
 ## Contributing
 
