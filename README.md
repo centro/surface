@@ -136,14 +136,14 @@ your styles to the appropriate SCSS partial inside the
 `app/assets/stylesheets` directory, along with a Markdown structured CSS 
 comment. For example, this bit of markup inside `_module.scss`:
 
-```css
+```scss
 /*
 ## Buttons
 Interact with buttons to view their various states (:hover, :focus, :active):
 
-<a class="m-button l-mg-right(1/4)">Default</a>
-<a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
-<a class="m-button" disabled="disabled">Disabled</a>
+    <a class="m-button l-mg-right(1/4)">Default</a>
+    <a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
+    <a class="m-button" disabled="disabled">Disabled</a>
 */
 
 .m-button {
