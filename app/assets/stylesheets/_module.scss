@@ -107,14 +107,17 @@ If even greater emphasis is needed, button’s size can be increased:
 ## Forms
 The most basic form element consists of a top aligned label and a 
 corresponding text input:
+
 ```
 <div class="m-form__field l-mg-btm(0) l-width(50)">
   <label class="m-form__label" for="label">Label</label>
   <input class="m-form__input" id="label" type="text">
 </div>
 ```
+
 Form errors are triggered differently by each application, but they 
 should be marked up consistently:
+
 ```
 <div class="m-form__field--error l-mg-btm(0) l-width(50)">
   <label class="m-form__label" for="error">Label</label>
@@ -124,6 +127,7 @@ should be marked up consistently:
   </div>
 </div>
 ```
+
 Depending on space constraints it may be desirable to use infield 
 labels. In Surface, there are two ways to implement this:
 
@@ -146,7 +150,42 @@ Examples of both implementations are provided below:
   <input class="m-form__input" id="js" type="text">
 </div>
 ```
+
+Though not frequently used up until this point, Surface does support 
+left and right aligned field labeling. Due to the difference in input 
+width, inline errors are tweaked slightly to support this layout method. 
+Left/Right aligned labels are good to use in situations where it is necessary 
+to save space (and where infield labels aren't appropriate), but [try and use 
+them sparingly](http://www.lukew.com/ff/entry.asp?504). 
+```
+<!-- Left aligned inline labels -->
+
+<div class="m-form__inline-field l-width(50)">
+  <label class="m-form__label--inline" for="label">Label:</label>
+  <input class="m-form__input--inline" id="label" type="text">
+</div>
+
+<!-- Right aligned inline labels -->
+
+<div class="m-form__inline-field l-width(50)">
+  <label class="m-form__label--inline t-right" for="label">Label:</label>
+  <input class="m-form__input--inline" id="label" type="text">
+</div>
+
+<!-- Inline error handling -->
+
+<div class="m-form__inline-field--error l-mg-btm(0) l-width(50)">
+  <label class="m-form__label--inline t-right" for="label">Label:</label>
+  <input class="m-form__input--inline" id="label" type="text">
+  <div class="m-form__input__error--inline">
+    <span>This is an error message.</span>
+  </div>
+</div>
+```
+
 */
+
+// Fields
 
 .m-form__field {
   margin-bottom: $base-line-height;
@@ -175,6 +214,16 @@ Examples of both implementations are provided below:
   @extend .m-form__infield;
 }
 
+.m-form__inline-field {
+  @extend .m-form__field;
+  font-size: 0; // Counteracts word space added by inline-block
+}
+
+.m-form__inline-field--error {
+  @extend .m-form__field--error;
+  @extend .m-form__inline-field;
+}
+
 .m-form__controls > p {
   color: $grayscale-3;
   display: inline-block;
@@ -184,85 +233,6 @@ Examples of both implementations are provided below:
 }
 
 // Inputs
-
-.m-form__dropdown {
-  @include transition(none !important);
-  @include box-shadow(inset 0 1px 2px rgba(black, 0.1));
-  border: 1px solid $grayscale-1;
-  background: white;
-  display: inline-block;
-  line-height: $base-line-height + 4;
-  height: $base-line-height + 6;
-  padding: 0 6px;
-  position: relative;
-  width: 100px;
-}
-
-.m-form__dropdown:hover {
-  @include box-shadow(none);
-}
-
-.m-form__dropdown > span:after {
-  @extend .i-icon;
-  color: $grayscale-1;
-  content: "\25BE";
-  font-size: 8px;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.m-form__dropdown > span {
-  color: $grayscale-5;
-  display: block;
-  height: 100%;
-  overflow: hidden; 
-  position: relative;
-  text-transform: capitalize;
-}
-
-.m-form__dropdown > ul {
-  @include box-shadow(0 4px 2px -2px rgba(black, 0.1));
-  background: white;
-  border: 1px solid $centro-brand-2b;
-  border-top: none;
-  color: $grayscale-5;
-  opacity: 0;
-  position: absolute;
-    left: -1px;
-    right: -1px;
-    top: 28px;
-  visibility: hidden;
-  line-height: 1em;
-}
-
-.m-form__dropdown > ul li {
-  height: $base-line-height + 6;
-  line-height: 32px;
-  overflow: hidden;
-}
-
-.m-form__dropdown > ul li a {
-  @include link-colors($grayscale-3, $grayscale-5);
-  display: block;
-  padding: 0 6px; 
-  position: relative;
-}
-
-.m-form__dropdown > ul li a.s-is-active {
-  background: $centro-brand-2b;
-  color: white;
-}
-
-.m-form__dropdown:hover {
-  border-color: $centro-brand-2b;
-  cursor: pointer;
-}
-
-.m-form__dropdown:hover > ul {
-  opacity: 1;
-  visibility:visible;
-}
 
 .m-form__input {
   @include box-shadow(inset 0 1px 2px rgba(black, 0.1));
@@ -275,17 +245,6 @@ Examples of both implementations are provided below:
   width: 100%;
 }
 
-.m-form__input--narrow {
-  @extend .m-form__input;
-  font-size: modular-scale(-1);
-  height: $base-line-height + 6px;
-  padding: 0 6px;
-}
-
-.m-form__input--inline {
-  display: inline-block;
-}
-
 .ie8 .m-form__input {
   line-height: 1em;
   padding-top: 10px;
@@ -294,6 +253,21 @@ Examples of both implementations are provided below:
 .m-form__input:focus {
   border-color: $centro-brand-2b; 
   outline: 0;
+}
+
+
+
+.m-form__input--inline {
+  @extend .m-form__input;
+  display: inline-block;
+  width: 80%;
+}
+
+.m-form__input--narrow {
+  @extend .m-form__input;
+  font-size: modular-scale(-1);
+  height: $base-line-height + 6px;
+  padding: 0 6px;
 }
 
 .m-form__input--password {
@@ -407,6 +381,11 @@ Examples of both implementations are provided below:
   visibility: visible;
 }
 
+.m-form__input__error--inline {
+  @extend .m-form__input__error;
+  left: 18.5%;
+}
+
 // Label
 
 .m-form__label {
@@ -420,6 +399,9 @@ Examples of both implementations are provided below:
 .m-form__label--inline {
   cursor: pointer;
   display: inline-block;
+  font-size: modular-scale(0);
+  padding-right: $gutter-width / 4;
+  width: 20%;
 }
 
 .m-form__label--infield {
@@ -461,6 +443,86 @@ Examples of both implementations are provided below:
   opacity: 0.5;
 }
 
+// Dropdowns
+
+.m-form__dropdown {
+  @include transition(none !important);
+  @include box-shadow(inset 0 1px 2px rgba(black, 0.1));
+  border: 1px solid $grayscale-1;
+  background: white;
+  display: inline-block;
+  line-height: $base-line-height + 4;
+  height: $base-line-height + 6;
+  padding: 0 6px;
+  position: relative;
+  width: 100px;
+}
+
+.m-form__dropdown:hover {
+  @include box-shadow(none);
+}
+
+.m-form__dropdown > span:after {
+  @extend .i-icon;
+  color: $grayscale-1;
+  content: "\25BE";
+  font-size: 8px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.m-form__dropdown > span {
+  color: $grayscale-5;
+  display: block;
+  height: 100%;
+  overflow: hidden; 
+  position: relative;
+  text-transform: capitalize;
+}
+
+.m-form__dropdown > ul {
+  @include box-shadow(0 4px 2px -2px rgba(black, 0.1));
+  background: white;
+  border: 1px solid $centro-brand-2b;
+  border-top: none;
+  color: $grayscale-5;
+  opacity: 0;
+  position: absolute;
+    left: -1px;
+    right: -1px;
+    top: 28px;
+  visibility: hidden;
+  line-height: 1em;
+}
+
+.m-form__dropdown > ul li {
+  height: $base-line-height + 6;
+  line-height: 32px;
+  overflow: hidden;
+}
+
+.m-form__dropdown > ul li a {
+  @include link-colors($grayscale-3, $grayscale-5);
+  display: block;
+  padding: 0 6px; 
+  position: relative;
+}
+
+.m-form__dropdown > ul li a.s-is-active {
+  background: $centro-brand-2b;
+  color: white;
+}
+
+.m-form__dropdown:hover {
+  border-color: $centro-brand-2b;
+  cursor: pointer;
+}
+
+.m-form__dropdown:hover > ul {
+  opacity: 1;
+  visibility:visible;
+}
 // [?3] FOOTER
 // This implementation of the footer currently serves as a debugging
 // line inside of insight.

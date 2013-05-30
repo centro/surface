@@ -118,11 +118,11 @@ body {
 .kalei-comments > h5,
 .kalei-comments > h6,
 .kalei-comments > ul,
-.kalei-comments> ol,
-.kalei-comments> p a,
-.kalei-comments> p a:visited,
-.kalei-comments>  a:visited,
-.kalei-comments> a,
+.kalei-comments > ol,
+.kalei-comments > p a,
+.kalei-comments > p a:visited,
+.kalei-comments >  a:visited,
+.kalei-comments > a,
 .kalei-styleguide-menu-heading > h1,
 .kalei-styleguide-menu > li > h3,
 .kalei-sheet-submenu  li,
@@ -131,7 +131,6 @@ body {
   font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 10px;
   margin: 0;
-  color: #444;
 }
 
 .kalei-comments > h2,
