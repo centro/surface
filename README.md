@@ -37,24 +37,28 @@ appliation.
 #### Using surface_updated?
 Require the helper file in your `deploy.rb` file.
 
-    require 'surface/capistrano'
+```ruby
+require 'surface/capistrano'
+```
 
 In your `assets:precomile` task, make sure to check if surface has been
 updated when determining whether or not to recompile assets:
 
-    namespace :assets do
-      task :precompile, :roles => :web, :except => { :no_release => true } do
-        from = source.next_revision(current_revision) rescue nil
-        if ENV['FORCE_PRECOMPILE'] ||
-            from.nil? ||
-            capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0 ||
-            surface_updated?
-          run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} tmp:cache:clear assets:precompile --trace}
-        else
-          logger.info "Skipping asset pre-compilation because there were no asset changes"
-        end
-      end
+```ruby
+namespace :assets do
+  task :precompile, :roles => :web, :except => { :no_release => true } do
+    from = source.next_revision(current_revision) rescue nil
+    if ENV['FORCE_PRECOMPILE'] ||
+        from.nil? ||
+        capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0 ||
+        surface_updated?
+      run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} tmp:cache:clear assets:precompile --trace}
+    else
+      logger.info "Skipping asset pre-compilation because there were no asset changes"
     end
+  end
+end
+```
 
 ## Living Style Guide
 
