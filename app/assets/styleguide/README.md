@@ -3,8 +3,6 @@
 
 This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks.
 
-
-
 ## Main goals and benefits
 
 * Fully documented CSS - No need to explain the benefits
@@ -14,24 +12,17 @@ This project aims at making sure your style sheets are fully documented whilst b
 * Rapid development of projects by allowing developers to find the correct CSS and HTML for any given UI component
 * Open sourced so that all great ideas can be included
 
-
-
-
-
 ## Getting started
 
 1. Download the repository (`git clone git://github.com/kaleistyleguide/kaleistyleguide.git`)
 2. Serve it on a HTTP server and it should work!
 3. Edit `js/config.js` to point at your own `styles.css`
 
-
 ## Author
 
 [Thomas Davis](http://thomasdavis.github.com)
 Luke Brooker
 Richard Barret
-
-
 
 ## Inspiration
 
@@ -46,7 +37,6 @@ Kalei is heavily influenced by the following projects and blog posts.
 [RJ Metrics](http://info.rjmetrics.com/blog/bid/52753/Our-Living-Style-Guide-Writing-maintainable-HTML-CSS)
 
 [Anchoring Your Design Language in a Live Style Guide](http://uxmag.com/articles/anchoring-your-design-language-in-a-live-style-guide)
-
 
 ## Technologies
 

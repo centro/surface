@@ -34,7 +34,7 @@ The `surface_updated?` method in `lib/surface/capistrano.rb` helps
 determine if you should recompile your assets when deploying your
 appliation.
 
-### Using surface_updated?
+#### Using surface_updated?
 Require the helper file in your `deploy.rb` file.
 
     require 'surface/capistrano'
@@ -55,6 +55,44 @@ updated when determining whether or not to recompile assets:
         end
       end
     end
+
+## Living Style Guide
+
+Surface includes a ‟Living Style Guide” that you can reference when 
+implementing styles within your application. Inside the Living Style Guide you 
+will find HTML examples of how to build the various components that 
+Surface is responsible for styling. As new styles are authored or 
+changed, these examples are automatically updated such that the Living Style 
+Guide is (or should be, anyway) always up to date. Information about the 
+program used to generate the guide can be found here: [Kalei Style Guide](http://kaleistyleguide.com/).
+
+#### How to view the Living Style Guide
+
+Viewing the guide is actually quite simple. Navigate to the `styleguide` 
+directory: 
+
+    $ cd app/assets/styleguide
+
+Once you are inside the directory, execute:
+
+    $ python -m SimpleHTTPServer
+
+By default, the server will start on port 8000, but you can specify any 
+port of your choosing. For example: 
+
+    $ python -m SimpleHTTPServer 8080
+
+If you were successful, you’ll see this message appear in your 
+terminal prompt:  
+
+    Serving HTTP on 0.0.0.0 port 8080 ...
+
+Once you see this message, open a browser and type in the following 
+address:
+
+    http://localhost:8080
+
+You should now be able view the Living Style Guide.
 
 ## Contributing
 
