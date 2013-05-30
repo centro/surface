@@ -187,6 +187,12 @@ we are trying to maintain a high degree of consistency in the way we
 write our CSS. If you’re unsure of if you have questions, please talk to 
 Billy Whited ([billy.whited@centro.net](mailto:billy.whited@centro.net)
 
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
 
 ## Contributing
 
