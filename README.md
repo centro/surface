@@ -131,9 +131,9 @@ a large CSS file named `surface.css` that lives in `app/assets/styleguide/css`.
 The style guide generator then uses this file to build the Living Style 
 Guide. 
 
-So, to actually contribute to the Living Style Guide, you’ll need to add 
+So, to actually contribute to the Living Style Guide you’ll need to add 
 your styles to the appropriate SCSS partial inside the 
-`app/assets/stylesheets` directory along with a Markdown structured CSS 
+`app/assets/stylesheets` directory, along with a Markdown structured CSS 
 comment. For example, this bit of markup inside `_module.scss`:
 
     /*
@@ -143,7 +143,6 @@ comment. For example, this bit of markup inside `_module.scss`:
     <a class="m-button l-mg-right(1/4)">Default</a>
     <a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
     <a class="m-button" disabled="disabled">Disabled</a>
- 
     */
     
     .m-button {
