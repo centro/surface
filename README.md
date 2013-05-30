@@ -136,44 +136,46 @@ your styles to the appropriate SCSS partial inside the
 `app/assets/stylesheets` directory, along with a Markdown structured CSS 
 comment. For example, this bit of markup inside `_module.scss`:
 
-    /*
-    ## Buttons
-    Interact with buttons to view their various states (:hover, :focus, :active):
-    ```
-    <a class="m-button l-mg-right(1/4)">Default</a>
-    <a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
-    <a class="m-button" disabled="disabled">Disabled</a>
-    */
-    
-    .m-button {
-      background: $grayscale-0; // Fallback for older browsers.
-      @include background-image(linear-gradient(hsl(0, 0, 97%), $grayscale-0));
-      @include border-radius(3px);
-      border: 1px solid $grayscale-1;
-      color: $grayscale-5 !important;
-      cursor: pointer;
-      display: inline-block;
-      font-size: modular-scale(-1);
-      height: $base-line-height + 6;
-      line-height: $base-line-height + 4;
-      padding: 0 8px;
-      text-decoration: none;
-    }
-    
-    .m-button:hover {
-      @include background-image(linear-gradient(white, $grayscale-0));
-      color: $grayscale-4;
-    }
-    
-    .m-button:focus {
-      @include box-shadow(0 0 4px white inset);
-      outline: none;
-    }
-    
-    .m-button:active {
-      @include background-image(none);
-      background-color: $grayscale-0;
-    }
+```CSS
+/*
+## Buttons
+Interact with buttons to view their various states (:hover, :focus, :active):
+```
+<a class="m-button l-mg-right(1/4)">Default</a>
+<a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
+<a class="m-button" disabled="disabled">Disabled</a>
+*/
+
+.m-button {
+  background: $grayscale-0; // Fallback for older browsers.
+  @include background-image(linear-gradient(hsl(0, 0, 97%), $grayscale-0));
+  @include border-radius(3px);
+  border: 1px solid $grayscale-1;
+  color: $grayscale-5 !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: modular-scale(-1);
+  height: $base-line-height + 6;
+  line-height: $base-line-height + 4;
+  padding: 0 8px;
+  text-decoration: none;
+}
+
+.m-button:hover {
+  @include background-image(linear-gradient(white, $grayscale-0));
+  color: $grayscale-4;
+}
+
+.m-button:focus {
+  @include box-shadow(0 0 4px white inset);
+  outline: none;
+}
+
+.m-button:active {
+  @include background-image(none);
+  background-color: $grayscale-0;
+}
+```
 
 Will appear like this when you view the Living Style Guide in your 
 browser:
