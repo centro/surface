@@ -91,7 +91,7 @@
 }
 
 .l-mg-btm\(1\/2\) {
-  margin-bottom: $base-line-height / 2;
+  margin-bottom: $base-line-height / 2 !important;
 }
 
 .l-mg-btm\(3\/4\) {
@@ -156,6 +156,10 @@
 
 .l-mg-right\(1\) {
   margin-right: $gutter-width;
+}
+
+.l-mg-right\(1gut4\) {
+  margin-right: gutter(4);
 }
 
 // Top
@@ -376,6 +380,10 @@
 
 .l-width\(50\) {
   width: 50% !important;
+}
+
+.l-width\(75\) {
+  width: 75% !important;
 }
 
 .l-width\(100\) {

@@ -43,7 +43,7 @@ If even greater emphasis is needed, button’s size can be increased:
   @include background-image(linear-gradient(hsl(0, 0, 97%), $grayscale-0));
   @include border-radius(3px);
   border: 1px solid $grayscale-1;
-  color: $grayscale-5 !important;
+  color: $grayscale-4 !important;
   cursor: pointer;
   display: inline-block;
   font-size: modular-scale(-1);
@@ -234,19 +234,68 @@ will rely on a [bit of JavaScript](/js/libs/jquery/surface-styleguide.js) to fun
 </div>
 ```
 
-Marking up form controls is straightforward: 
+You may wish to label groups of related inputs or call 
+out special instructions that govern the successful completion of a form:
+
+```
+<h3 class="m-form__legend l-mg-btm(0) l-width(75)">
+  This Title Describes Related Inputs 
+  <span>All fields required.</span>
+</h3>
+```
+
+Marking up form submission controls is straightforward: 
 
 ```
 <div class="m-form__controls l-mg-btm(0)">
-  <input class="m-button--large m-button--primary" type="submit" value="Create account">
+  <input class="m-button--large m-button--primary" type="submit" 
+  value="Submit">
   <p class="l-mg-left(1/4)">
-    By signing up, you agree to our terms of service.
+    By submitting, you agree to our terms of service.
   </p>
 </div>
 ```
 
-Finally, here’s an example of you might create a form using layout 
-classes to assemble the requisite pieces.
+Finally, here’s an example of how you might assemble a form using the 
+pieces documented above as well as requisite layout classes.
+
+```
+<fieldset class="l-clearfix l-mg-btm(1/2) l-width(75)">
+  <h3 class="m-form__legend">
+    Personal Information
+    <span>All fields required.</span>
+  </h3>
+  <div class="m-form__field l-left l-mg-right(1gut4) l-width(2of4)">
+    <label class="m-form__label" for="first_name">First name</label>
+    <input class="m-form__input" id="first_name" type="text">
+  </div>
+  <div class="m-form__field l-left l-width(2of4)">
+    <label class="m-form__label" for="last_name">Last name</label>
+    <input class="m-form__input" id="last_name" type="text">
+  </div>
+  <div class="m-form__field l-left l-mg-right(1gut4) l-width(1of4) ">
+    <label class="m-form__label">Prefix</label>
+    <div class="m-form__dropdown l-mg-btm(0)">
+      <span></span>
+      <ul>
+        <li><a href="#">-- choose --</a></li>
+        <li><a href="#">Mr.</a></li>
+        <li><a href="#">Mrs.</a></li>
+        <li><a href="#">Ms.</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="m-form__field l-left l-width(3of4)">
+    <label class="m-form__label" for="email">Email</label>
+    <input as="string" class="m-form__input" id="email" type="text">
+  </div>
+</fieldset>
+
+<div class="m-form__controls l-mg-btm(0)">
+  <input class="m-button--large m-button--primary" type="submit" value="Submit">
+  <a class="m-button--large l-mg-left(1/4)" href="#">Cancel</a>
+</div>
+```
 
 */
 
@@ -523,7 +572,7 @@ classes to assemble the requisite pieces.
   height: $base-line-height * 1.5;
   padding: 0 8px;
   position: relative;
-  width: 100px;
+  width: 100%;
 }
 
 .m-form__dropdown--narrow {
@@ -554,7 +603,6 @@ classes to assemble the requisite pieces.
   height: 100%;
   overflow: hidden; 
   position: relative;
-  text-transform: capitalize;
 }
 
 .m-form__dropdown > ul {
