@@ -7,17 +7,19 @@ $(function() {
   } else {
     $('.m-form__label--infield').inFieldLabels({labelClass: '', fadeDuration: 100});
   }
-  
-  var defaultText = $('.m-form__dropdown li:first a').text(); 
+ 
+  // Hacked together JS for custom CSS dropdowns
 
-  $('.m-form__dropdown__selected').text(defaultText);
-  $('.m-form__dropdown li:first a').addClass('s-is-active');
+  $('[class*="m-form__dropdown"]').each( function () {
+    $(this).find('li:first a').addClass('s-is-active');
+    $(this).find('span').text($(this).find('li:first a').text());
+  })
 
-  $('.m-form__dropdown li a').click(function() { 
+  $('[class*="m-form__dropdown"] li a').click(function() { 
     var optionText = $(this).text();
-    $('.m-form__dropdown li a').removeClass();
+    $(this).parents('[class*="m-form__dropdown"]').find('a').removeClass();
     $(this).addClass('s-is-active');
-    $('.m-form__dropdown__selected').text(optionText);
+    $(this).parents('[class*="m-form__dropdown"]').find('span').text(optionText);
     return false;
   })
 

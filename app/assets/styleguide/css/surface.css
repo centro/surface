@@ -1045,27 +1045,39 @@ efficient:
 </div>
 ```
 
-Because `select` elements are notoriously difficult to customize with 
-CSS alone, we keep things pretty simple by default. Nonetheless, Surface 
-does provide styles for a custom CSS dropdown, though it relies on 
-JavaScript to function properly: 
+Because `<select>` elements are notoriously difficult to customize with 
+CSS alone, we keep things simple by default.
 
 ```
-
-<!-- Browser <select> default -->
-
-<div class="m-form__field l-mg-btm(1) l-width(25)">
+<div class="m-form__field l-mg-btm(0) l-width(25)">
   <select class="m-form__input--select">
     <option>Option 1</option>
     <option>Option 2</option>
     <option>Option 3</option>
   </select>
 </div>
+```
 
-<!-- Custom dropdown implemented in CSS (requires JS) -->
+However, Surface does provide a few styles for custom CSS dropdowns, 
+should you want to include them in your application. Keep in mind that this approach 
+will rely on a [bit of JavaScript](/js/libs/jquery/surface-styleguide.js) to function properly:
 
-<div class="m-form__dropdown l-width(25)">
-  <span class="m-form__dropdown__selected"></span>
+```
+<!-- Default -->
+
+<div class="m-form__dropdown l-mg-btm(1) l-width(25)">
+  <span></span>
+  <ul>
+    <li><a href="#">Option 1</a></li>
+    <li><a href="#">Option 2</a></li>
+    <li><a href="#">Option 3</a></li>
+  </ul>
+</div>
+
+<!-- Narrow -->
+
+<div class="m-form__dropdown--narrow l-mg-btm(0) l-width(25)">
+  <span></span>
   <ul>
     <li><a href="#">Option 1</a></li>
     <li><a href="#">Option 2</a></li>
@@ -1339,7 +1351,7 @@ classes to assemble the requisite pieces.
   left: 18.5%;
 }
 
-.m-form__dropdown {
+.m-form__dropdown, .m-form__dropdown--narrow {
   -webkit-transition: none !important;
   -moz-transition: none !important;
   -o-transition: none !important;
@@ -1349,22 +1361,27 @@ classes to assemble the requisite pieces.
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   border: 1px solid #c4d0d4;
   background: white;
-  display: inline-block;
+  line-height: 34px;
+  height: 36px;
+  padding: 0 8px;
+  position: relative;
+  width: 100px;
+}
+
+.m-form__dropdown--narrow {
+  font-size: 14px;
   line-height: 28px;
   height: 30px;
   padding: 0 6px;
-  position: relative;
-  width: 100px;
-  z-index: 10;
 }
 
-.m-form__dropdown:hover {
+.m-form__dropdown:hover, .m-form__dropdown--narrow:hover {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
 
-.m-form__dropdown > span:after {
+.m-form__dropdown > span:after, .m-form__dropdown--narrow > span:after {
   color: #c4d0d4;
   content: "\25BE";
   font-size: 8px;
@@ -1373,7 +1390,7 @@ classes to assemble the requisite pieces.
   right: 0;
 }
 
-.m-form__dropdown > span {
+.m-form__dropdown > span, .m-form__dropdown--narrow > span {
   color: #032530;
   display: block;
   height: 100%;
@@ -1382,7 +1399,7 @@ classes to assemble the requisite pieces.
   text-transform: capitalize;
 }
 
-.m-form__dropdown > ul {
+.m-form__dropdown > ul, .m-form__dropdown--narrow > ul {
   -webkit-box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
@@ -1394,35 +1411,45 @@ classes to assemble the requisite pieces.
   position: absolute;
   left: -1px;
   right: -1px;
-  top: 28px;
+  top: 34px;
   visibility: hidden;
   line-height: 1em;
+  z-index: 10;
 }
 
-.m-form__dropdown > ul li {
-  height: 30px;
-  line-height: 32px;
+.m-form__dropdown--narrow > ul {
+  top: 28px;
+}
+
+.m-form__dropdown > ul li, .m-form__dropdown--narrow > ul li {
+  height: 36px;
+  line-height: 36px;
   overflow: hidden;
 }
 
-.m-form__dropdown > ul li a {
+.m-form__dropdown--narrow > ul li {
+  line-height: 30px;
+  height: 30px;
+}
+
+.m-form__dropdown > ul li a, .m-form__dropdown--narrow > ul li a {
   color: #6c8993;
   display: block;
   padding: 0 6px;
   position: relative;
 }
 
-.m-form__dropdown > ul li a.s-is-active {
+.m-form__dropdown > ul li a.s-is-active, .m-form__dropdown--narrow > ul li a.s-is-active {
   background: #00a4db;
   color: white;
 }
 
-.m-form__dropdown:hover {
+.m-form__dropdown:hover, .m-form__dropdown--narrow:hover {
   border-color: #00a4db;
   cursor: pointer;
 }
 
-.m-form__dropdown:hover > ul {
+.m-form__dropdown:hover > ul, .m-form__dropdown--narrow:hover > ul {
   opacity: 1;
   visibility: visible;
 }
@@ -1465,7 +1492,7 @@ classes to assemble the requisite pieces.
   background: url('/images/logo.png?1362177039') no-repeat left -2px;
 }
 
-.i-icon, .m-form__dropdown > span:after, .m-notice > p:before, .m-notice--alert > p:before,
+.i-icon, .m-form__dropdown > span:after, .m-form__dropdown--narrow > span:after, .m-notice > p:before, .m-notice--alert > p:before,
 .m-notice--confirm > p:before, .m-overlay__close {
   cursor: pointer;
   display: inline-block;
