@@ -133,11 +133,11 @@
 // Left
 
 .l-mg-left\(1\/4\) {
-  margin-left: $gutter-width / 4;
+  margin-left: $gutter-width / 4 !important;
 }
 
 .l-mg-left\(1\/2\) {
-  margin-left: $gutter-width / 2;
+  margin-left: $gutter-width / 2 !important;
 }
 
 .l-mg-left\(1\) {
@@ -370,6 +370,9 @@
 
 // Percentages
 
+.l-width\(25\) {
+  width: 25% !important;
+}
 
 .l-width\(50\) {
   width: 50% !important;

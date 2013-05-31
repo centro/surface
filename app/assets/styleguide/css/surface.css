@@ -502,11 +502,11 @@ ul {
 }
 
 .l-mg-left\(1\/4\) {
-  margin-left: 5px;
+  margin-left: 5px !important;
 }
 
 .l-mg-left\(1\/2\) {
-  margin-left: 10px;
+  margin-left: 10px !important;
 }
 
 .l-mg-left\(1\) {
@@ -707,6 +707,10 @@ ul {
 
 .l-width\(9of10\+1g\) {
   width: 91.52542%;
+}
+
+.l-width\(25\) {
+  width: 25% !important;
 }
 
 .l-width\(50\) {
@@ -1000,12 +1004,11 @@ Examples of both implementations are provided below:
 ```
 
 Though not frequently used up until this point, Surface does support 
-left and right aligned field labeling. Due to the difference in input 
+left and right aligned field labeling, but [try and use 
+them sparingly](http://www.lukew.com/ff/entry.asp?504). Due to the difference in input 
 width, inline errors are tweaked slightly to support this layout method. 
-Left/Right aligned labels are good to use in situations where it is necessary 
-to save space (and where infield labels aren't appropriate), but [try and use 
-them sparingly](http://www.lukew.com/ff/entry.asp?504). 
 ```
+
 <!-- Left aligned inline labels -->
 
 <div class="m-form__inline-field l-width(50)">
@@ -1030,6 +1033,60 @@ them sparingly](http://www.lukew.com/ff/entry.asp?504).
   </div>
 </div>
 ```
+
+By default, inputs are pretty large. Chances are, there will be 
+instances when you’ll want to use an input that is a little more space 
+efficient:
+
+```
+<div class="m-form__field l-mg-btm(0) l-width(50)">
+  <label class="m-form__label--narrow" for="narrow">Label</label>
+  <input class="m-form__input--narrow" id="narrow" type="text">
+</div>
+```
+
+Because `select` elements are notoriously difficult to customize with 
+CSS alone, we keep things pretty simple by default. Nonetheless, Surface 
+does provide styles for a custom CSS dropdown, though it relies on 
+JavaScript to function properly: 
+
+```
+
+<!-- Browser <select> default -->
+
+<div class="m-form__field l-mg-btm(1) l-width(25)">
+  <select class="m-form__input--select">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </select>
+</div>
+
+<!-- Custom dropdown implemented in CSS (requires JS) -->
+
+<div class="m-form__dropdown l-width(25)">
+  <span class="m-form__dropdown__selected"></span>
+  <ul>
+    <li><a href="#">Option 1</a></li>
+    <li><a href="#">Option 2</a></li>
+    <li><a href="#">Option 3</a></li>
+  </ul>
+</div>
+```
+
+Marking up form controls is straightforward: 
+
+```
+<div class="m-form__controls l-mg-btm(0)">
+  <input class="m-button--large m-button--primary" type="submit" value="Create account">
+  <p class="l-mg-left(1/4)">
+    By signing up, you agree to our terms of service.
+  </p>
+</div>
+```
+
+Finally, here’s an example of you might create a form using layout 
+classes to assemble the requisite pieces.
 
 */
 .m-form__field, .m-form__field--error, .m-form__infield--error, .m-form__inline-field--error, .m-form__infield,
@@ -1145,6 +1202,66 @@ them sparingly](http://www.lukew.com/ff/entry.asp?504).
   float: right;
 }
 
+.m-form__label, .m-form__label--narrow {
+  cursor: pointer;
+  display: block;
+  line-height: 1;
+  padding-bottom: 6px;
+  white-space: nowrap;
+}
+
+.m-form__label--infield {
+  color: #6c8993;
+  cursor: text;
+  padding-left: 10px;
+  position: absolute;
+}
+
+.m-form__label--inline {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  padding-right: 5px;
+  width: 20%;
+}
+
+.m-form__label--narrow {
+  font-size: 14px;
+}
+
+::-webkit-input-placeholder {
+  color: #6c8993;
+  cursor: text;
+}
+
+.m-form__input::-webkit-input-placeholder, .m-form__input--inline::-webkit-input-placeholder, .m-form__input--narrow::-webkit-input-placeholder, .m-form__input--password::-webkit-input-placeholder, .m-form__input--search::-webkit-input-placeholder {
+  padding-top: 2px;
+}
+
+:-moz-placeholder {
+  color: #6c8993;
+  cursor: text;
+  padding: 0;
+}
+
+::-moz-placeholder {
+  color: #6c8993;
+  cursor: text;
+  padding: 0;
+}
+
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+:focus:-moz-placeholder {
+  opacity: 0.5;
+}
+
+:focus::-moz-placeholder {
+  opacity: 0.5;
+}
+
 .m-form__field--error > .m-form__input, .m-form__infield--error > .m-form__input, .m-form__inline-field--error > .m-form__input, .m-form__field--error > .m-form__input--inline, .m-form__infield--error > .m-form__input--inline, .m-form__inline-field--error > .m-form__input--inline, .m-form__field--error > .m-form__input--narrow, .m-form__infield--error > .m-form__input--narrow, .m-form__inline-field--error > .m-form__input--narrow, .m-form__field--error > .m-form__input--password, .m-form__infield--error > .m-form__input--password, .m-form__inline-field--error > .m-form__input--password, .m-form__field--error > .m-form__input--search, .m-form__infield--error > .m-form__input--search, .m-form__inline-field--error > .m-form__input--search,
 .m-form__field--error > .m-form__input--narrow,
 .m-form__infield--error > .m-form__input--narrow,
@@ -1222,62 +1339,6 @@ them sparingly](http://www.lukew.com/ff/entry.asp?504).
   left: 18.5%;
 }
 
-.m-form__label {
-  cursor: pointer;
-  display: block;
-  line-height: 1;
-  padding-bottom: 6px;
-  white-space: nowrap;
-}
-
-.m-form__label--inline {
-  cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  padding-right: 5px;
-  width: 20%;
-}
-
-.m-form__label--infield {
-  color: #6c8993;
-  cursor: text;
-  padding-left: 10px;
-  position: absolute;
-}
-
-::-webkit-input-placeholder {
-  color: #6c8993;
-  cursor: text;
-}
-
-.m-form__input::-webkit-input-placeholder, .m-form__input--inline::-webkit-input-placeholder, .m-form__input--narrow::-webkit-input-placeholder, .m-form__input--password::-webkit-input-placeholder, .m-form__input--search::-webkit-input-placeholder {
-  padding-top: 2px;
-}
-
-:focus::-webkit-input-placeholder {
-  opacity: 0.5;
-}
-
-:-moz-placeholder {
-  color: #6c8993;
-  cursor: text;
-  padding: 0;
-}
-
-::-moz-placeholder {
-  color: #6c8993;
-  cursor: text;
-  padding: 0;
-}
-
-:focus:-moz-placeholder {
-  opacity: 0.5;
-}
-
-:focus::-moz-placeholder {
-  opacity: 0.5;
-}
-
 .m-form__dropdown {
   -webkit-transition: none !important;
   -moz-transition: none !important;
@@ -1294,6 +1355,7 @@ them sparingly](http://www.lukew.com/ff/entry.asp?504).
   padding: 0 6px;
   position: relative;
   width: 100px;
+  z-index: 10;
 }
 
 .m-form__dropdown:hover {
@@ -1348,9 +1410,6 @@ them sparingly](http://www.lukew.com/ff/entry.asp?504).
   display: block;
   padding: 0 6px;
   position: relative;
-}
-.m-form__dropdown > ul li a:hover {
-  color: #032530;
 }
 
 .m-form__dropdown > ul li a.s-is-active {

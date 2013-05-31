@@ -7,5 +7,18 @@ $(function() {
   } else {
     $('.m-form__label--infield').inFieldLabels({labelClass: '', fadeDuration: 100});
   }
+  
+  var defaultText = $('.m-form__dropdown li:first a').text(); 
+
+  $('.m-form__dropdown__selected').text(defaultText);
+  $('.m-form__dropdown li:first a').addClass('s-is-active');
+
+  $('.m-form__dropdown li a').click(function() { 
+    var optionText = $(this).text();
+    $('.m-form__dropdown li a').removeClass();
+    $(this).addClass('s-is-active');
+    $('.m-form__dropdown__selected').text(optionText);
+    return false;
+  })
 
  });
