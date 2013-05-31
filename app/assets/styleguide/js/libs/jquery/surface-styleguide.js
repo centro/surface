@@ -6,11 +6,11 @@ $(function() {
 
   // Only fade infield label opacity if the browser supports it
  
-  if (!$.support.opacity) {
-    $('.m-form__label--infield').inFieldLabels({labelClass: '', fadeDuration: 100, fadeOpacity: 1});
-  } else {
-    $('.m-form__label--infield').inFieldLabels({labelClass: '', fadeDuration: 100});
-  }
+  $('.m-form__label--infield').inFieldLabels({labelClass: '', fadeDuration: 100});
+
+  // Call toggle masked/unmasked password fields function. 
+
+  unmaskPassword();
  
   // Hacked together JS for custom CSS dropdowns
 
@@ -28,3 +28,38 @@ $(function() {
   })
 
  });
+
+// Toggle masked/unmasked password fields. 
+
+var unmaskPassword = function () {
+
+  var maskingToggle =  $('.js-masking-toggle');
+
+  maskingToggle.prop('tabindex','-1');
+
+  maskingToggle.click(function() {
+
+    var input = $(this).siblings('.m-form__input--password');
+    var inputType = $(this).siblings('.m-form__input--password').prop('type');
+
+    if (inputType === 'text') {
+      input.prop('type', 'password');
+    } else {
+      input.prop('type', 'text');
+    }
+
+    // Change link text.
+
+    var linkText = maskingToggle.text();
+
+    if (linkText === 'Hide') {
+      maskingToggle.text('Show');
+    } else {
+      maskingToggle.text('Hide');
+    }
+
+    return false;
+
+  }); 
+
+}

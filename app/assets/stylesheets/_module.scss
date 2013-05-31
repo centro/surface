@@ -193,6 +193,18 @@ efficient:
 </div>
 ```
 
+One other feature to be aware of is the way Surface can handle password 
+inputs. Where appropriate, we can allow users to [mask and unmask 
+password attempts ](/js/libs/jquery/surface-styleguide.js). For example:  
+
+```
+<div class="m-form__field l-mg-btm(0) l-width(50)">
+  <a href="#" class="js-masking-toggle m-form__input-toggle--visible-label">Show</a>
+  <label class="m-form__label" for="password">Password</label>
+  <input class="m-form__input--password" id="password" type="password">
+</div>
+```
+
 Because `<select>` elements are notoriously difficult to customize with 
 CSS alone, we keep things simple by default.
 
@@ -286,7 +298,7 @@ pieces documented above as well as requisite layout classes.
     </div>
   </div>
   <div class="m-form__field l-left l-width(3of4)">
-    <label class="m-form__label" for="email">Email</label>
+    <label class="m-form__label" for="email">Email address</label>
     <input as="string" class="m-form__input" id="email" type="text">
   </div>
 </fieldset>
