@@ -14,7 +14,7 @@
 // Forms
 // FOOTER
 // HEADER
-// ICONS
+// Icons
 // LISTS
 // NAVIGATION
 // NOTICES
@@ -24,7 +24,7 @@
 
 /*
 ## Buttons
-Interact with buttons to view their various states (:hover, :focus, :active):
+Interact with buttons to view their `:hover`, `:focus` and `:active` states:
 ```
 <a class="m-button l-mg-right(1/4)">Default</a>
 <a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
@@ -671,7 +671,7 @@ pieces documented above as well as requisite layout classes.
 }
 // [?3] FOOTER
 // This implementation of the footer currently serves as a debugging
-// line inside of insight.
+// line inside of luxo.
 
 .m-footer {
   color: $grayscale-1;
@@ -713,8 +713,65 @@ pieces documented above as well as requisite layout classes.
   background: image-url("logo.png") no-repeat left -2px;
 }
 
-// [?5] ICONS
-// Classes used to render various and assorted semantic icons. 
+/* ## Icons
+
+Surface currently uses a font called [SS 
+Standard](http://symbolset.com/icons/standard) to display icons. The 
+really cool thing about this particular icon font is that it’s semantic. 
+That is, specific icons are mapped to whole words in addition to just 
+special Unicode glyphs. 
+
+The simplest way to add an icon within 
+Surface is to [look up the keyword for an 
+icon](/fonts/ss-standard/documentation.html) and then add the `.i-icon` 
+class to the element that contains the keyword: 
+
+```
+<p class="i-icon">Logout</p>
+```
+
+This strategy is best when an icon’s keyword closes matches the concept 
+you are trying to convey. That way, if the icon doesn’t show up for some 
+reason, the underlying text would still make sense (this benefit also holds true for those 
+using screen readers). 
+
+However, in situations where you want to use an icon with a keyword that 
+<em>does not</em> align nicely with the concept you are trying to 
+convey, you’ll want to approach the markup a bit differently: 
+
+```
+<p>
+  <span class="i-icon">&#xED50;</span>
+  <span class="t-screen-reader-text">Campaigns</span>
+</p>
+```
+
+In the example above, we used the Unicode glyph `&#xED50` to display a 
+“list” icon. But obviously, if we didn’t provide some alternate text, 
+things could get a bit cryptic for screen readers (or in situations 
+where the icon fails to render.) With a little additional markup we can 
+provide fallback text that will be readable by assistive 
+devices, but that will only be visible if CSS is turned off.  
+
+Situations may arise where you’d like to use an icon without 
+having it appear as content within the DOM. It’s outside the scope of 
+this document to explain the reasons for doing this, but here’s an 
+example of how you might use such a method:
+
+```
+<ul>
+  <li class="i-icon--before" data-icon="mail">Contact Us</li>
+</ul>
+```
+
+In the event that you’d like to add icon support to your own custom 
+element you can do so by using the `@extend` directive native to 
+SASS, which is documented [here](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend). 
+
+In this particular case, simply add the line `@extends .i-icon;` to your 
+custom element’s  CSS declaration block.
+
+*/
 
 .i-icon {
   cursor: pointer;
@@ -737,11 +794,87 @@ pieces documented above as well as requisite layout classes.
   -webkit-font-smoothing: antialiased;
 }
 
-// [?6] LISTS
-// Generic utilities that can be used to alter the layout and/or stylistic 
-// treatment of lists. 
+.i-icon--before {
+  padding-left: 1.5em;
+  position: relative;
+}
 
-// Force list elements to render in a single horizontal line. 
+.i-icon--before:before {
+  @extend .i-icon;
+  content: attr(data-icon);
+  position: absolute;
+  left: 0;
+}
+
+/* ## Lists
+
+In Surface, unordered lists are marked up without a great deal of 
+fanfare: 
+
+```
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+
+By default, `line-height` for list items is inherited from the 
+`body` element, which is set to the equivalent of 1 baseline unit 
+(24px). This creates a pleasing default vertical rhythm. 
+
+If a greater degree of control is required, the line-height of default 
+list can be compressed. Vertical rhythm can then be modified through the use of layout classes, like 
+so:
+
+```
+<ul class="m-list--compressed">
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 1 Title</li>
+  <li class="l-mg-btm(1)">Item 1</li>
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 2 Title</li>
+  <li class="l-mg-btm(1)">Item 2</li>
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 3 Title</li>
+  <li class="l-mg-btm(1)">Item 3</li>
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 4 Title</li>
+  <li class="l-mg-btm(0)">Item 4</li>
+</ul>
+```
+
+For navigation menus, Surface provides a couple of slightly different 
+options for tabs. The first option is the more subtle of the two:
+
+```
+<div class="l-width(75)" style="border: 1px solid #e2e7e9;">
+  <ul class="m-tabs">
+    <li><a href="#">Item 1</a></li>
+    <li class="s-is-active"><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+  </ul>
+</div>
+
+<!-- The following <div> is for demonstrative purposes only -->
+
+<div class="l-width(75)" style="border:1px solid #e2e7e9; border-top:none; height: 20px;"></div>
+```
+
+While the second option provides a little shading to help the active tab 
+stand out a little more from those that surround it:
+
+```
+<div class="l-width(75)" style="border: 1px solid #e2e7e9;">
+  <ul class="m-tabs--shaded">
+    <li><a href="#">Item 1</a></li>
+    <li class="s-is-active"><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+  </ul>
+</div>
+
+<!-- The following <div> is for demonstrative purposes only -->
+
+<div class="l-width(75)" style="background:#f0f3f4;border:1px solid #e2e7e9;border-top:none;height: 20px;"></div>
+```
+
+*/
 
 .m-list-horiz {
   @include pie-clearfix;
@@ -769,8 +902,6 @@ pieces documented above as well as requisite layout classes.
 .m-list--compressed > li:last-child {
   margin-bottom: 0;
 }
-
-// Tabs
 
 .m-tabs {
   @extend .m-list-horiz;
@@ -882,11 +1013,54 @@ pieces documented above as well as requisite layout classes.
  z-index: -1;
 }
 
-// [?8] NOTICES
-// This classes provide styles for various types of global messages 
-// (alerts, confirmation messages, notices, etc.) 
+/* ## Notices
+Surface provides styles for various types of global messages like 
+alerts, confirmation messages and notices. Messages will appear just 
+below your application’s header and will be styled in way that is consistent with it’s type.  
 
-// Sets up a window for the notice to position itself inside of.
+The default type of message is just a simple 
+notice which will disappear after 10 seconds (the JS that handles the 
+fade has been turned off for this demo). For example: 
+
+```
+<div class="m-header l-mg-btm(1/2)">
+  <div class="m-notice-window">
+    <div class="m-notice">
+      <p>This is a basic system notice.</p>
+    </div>
+  </div>
+</div>
+```
+
+Like default system messages, confirmation messages will disappear after 
+a short period of time. They do get styled a little differently, 
+however:
+
+```
+<div class="m-header l-mg-btm(1/2)">
+  <div class="m-notice-window">
+    <div class="m-notice--confirm">
+      <p>This is a system confirmation.</p>
+    </div>
+  </div>
+</div>
+```
+
+The following is an example of an alert. Unlike default system messages 
+and confirmation messages, alerts will not automatically disappear and 
+need to be manually dismissed.
+
+```
+<div class="m-header l-mg-btm(1/2)">
+  <div class="m-notice-window">
+    <div class="m-notice--alert">
+      <p>This is a system alert.<a href="#">Dismiss</a></p>
+    </div>
+  </div>
+</div>
+```
+
+*/
 
 .m-notice-window {
   position: absolute;
@@ -918,7 +1092,7 @@ pieces documented above as well as requisite layout classes.
   display: inline-block;
   font-size: modular-scale(-1);
   height: $base-line-height + 6;
-  line-height: $base-line-height + 6;
+  line-height: $base-line-height + 2;
   overflow: hidden;
   padding: 0 ($gutter-width / 2);
   position: relative;
@@ -954,13 +1128,15 @@ pieces documented above as well as requisite layout classes.
 .m-notice--alert > p,
 .m-notice--confirm > p {
   color: white;
-  padding-left: 36px;
+  padding-left: 32px;
   text-shadow: 0 1px 2px rgba(black, 0.2);
 }
 
 .m-notice--alert > p:before,
 .m-notice--confirm > p:before {
   display: block;
+  font-size: modular-scale(-1);
+  line-height: $base-line-height + 6;
 }
 
 .m-notice--alert > p {
@@ -969,7 +1145,7 @@ pieces documented above as well as requisite layout classes.
 }
 
 .m-notice--alert > p:before  {
-  content: 'alert';
+  content: '\26A0';
 }
 
 .m-notice--alert > p > a {
@@ -987,7 +1163,7 @@ pieces documented above as well as requisite layout classes.
 }
 
 .m-notice--confirm > p:before {
-  content: 'check';
+  content: '\2713';
 }
 
 // Overlay

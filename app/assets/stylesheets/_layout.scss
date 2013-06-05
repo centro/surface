@@ -83,11 +83,11 @@
 }
 
 .l-mg-btm\(1\/6\) {
-  margin-bottom: $base-line-height / 6;
+  margin-bottom: $base-line-height / 6 !important;
 }
 
 .l-mg-btm\(1\/4\) {
-  margin-bottom: $base-line-height / 4;
+  margin-bottom: $base-line-height / 4 !important;
 }
 
 .l-mg-btm\(1\/2\) {
@@ -95,7 +95,7 @@
 }
 
 .l-mg-btm\(3\/4\) {
-  margin-bottom: $base-line-height * 0.75;
+  margin-bottom: $base-line-height * 0.75 !important;
 }
 
 //
