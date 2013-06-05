@@ -302,6 +302,10 @@
   padding-top: $base-line-height / 3;
 }
 
+.m-form__legend:first-of-type {
+  border-top: none;
+}
+
 .s-has-errors .m-form__legend {
   color:  $grayscale-2;
 }
@@ -310,6 +314,7 @@
   color: $grayscale-2;
   font-size: modular-scale(-1);
   float: right;
+  text-align: right;
 }
 
 // Input errors
