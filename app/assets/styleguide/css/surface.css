@@ -529,16 +529,52 @@ ul {
   margin-right: 4.34783%;
 }
 
+.l-mg-top\(0\) {
+  margin-top: 0 !important;
+}
+
+.l-mg-top\(1\/6\) {
+  margin-top: 4px;
+}
+
 .l-mg-top\(1\/4\) {
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 .l-mg-top\(1\/2\) {
-  margin-top: 10px;
+  margin-top: 12px !important;
+}
+
+.l-mg-top\(3\/4\) {
+  margin-top: 18px;
 }
 
 .l-mg-top\(1\) {
-  margin-top: 20px;
+  margin-top: 24px !important;
+}
+
+.l-mg-top\(1\+1\/4\) {
+  margin-top: 30px !important;
+}
+
+.l-mg-top\(1\+1\/2\) {
+  margin-top: 36px !important;
+}
+
+.l-mg-top\(2\) {
+  margin-top: 48px !important;
+}
+
+.l-mg-top\(3\) {
+  margin-top: 72px;
+}
+
+.l-mg-top\(3\+1\/2\) {
+  margin-top: 84px;
+}
+
+.l-mg-top\(4\) {
+  margin-top: 96px;
 }
 
 .l-pd-left\(1\/2\) {
@@ -825,6 +861,10 @@ ul {
   font-weight: 600;
 }
 
+.t-capitalize {
+  text-transform: capitalize;
+}
+
 .t-mono {
   font-family: "Source Code", monospace;
 }
@@ -1020,22 +1060,22 @@ width, inline errors are tweaked slightly to support this layout method.
 <!-- Left aligned inline labels -->
 
 <div class="m-form__inline-field l-width(50)">
-  <label class="m-form__label--inline" for="label">Label:</label>
-  <input class="m-form__input--inline" id="label" type="text">
+  <label class="m-form__label--inline l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
 </div>
 
 <!-- Right aligned inline labels -->
 
 <div class="m-form__inline-field l-width(50)">
-  <label class="m-form__label--inline t-right" for="label">Label:</label>
-  <input class="m-form__input--inline" id="label" type="text">
+  <label class="m-form__label--inline t-right l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
 </div>
 
 <!-- Inline error handling -->
 
 <div class="m-form__inline-field--error l-mg-btm(0) l-width(50)">
-  <label class="m-form__label--inline t-right" for="label">Label:</label>
-  <input class="m-form__input--inline" id="label" type="text">
+  <label class="m-form__label--inline t-right l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
   <div class="m-form__input__error--inline">
     <span>This is an error message.</span>
   </div>
@@ -1086,7 +1126,7 @@ will rely on a [bit of JavaScript](/js/libs/jquery/surface-styleguide.js) to fun
 <!-- Default -->
 
 <div class="m-form__dropdown l-mg-btm(1) l-width(25)">
-  <span></span>
+  <span class="m-form__dropdown__selected"></span>
   <ul>
     <li><a href="#">Option 1</a></li>
     <li><a href="#">Option 2</a></li>
@@ -1097,7 +1137,7 @@ will rely on a [bit of JavaScript](/js/libs/jquery/surface-styleguide.js) to fun
 <!-- Narrow -->
 
 <div class="m-form__dropdown--narrow l-mg-btm(0) l-width(25)">
-  <span></span>
+  <span class="m-form__dropdown__selected"></span>
   <ul>
     <li><a href="#">Option 1</a></li>
     <li><a href="#">Option 2</a></li>
@@ -1148,7 +1188,7 @@ pieces documented above as well as requisite layout classes.
   <div class="m-form__field l-left l-mg-right(1gut4) l-width(1of4) ">
     <label class="m-form__label">Prefix</label>
     <div class="m-form__dropdown l-mg-btm(0)">
-      <span></span>
+      <span class="m-form__dropdown__selected"></span>
       <ul>
         <li><a href="#">-- choose --</a></li>
         <li><a href="#">Mr.</a></li>
@@ -1233,7 +1273,6 @@ pieces documented above as well as requisite layout classes.
 
 .m-form__input--inline {
   display: inline-block;
-  width: 80%;
 }
 
 .m-form__input--narrow {
@@ -1303,7 +1342,6 @@ pieces documented above as well as requisite layout classes.
   display: inline-block;
   font-size: 16px;
   padding-right: 5px;
-  width: 20%;
 }
 
 .m-form__label--narrow {
@@ -1450,21 +1488,24 @@ pieces documented above as well as requisite layout classes.
   box-shadow: none;
 }
 
-.m-form__dropdown > span:after, .m-form__dropdown--narrow > span:after {
+.m-form__dropdown__selected {
+  color: #032530;
+  display: block !important;
+  margin-bottom: 0 !important;
+  position: relative;
+}
+
+.m-form__dropdown__selected:after {
   color: #c4d0d4;
   content: "\25BE";
   font-size: 8px;
+  height: 1em;
+  line-height: 1em;
+  margin-top: -0.5em;
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0;
-}
-
-.m-form__dropdown > span, .m-form__dropdown--narrow > span {
-  color: #032530;
-  display: block;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
+  width: 1em;
 }
 
 .m-form__dropdown > ul, .m-form__dropdown--narrow > ul {
@@ -1619,7 +1660,7 @@ In this particular case, simply add the line `@extends .i-icon;` to your
 custom element’s  CSS declaration block.
 
 */
-.i-icon, .m-form__dropdown > span:after, .m-form__dropdown--narrow > span:after, .i-icon--before:before, .m-notice > p:before, .m-notice--alert > p:before,
+.i-icon, .m-form__dropdown__selected:after, .i-icon--before:before, .m-notice > p:before, .m-notice--alert > p:before,
 .m-notice--confirm > p:before, .m-overlay__close {
   cursor: pointer;
   display: inline-block;

@@ -160,22 +160,22 @@ width, inline errors are tweaked slightly to support this layout method.
 <!-- Left aligned inline labels -->
 
 <div class="m-form__inline-field l-width(50)">
-  <label class="m-form__label--inline" for="label">Label:</label>
-  <input class="m-form__input--inline" id="label" type="text">
+  <label class="m-form__label--inline l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
 </div>
 
 <!-- Right aligned inline labels -->
 
 <div class="m-form__inline-field l-width(50)">
-  <label class="m-form__label--inline t-right" for="label">Label:</label>
-  <input class="m-form__input--inline" id="label" type="text">
+  <label class="m-form__label--inline t-right l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
 </div>
 
 <!-- Inline error handling -->
 
 <div class="m-form__inline-field--error l-mg-btm(0) l-width(50)">
-  <label class="m-form__label--inline t-right" for="label">Label:</label>
-  <input class="m-form__input--inline" id="label" type="text">
+  <label class="m-form__label--inline t-right l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
   <div class="m-form__input__error--inline">
     <span>This is an error message.</span>
   </div>
@@ -226,7 +226,7 @@ will rely on a [bit of JavaScript](/js/libs/jquery/surface-styleguide.js) to fun
 <!-- Default -->
 
 <div class="m-form__dropdown l-mg-btm(1) l-width(25)">
-  <span></span>
+  <span class="m-form__dropdown__selected"></span>
   <ul>
     <li><a href="#">Option 1</a></li>
     <li><a href="#">Option 2</a></li>
@@ -237,7 +237,7 @@ will rely on a [bit of JavaScript](/js/libs/jquery/surface-styleguide.js) to fun
 <!-- Narrow -->
 
 <div class="m-form__dropdown--narrow l-mg-btm(0) l-width(25)">
-  <span></span>
+  <span class="m-form__dropdown__selected"></span>
   <ul>
     <li><a href="#">Option 1</a></li>
     <li><a href="#">Option 2</a></li>
@@ -288,7 +288,7 @@ pieces documented above as well as requisite layout classes.
   <div class="m-form__field l-left l-mg-right(1gut4) l-width(1of4) ">
     <label class="m-form__label">Prefix</label>
     <div class="m-form__dropdown l-mg-btm(0)">
-      <span></span>
+      <span class="m-form__dropdown__selected"></span>
       <ul>
         <li><a href="#">-- choose --</a></li>
         <li><a href="#">Mr.</a></li>
@@ -384,7 +384,6 @@ pieces documented above as well as requisite layout classes.
 .m-form__input--inline {
   @extend .m-form__input;
   display: inline-block;
-  width: 80%;
 }
 
 .m-form__input--narrow {
@@ -461,7 +460,6 @@ pieces documented above as well as requisite layout classes.
   display: inline-block;
   font-size: modular-scale(0);
   padding-right: $gutter-width / 4;
-  width: 20%;
 }
 
 .m-form__label--narrow {
@@ -599,24 +597,26 @@ pieces documented above as well as requisite layout classes.
   @include box-shadow(none);
 }
 
-.m-form__dropdown > span:after {
+.m-form__dropdown__selected {
+  color: $grayscale-5;
+  display: block !important;
+  margin-bottom: 0 !important;
+  position: relative;
+}
+
+.m-form__dropdown__selected:after {
   @extend .i-icon;
   color: $grayscale-1;
   content: "\25BE";
   font-size: 8px;
+  height: 1em;
+  line-height: 1em;
+  margin-top: -0.5em;
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0;
+  width: 1em;
 }
-
-.m-form__dropdown > span {
-  color: $grayscale-5;
-  display: block;
-  height: 100%;
-  overflow: hidden; 
-  position: relative;
-}
-
 .m-form__dropdown > ul {
   @include box-shadow(0 4px 2px -2px rgba(black, 0.1));
   background: white;
