@@ -78,20 +78,24 @@
 
 // Bottom
 
+.l-mg-btm\(0\) {
+  margin-bottom: 0 !important;
+}
+
 .l-mg-btm\(1\/6\) {
-  margin-bottom: $base-line-height / 6;
+  margin-bottom: $base-line-height / 6 !important;
 }
 
 .l-mg-btm\(1\/4\) {
-  margin-bottom: $base-line-height / 4;
+  margin-bottom: $base-line-height / 4 !important;
 }
 
 .l-mg-btm\(1\/2\) {
-  margin-bottom: $base-line-height / 2;
+  margin-bottom: $base-line-height / 2 !important;
 }
 
 .l-mg-btm\(3\/4\) {
-  margin-bottom: $base-line-height * 0.75;
+  margin-bottom: $base-line-height * 0.75 !important;
 }
 
 //
@@ -129,11 +133,11 @@
 // Left
 
 .l-mg-left\(1\/4\) {
-  margin-left: $gutter-width / 4;
+  margin-left: $gutter-width / 4 !important;
 }
 
 .l-mg-left\(1\/2\) {
-  margin-left: $gutter-width / 2;
+  margin-left: $gutter-width / 2 !important;
 }
 
 .l-mg-left\(1\) {
@@ -152,6 +156,10 @@
 
 .l-mg-right\(1\) {
   margin-right: $gutter-width;
+}
+
+.l-mg-right\(1gut4\) {
+  margin-right: gutter(4);
 }
 
 // Top
@@ -406,6 +414,18 @@
 }
 
 // Percentages
+
+.l-width\(25\) {
+  width: 25% !important;
+}
+
+.l-width\(50\) {
+  width: 50% !important;
+}
+
+.l-width\(75\) {
+  width: 75% !important;
+}
 
 .l-width\(100\) {
   width: 100% !important;

@@ -10,28 +10,41 @@
 
 // TOC:
 
-// [?1] BUTTONS
-// [?2] FORMS
-// [?3] FOOTER
-// [?4] HEADER
-// [?5] ICONS
-// [?6] LISTS
-// [?7] NAVIGATION
-// [?8] NOTICES
-// [?9] UTILITIES
+// Buttons
+// Forms
+// FOOTER
+// HEADER
+// Icons
+// LISTS
+// NAVIGATION
+// NOTICES
+// UTILITIES
 
 // ========================================================================== 
 
-// [?1] BUTTONS
-
-// Defaults
+/*
+## Buttons
+Interact with buttons to view their `:hover`, `:focus` and `:active` states:
+```
+<a class="m-button l-mg-right(1/4)">Default</a>
+<a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
+<a class="m-button" disabled="disabled">Disabled</a>
+```
+If even greater emphasis is needed, button’s size can be increased: 
+```
+<a class="m-button--large l-mg-right(1/4)">Large</a>
+<a class="m-button--large m-button--primary l-mg-right(1/4)">Large + Primary</a>
+<a class="m-button--large" disabled="disabled">Disabled</a>
+```
+*/
 
 .m-button {
   background: $grayscale-0; // Fallback for older browsers.
   @include background-image(linear-gradient(hsl(0, 0, 97%), $grayscale-0));
   @include border-radius(3px);
   border: 1px solid $grayscale-1;
-  color: $grayscale-5 !important;
+  color: $grayscale-4 !important;
+  cursor: pointer;
   display: inline-block;
   font-size: modular-scale(-1);
   height: $base-line-height + 6;
@@ -55,6 +68,13 @@
   background-color: $grayscale-0;
 }
 
+.m-button[disabled] {
+  @extend .m-button;
+  color: $grayscale-3 !important;
+  cursor: not-allowed !important;
+  text-shadow: none;
+}
+
 .m-button--large {
   @extend .m-button;
   font-size: modular-scale(0) !important;
@@ -62,23 +82,6 @@
   line-height: $base-line-height + ($base-line-height / 2) - 2;
   padding: 0 $gutter-width * 0.75;
 }
-
-.m-button--small {
-  @extend .m-button;
-  height: $base-line-height;
-  line-height: $base-line-height;
-}
-
-.m-button--square {
-  line-height: 2em;
-  height: 2em;
-  padding-left: 0;
-  padding-right: 0;
-  text-align: center;
-  width: 2em;
-}
-
-// Colors
 
 .m-button--primary:not([disabled]) {
   background: lighten($centro-brand-2b, 2%);
@@ -94,30 +97,221 @@
   @include background-image(linear-gradient(lighten($centro-brand-2b, 8%), $centro-brand-2b));
   @include box-shadow(0 1px 2px rgba(black, 0.2));
   border-color:  darken($centro-brand-2b, 6%);
-  color: white !important;
 }
 
 .m-button--primary:active:not([disabled]) {
   @include background-image(linear-gradient($centro-brand-2b, lighten($centro-brand-2b, 6%)));
 }
 
-// State
+/*
+## Forms
+The most basic form element consists of a top aligned label and a 
+corresponding text input:
 
-.m-button[disabled] {
-  @extend .m-button;
-  color: $grayscale-3 !important;
-  cursor: not-allowed !important;
-  text-shadow: none;
-}
+```
+<div class="m-form__field l-mg-btm(0) l-width(50)">
+  <label class="m-form__label" for="label">Label</label>
+  <input class="m-form__input" id="label" type="text">
+</div>
+```
 
-.m-button--large[disabled] {
-  @extend .m-button--large;
-  color: $grayscale-3 !important;
-  cursor: not-allowed !important;
-  text-shadow: none;
-}
+Form errors are triggered differently by each application, but they 
+should be marked up consistently:
 
-// [?2] FORMS
+```
+<div class="m-form__field--error l-mg-btm(0) l-width(50)">
+  <label class="m-form__label" for="error">Label</label>
+  <input class="m-form__input" id="error" type="text">
+  <div class="m-form__input__error">
+    <span>This is an error message.</span>
+  </div>
+</div>
+```
+
+Depending on space constraints it may be desirable to use infield 
+labels. In Surface, there are two ways to implement this:
+
+1. Use the browser’s native placeholder attribute (not supported in IE8)
+2. If IE8 support is required, use a JavaScript plug-in like [infield-label.js](/js/libs/jquery/infield-label.js) 
+
+Examples of both implementations are provided below:
+
+```
+<!-- Native browser implementation with placeholder attribute -->
+
+<div class="m-form__infield l-width(50)">
+  <input class="m-form__input" placeholder="Placeholder Label" type="text">
+</div>
+
+<!-- JavaScript implementation using infield-label.js -->
+
+<div class="m-form__infield l-mg-btm(0) l-width(50)">
+  <label class="m-form__label--infield" for="js">JavaScript Label</label>
+  <input class="m-form__input" id="js" type="text">
+</div>
+```
+
+Though not frequently used up until this point, Surface does support 
+left and right aligned field labeling, but [try and use 
+them sparingly](http://www.lukew.com/ff/entry.asp?504). Due to the difference in input 
+width, inline errors are tweaked slightly to support this layout method. 
+```
+
+<!-- Left aligned inline labels -->
+
+<div class="m-form__inline-field l-width(50)">
+  <label class="m-form__label--inline l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
+</div>
+
+<!-- Right aligned inline labels -->
+
+<div class="m-form__inline-field l-width(50)">
+  <label class="m-form__label--inline t-right l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
+</div>
+
+<!-- Inline error handling -->
+
+<div class="m-form__inline-field--error l-mg-btm(0) l-width(50)">
+  <label class="m-form__label--inline t-right l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
+  <div class="m-form__input__error--inline">
+    <span>This is an error message.</span>
+  </div>
+</div>
+```
+
+By default, inputs are pretty large. Chances are, there will be 
+instances when you’ll want to use an input that is a little more space 
+efficient:
+
+```
+<div class="m-form__field l-mg-btm(0) l-width(50)">
+  <label class="m-form__label--narrow" for="narrow">Label</label>
+  <input class="m-form__input--narrow" id="narrow" type="text">
+</div>
+```
+
+One other feature to be aware of is the way Surface can handle password 
+inputs. Where appropriate, we can allow users to [mask and unmask 
+password attempts](/js/libs/jquery/surface-styleguide.js). For example:  
+
+```
+<div class="m-form__field l-mg-btm(0) l-width(50)">
+  <a href="#" class="js-masking-toggle m-form__input-toggle--visible-label">Show</a>
+  <label class="m-form__label" for="password">Password</label>
+  <input class="m-form__input--password" id="password" type="password">
+</div>
+```
+
+Because `<select>` elements are notoriously difficult to customize with 
+CSS alone, we keep things simple by default.
+
+```
+<div class="m-form__field l-mg-btm(0) l-width(25)">
+  <select class="m-form__input--select">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </select>
+</div>
+```
+
+However, Surface does provide a few styles for custom CSS dropdowns, 
+should you want to include them in your application. Keep in mind that this approach 
+will rely on a [bit of JavaScript](/js/libs/jquery/surface-styleguide.js) to function properly:
+
+```
+<!-- Default -->
+
+<div class="m-form__dropdown l-mg-btm(1) l-width(25)">
+  <span class="m-form__dropdown__selected"></span>
+  <ul>
+    <li><a href="#">Option 1</a></li>
+    <li><a href="#">Option 2</a></li>
+    <li><a href="#">Option 3</a></li>
+  </ul>
+</div>
+
+<!-- Narrow -->
+
+<div class="m-form__dropdown--narrow l-mg-btm(0) l-width(25)">
+  <span class="m-form__dropdown__selected"></span>
+  <ul>
+    <li><a href="#">Option 1</a></li>
+    <li><a href="#">Option 2</a></li>
+    <li><a href="#">Option 3</a></li>
+  </ul>
+</div>
+```
+
+You may wish to label groups of related inputs or call 
+out special instructions that govern the successful completion of a form:
+
+```
+<h3 class="m-form__legend l-mg-btm(0) l-width(75)">
+  This Title Describes Related Inputs 
+  <span>All fields required.</span>
+</h3>
+```
+
+Marking up form submission controls is straightforward: 
+
+```
+<div class="m-form__controls l-mg-btm(0)">
+  <input class="m-button--large m-button--primary" type="submit" 
+  value="Submit">
+  <p class="l-mg-left(1/4)">
+    By submitting, you agree to our terms of service.
+  </p>
+</div>
+```
+
+Finally, here’s an example of how you might assemble a form using the 
+pieces documented above as well as requisite layout classes.
+
+```
+<fieldset class="l-clearfix l-mg-btm(1/2) l-width(75)">
+  <h3 class="m-form__legend">
+    Personal Information
+    <span>All fields required.</span>
+  </h3>
+  <div class="m-form__field l-left l-mg-right(1gut4) l-width(2of4)">
+    <label class="m-form__label" for="first_name">First name</label>
+    <input class="m-form__input" id="first_name" type="text">
+  </div>
+  <div class="m-form__field l-left l-width(2of4)">
+    <label class="m-form__label" for="last_name">Last name</label>
+    <input class="m-form__input" id="last_name" type="text">
+  </div>
+  <div class="m-form__field l-left l-mg-right(1gut4) l-width(1of4) ">
+    <label class="m-form__label">Prefix</label>
+    <div class="m-form__dropdown l-mg-btm(0)">
+      <span class="m-form__dropdown__selected"></span>
+      <ul>
+        <li><a href="#">-- choose --</a></li>
+        <li><a href="#">Mr.</a></li>
+        <li><a href="#">Mrs.</a></li>
+        <li><a href="#">Ms.</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="m-form__field l-left l-width(3of4)">
+    <label class="m-form__label" for="email">Email address</label>
+    <input as="string" class="m-form__input" id="email" type="text">
+  </div>
+</fieldset>
+
+<div class="m-form__controls l-mg-btm(0)">
+  <input class="m-button--large m-button--primary" type="submit" value="Submit">
+  <a class="m-button--large l-mg-left(1/4)" href="#">Cancel</a>
+</div>
+```
+
+*/
+
+// Fields
 
 .m-form__field {
   margin-bottom: $base-line-height;
@@ -128,11 +322,32 @@
   line-height: inherit;
 }
 
+.m-form__field--error {
+  @extend .m-form__field;
+  color: $centro-alert-1;
+  position: relative;
+}
+
 .m-form__infield,
 .m-form__controls {
   @extend .m-form__field;
   height: $base-line-height * 1.5;
   line-height: $base-line-height * 1.5;
+}
+
+.m-form__infield--error {
+  @extend .m-form__field--error;
+  @extend .m-form__infield;
+}
+
+.m-form__inline-field {
+  @extend .m-form__field;
+  font-size: 0; // Counteracts word space added by inline-block
+}
+
+.m-form__inline-field--error {
+  @extend .m-form__field--error;
+  @extend .m-form__inline-field;
 }
 
 .m-form__controls > p {
@@ -143,97 +358,7 @@
   white-space: nowrap;
 }
 
-.m-form__field--error {
-  @extend .m-form__field;
-  color: $centro-alert-1;
-  position: relative;
-}
-
-.m-form__infield--error {
-  @extend .m-form__field--error;
-  @extend .m-form__infield;
-}
-
 // Inputs
-
-.m-form__dropdown {
-  @include transition(none !important);
-  @include box-shadow(inset 0 1px 2px rgba(black, 0.1));
-  border: 1px solid $grayscale-1;
-  background: white;
-  display: inline-block;
-  line-height: $base-line-height + 4;
-  height: $base-line-height + 6;
-  padding: 0 6px;
-  position: relative;
-  width: 100px;
-}
-
-.m-form__dropdown:hover {
-  @include box-shadow(none);
-}
-
-.m-form__dropdown > span:after {
-  @extend .i-icon;
-  color: $grayscale-1;
-  content: "\25BE";
-  font-size: 8px;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.m-form__dropdown > span {
-  color: $grayscale-5;
-  display: block;
-  height: 100%;
-  overflow: hidden; 
-  position: relative;
-  text-transform: capitalize;
-}
-
-.m-form__dropdown > ul {
-  @include box-shadow(0 4px 2px -2px rgba(black, 0.1));
-  background: white;
-  border: 1px solid $centro-brand-2b;
-  border-top: none;
-  color: $grayscale-5;
-  opacity: 0;
-  position: absolute;
-    left: -1px;
-    right: -1px;
-    top: 28px;
-  visibility: hidden;
-  line-height: 1em;
-}
-
-.m-form__dropdown > ul li {
-  height: $base-line-height + 6;
-  line-height: 32px;
-  overflow: hidden;
-}
-
-.m-form__dropdown > ul li a {
-  @include link-colors($grayscale-3, $grayscale-5);
-  display: block;
-  padding: 0 6px; 
-  position: relative;
-}
-
-.m-form__dropdown > ul li a.s-is-active {
-  background: $centro-brand-2b;
-  color: white;
-}
-
-.m-form__dropdown:hover {
-  border-color: $centro-brand-2b;
-  cursor: pointer;
-}
-
-.m-form__dropdown:hover > ul {
-  opacity: 1;
-  visibility:visible;
-}
 
 .m-form__input {
   @include box-shadow(inset 0 1px 2px rgba(black, 0.1));
@@ -246,17 +371,6 @@
   width: 100%;
 }
 
-.m-form__input--narrow {
-  @extend .m-form__input;
-  font-size: modular-scale(-1);
-  height: $base-line-height + 6px;
-  padding: 0 6px;
-}
-
-.m-form__input--inline {
-  display: inline-block;
-}
-
 .ie8 .m-form__input {
   line-height: 1em;
   padding-top: 10px;
@@ -265,6 +379,18 @@
 .m-form__input:focus {
   border-color: $centro-brand-2b; 
   outline: 0;
+}
+
+.m-form__input--inline {
+  @extend .m-form__input;
+  display: inline-block;
+}
+
+.m-form__input--narrow {
+  @extend .m-form__input;
+  font-size: modular-scale(-1);
+  height: $base-line-height + 6px;
+  padding: 0 6px;
 }
 
 .m-form__input--password {
@@ -312,7 +438,69 @@
   float: right;
 }
 
-// Input errors
+// Labels
+
+.m-form__label {
+  cursor: pointer;
+  display: block;
+  line-height: 1;
+  padding-bottom: $base-line-height / 4;
+  white-space: nowrap;
+}
+
+.m-form__label--infield {
+  color: $grayscale-3; 
+  cursor: text;
+  padding-left: 10px;
+  position: absolute;
+}
+
+.m-form__label--inline {
+  cursor: pointer;
+  display: inline-block;
+  font-size: modular-scale(0);
+  padding-right: $gutter-width / 4;
+}
+
+.m-form__label--narrow {
+  @extend .m-form__label;
+  font-size: modular-scale(-1);
+}
+
+::-webkit-input-placeholder {
+  color: $grayscale-3; 
+  cursor: text;
+}
+
+.m-form__input::-webkit-input-placeholder {
+    padding-top: 2px;
+}
+
+:-moz-placeholder {
+  color: $grayscale-3; 
+  cursor: text;
+  padding: 0;
+}
+
+::-moz-placeholder {
+  color: $grayscale-3; 
+  cursor: text;
+  padding: 0;
+}
+
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+:focus:-moz-placeholder {
+  opacity: 0.5;
+}
+
+:focus::-moz-placeholder {
+  opacity: 0.5;
+}
+
+// Errors
 
 .m-form__field--error > .m-form__input,
 .m-form__field--error > .m-form__input--narrow {
@@ -378,61 +566,112 @@
   visibility: visible;
 }
 
-// Label
+.m-form__input__error--inline {
+  @extend .m-form__input__error;
+  left: 18.5%;
+}
 
-.m-form__label {
-  cursor: pointer;
+// Custom
+
+.m-form__dropdown {
+  @include transition(none !important);
+  @include box-shadow(inset 0 1px 2px rgba(black, 0.1));
+  border: 1px solid $grayscale-1;
+  background: white;
+  line-height: $base-line-height * 1.5 - 2;
+  height: $base-line-height * 1.5;
+  padding: 0 8px;
+  position: relative;
+  width: 100%;
+}
+
+.m-form__dropdown--narrow {
+  @extend .m-form__dropdown;
+  font-size: modular-scale(-1);
+  line-height: $base-line-height + 4;
+  height: $base-line-height + 6;
+  padding: 0 6px;
+}
+
+.m-form__dropdown:hover {
+  @include box-shadow(none);
+}
+
+.m-form__dropdown__selected {
+  color: $grayscale-5;
+  display: block !important;
+  margin-bottom: 0 !important;
+  position: relative;
+}
+
+.m-form__dropdown__selected:after {
+  @extend .i-icon;
+  color: $grayscale-1;
+  content: "\25BE";
+  font-size: 8px;
+  height: 1em;
+  line-height: 1em;
+  margin-top: -0.5em;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1em;
+}
+.m-form__dropdown > ul {
+  @include box-shadow(0 4px 2px -2px rgba(black, 0.1));
+  background: white;
+  border: 1px solid $centro-brand-2b;
+  border-top: none;
+  color: $grayscale-5;
+  opacity: 0;
+  position: absolute;
+    left: -1px;
+    right: -1px;
+    top: 34px;
+  visibility: hidden;
+  line-height: 1em;
+  z-index: 10;
+}
+
+.m-form__dropdown--narrow > ul {
+  top: 28px;
+}
+
+.m-form__dropdown > ul li {
+  height: $base-line-height * 1.5 ;
+  line-height: $base-line-height * 1.5;
+  overflow: hidden;
+}
+
+.m-form__dropdown--narrow > ul li {
+  line-height: $base-line-height + 6;
+  height: $base-line-height + 6;
+}
+
+.m-form__dropdown > ul li a {
+  color: $grayscale-3;
   display: block;
-  white-space: nowrap;
+  padding: 0 6px; 
+  position: relative;
 }
 
-.m-form__label--inline {
+.m-form__dropdown > ul li a.s-is-active {
+  background: $centro-brand-2b;
+  color: white;
+}
+
+.m-form__dropdown:hover {
+  border-color: $centro-brand-2b;
   cursor: pointer;
-  display: inline-block;
 }
 
-.m-form__label--infield {
-  color: $grayscale-3; 
-  cursor: text;
-  font-style: italic;
-  padding: 1px 0 0 10px;
+.m-form__dropdown:hover > ul {
+  opacity: 1;
+  visibility:visible;
 }
-
-::-webkit-input-placeholder {
-  color: $grayscale-3; 
-  cursor: text;
-}
-.m-form__input::-webkit-input-placeholder {
-    padding-top: 2px;
-}
-
-:focus::-webkit-input-placeholder {
-  opacity: 0.5;
-}
-
-:-moz-placeholder {
-  color: $grayscale-3; 
-  cursor: text;
-  padding: 0;
-}
-
-::-moz-placeholder {
-  color: $grayscale-3; 
-  cursor: text;
-  padding: 0;
-}
-
-:focus:-moz-placeholder {
-  opacity: 0.5;
-}
-
-:focus::-moz-placeholder {
-  opacity: 0.5;
-}
-
 // [?3] FOOTER
 // This implementation of the footer currently serves as a debugging
-// line inside of insight.
+// line inside of luxo.
 
 .m-footer {
   color: $grayscale-1;
@@ -474,8 +713,65 @@
   background: image-url("logo.png") no-repeat left -2px;
 }
 
-// [?5] ICONS
-// Classes used to render various and assorted semantic icons. 
+/* ## Icons
+
+Surface currently uses a font called [SS 
+Standard](http://symbolset.com/icons/standard) to display icons. The 
+really cool thing about this particular icon font is that it’s semantic. 
+That is, specific icons are mapped to whole words in addition to just 
+special Unicode glyphs. 
+
+The simplest way to add an icon within 
+Surface is to [look up the keyword for an 
+icon](/fonts/ss-standard/documentation.html) and then add the `.i-icon` 
+class to the element that contains the keyword: 
+
+```
+<p class="i-icon">Logout</p>
+```
+
+This strategy is best when an icon’s keyword closes matches the concept 
+you are trying to convey. That way, if the icon doesn’t show up for some 
+reason, the underlying text would still make sense (this benefit also holds true for those 
+using screen readers). 
+
+However, in situations where you want to use an icon with a keyword that 
+<em>does not</em> align nicely with the concept you are trying to 
+convey, you’ll want to approach the markup a bit differently: 
+
+```
+<p>
+  <span class="i-icon">&#xED50;</span>
+  <span class="t-screen-reader-text">Campaigns</span>
+</p>
+```
+
+In the example above, we used the Unicode glyph `&#xED50` to display a 
+“list” icon. But obviously, if we didn’t provide some alternate text, 
+things could get a bit cryptic for screen readers (or in situations 
+where the icon fails to render.) With a little additional markup we can 
+provide fallback text that will be readable by assistive 
+devices, but that will only be visible if CSS is turned off.  
+
+Situations may arise where you’d like to use an icon without 
+having it appear as content within the DOM. It’s outside the scope of 
+this document to explain the reasons for doing this, but here’s an 
+example of how you might use such a method:
+
+```
+<ul>
+  <li class="i-icon--before" data-icon="mail">Contact Us</li>
+</ul>
+```
+
+In the event that you’d like to add icon support to your own custom 
+element you can do so by using the `@extend` directive native to 
+SASS, which is documented [here](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend). 
+
+In this particular case, simply add the line `@extends .i-icon;` to your 
+custom element’s  CSS declaration block.
+
+*/
 
 .i-icon {
   cursor: pointer;
@@ -498,11 +794,87 @@
   -webkit-font-smoothing: antialiased;
 }
 
-// [?6] LISTS
-// Generic utilities that can be used to alter the layout and/or stylistic 
-// treatment of lists. 
+.i-icon--before {
+  padding-left: 1.5em;
+  position: relative;
+}
 
-// Force list elements to render in a single horizontal line. 
+.i-icon--before:before {
+  @extend .i-icon;
+  content: attr(data-icon);
+  position: absolute;
+  left: 0;
+}
+
+/* ## Lists
+
+In Surface, unordered lists are marked up without a great deal of 
+fanfare: 
+
+```
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+
+By default, `line-height` for list items is inherited from the 
+`body` element, which is set to the equivalent of 1 baseline unit 
+(24px). This creates a pleasing default vertical rhythm. 
+
+If a greater degree of control is required, the line-height of default 
+list can be compressed. Vertical rhythm can then be modified through the use of layout classes, like 
+so:
+
+```
+<ul class="m-list--compressed">
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 1 Title</li>
+  <li class="l-mg-btm(1)">Item 1</li>
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 2 Title</li>
+  <li class="l-mg-btm(1)">Item 2</li>
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 3 Title</li>
+  <li class="l-mg-btm(1)">Item 3</li>
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 4 Title</li>
+  <li class="l-mg-btm(0)">Item 4</li>
+</ul>
+```
+
+For navigation menus, Surface provides a couple of slightly different 
+options for tabs. The first option is the more subtle of the two:
+
+```
+<div class="l-width(75)" style="border: 1px solid #e2e7e9;">
+  <ul class="m-tabs">
+    <li><a href="#">Item 1</a></li>
+    <li class="s-is-active"><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+  </ul>
+</div>
+
+<!-- The following <div> is for demonstrative purposes only -->
+
+<div class="l-width(75)" style="border:1px solid #e2e7e9; border-top:none; height: 20px;"></div>
+```
+
+While the second option provides a little shading to help the active tab 
+stand out a little more from those that surround it:
+
+```
+<div class="l-width(75)" style="border: 1px solid #e2e7e9;">
+  <ul class="m-tabs--shaded">
+    <li><a href="#">Item 1</a></li>
+    <li class="s-is-active"><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+  </ul>
+</div>
+
+<!-- The following <div> is for demonstrative purposes only -->
+
+<div class="l-width(75)" style="background:#f0f3f4;border:1px solid #e2e7e9;border-top:none;height: 20px;"></div>
+```
+
+*/
 
 .m-list-horiz {
   @include pie-clearfix;
@@ -530,8 +902,6 @@
 .m-list--compressed > li:last-child {
   margin-bottom: 0;
 }
-
-// Tabs
 
 .m-tabs {
   @extend .m-list-horiz;
@@ -643,11 +1013,54 @@
  z-index: -1;
 }
 
-// [?8] NOTICES
-// This classes provide styles for various types of global messages 
-// (alerts, confirmation messages, notices, etc.) 
+/* ## Notices
+Surface provides styles for various types of global messages like 
+alerts, confirmation messages and notices. Messages will appear just 
+below your application’s header and will be styled in way that is consistent with it’s type.  
 
-// Sets up a window for the notice to position itself inside of.
+The default type of message is just a simple 
+notice which will disappear after 10 seconds (the JS that handles the 
+fade has been turned off for this demo). For example: 
+
+```
+<div class="m-header l-mg-btm(1/2)">
+  <div class="m-notice-window">
+    <div class="m-notice">
+      <p>This is a basic system notice.</p>
+    </div>
+  </div>
+</div>
+```
+
+Like default system messages, confirmation messages will disappear after 
+a short period of time. They do get styled a little differently, 
+however:
+
+```
+<div class="m-header l-mg-btm(1/2)">
+  <div class="m-notice-window">
+    <div class="m-notice--confirm">
+      <p>This is a system confirmation.</p>
+    </div>
+  </div>
+</div>
+```
+
+The following is an example of an alert. Unlike default system messages 
+and confirmation messages, alerts will not automatically disappear and 
+need to be manually dismissed.
+
+```
+<div class="m-header l-mg-btm(1/2)">
+  <div class="m-notice-window">
+    <div class="m-notice--alert">
+      <p>This is a system alert.<a href="#">Dismiss</a></p>
+    </div>
+  </div>
+</div>
+```
+
+*/
 
 .m-notice-window {
   position: absolute;
@@ -679,7 +1092,7 @@
   display: inline-block;
   font-size: modular-scale(-1);
   height: $base-line-height + 6;
-  line-height: $base-line-height + 6;
+  line-height: $base-line-height + 2;
   overflow: hidden;
   padding: 0 ($gutter-width / 2);
   position: relative;
@@ -715,13 +1128,15 @@
 .m-notice--alert > p,
 .m-notice--confirm > p {
   color: white;
-  padding-left: 36px;
+  padding-left: 32px;
   text-shadow: 0 1px 2px rgba(black, 0.2);
 }
 
 .m-notice--alert > p:before,
 .m-notice--confirm > p:before {
   display: block;
+  font-size: modular-scale(-1);
+  line-height: $base-line-height + 6;
 }
 
 .m-notice--alert > p {
@@ -730,7 +1145,7 @@
 }
 
 .m-notice--alert > p:before  {
-  content: 'alert';
+  content: '\26A0';
 }
 
 .m-notice--alert > p > a {
@@ -748,7 +1163,7 @@
 }
 
 .m-notice--confirm > p:before {
-  content: 'check';
+  content: '\2713';
 }
 
 // Overlay

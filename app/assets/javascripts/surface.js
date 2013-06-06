@@ -32,7 +32,6 @@ var unmaskPassword = function () {
   var maskingToggle =  $('.js-masking-toggle');
   var maskingToggleErrorMsg = $('.js-masking-toggle--error-msg');
 
-  maskingToggle.siblings('.m-form__input--password').prop('type', 'text');
   maskingToggle.prop('tabindex','-1');
 
   maskingToggle.click(function() {

@@ -1,0 +1,2310 @@
+@charset "UTF-8";
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* html {
+  font-size: 100%;
+}
+
+html {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+a:link,
+a:visited {
+  outline: none;
+  color: #00a4db;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #006f94;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  color: #032530;
+  font-family: "Source Sans", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+dl,
+dd,
+dt {
+  margin: 0;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 48px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+input[disabled] {
+  cursor: not-allowed;
+}
+
+mark {
+  background: transparent;
+  color: #00a4db;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+::-ms-clear,
+::-ms-reveal {
+  display: none;
+}
+
+#grid {
+  height: 100%;
+  margin-left: -610px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1220px;
+}
+
+#grid * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#grid div.horiz {
+  border-bottom: 1px solid darkgray;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#grid div.horiz::after {
+  border-bottom: 1px dotted darkgray;
+  content: '';
+  height: 0;
+  position: absolute;
+  top: 11px;
+  width: 100%;
+}
+
+#grid div.vert {
+  border: solid darkturquoise;
+  border-width: 0 1px;
+  margin-right: 20px;
+  width: 100px;
+}
+
+#grid div.vert.first-line {
+  margin-left: 20px;
+}
+
+@font-face {
+  font-family: "Source Sans";
+  src: url('/fonts/source-sans/sourcesanspro-light.eot');
+  src: url('/fonts/source-sans/sourcesanspro-light.eot?#iefix') format('eot'), url('/fonts/source-sans/sourcesanspro-light.woff') format('woff'), url('/fonts/source-sans/sourcesanspro-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans";
+  src: url('/fonts/source-sans/sourcesanspro-regular.eot');
+  src: url('/fonts/source-sans/sourcesanspro-regular.eot?#iefix') format('eot'), url('/fonts/source-sans/sourcesanspro-regular.woff') format('woff'), url('/fonts/source-sans/sourcesanspro-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans";
+  src: url('/fonts/source-sans/sourcesanspro-semibold.eot');
+  src: url('/fonts/source-sans/sourcesanspro-semibold.eot?#iefix') format('eot'), url('/fonts/source-sans/sourcesanspro-semibold.woff') format('woff'), url('/fonts/source-sans/sourcesanspro-semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SS Standard";
+  src: url('/fonts/ss-standard/ss-standard.eot');
+  src: url('/fonts/ss-standard/ss-standard.eot?#iefix') format('eot'), url('/fonts/ss-standard/ss-standard.woff') format('woff'), url('/fonts/ss-standard/ss-standard.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Code";
+  src: url('/fonts/source-code/sourcecodepro-regular.eot');
+  src: url('/fonts/source-code/sourcecodepro-regular.eot?#iefix') format('eot'), url('/fonts/source-code/sourcecodepro-regular.woff') format('woff'), url('/fonts/source-code/sourcecodepro-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Code";
+  src: url('/fonts/source-code/sourcecodepro-semibold.eot');
+  src: url('/fonts/source-code/sourcecodepro-semibold.eot?#iefix') format('eot'), url('/fonts/source-code/sourcecodepro-semibold.woff') format('woff'), url('/fonts/source-code/sourcecodepro-semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.l-left {
+  float: left !important;
+}
+
+.l-right {
+  float: right !important;
+}
+
+.l-clr-left {
+  clear: left;
+}
+
+.l-clr-right {
+  clear: right;
+}
+
+.l-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.l-grid, .l-grid--narrow {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 1220px;
+}
+.l-grid:after, .l-grid--narrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.l-grid--narrow {
+  min-width: 980px;
+}
+
+.l-height\(8\) {
+  height: 192px;
+}
+
+.l-height\(100\) {
+  height: 100%;
+}
+
+.l-mg-ctr {
+  margin: 0 auto;
+}
+
+.l-mg-btm\(0\) {
+  margin-bottom: 0 !important;
+}
+
+.l-mg-btm\(1\/6\) {
+  margin-bottom: 4px !important;
+}
+
+.l-mg-btm\(1\/4\) {
+  margin-bottom: 6px !important;
+}
+
+.l-mg-btm\(1\/2\) {
+  margin-bottom: 12px !important;
+}
+
+.l-mg-btm\(3\/4\) {
+  margin-bottom: 18px !important;
+}
+
+.l-mg-btm\(1\) {
+  margin-bottom: 24px !important;
+}
+
+.l-mg-btm\(1\+1\/4\) {
+  margin-bottom: 30px !important;
+}
+
+.l-mg-btm\(1\+1\/2\) {
+  margin-bottom: 36px !important;
+}
+
+.l-mg-btm\(2\) {
+  margin-bottom: 48px !important;
+}
+
+.l-mg-btm\(3\) {
+  margin-bottom: 72px;
+}
+
+.l-mg-btm\(3\+1\/2\) {
+  margin-bottom: 84px;
+}
+
+.l-mg-btm\(4\) {
+  margin-bottom: 96px;
+}
+
+.l-mg-left\(1\/4\) {
+  margin-left: 5px !important;
+}
+
+.l-mg-left\(1\/2\) {
+  margin-left: 10px !important;
+}
+
+.l-mg-left\(1\) {
+  margin-left: 20px;
+}
+
+.l-mg-right\(1\/4\) {
+  margin-right: 5px;
+}
+
+.l-mg-right\(1\/2\) {
+  margin-right: 10px;
+}
+
+.l-mg-right\(1\) {
+  margin-right: 20px;
+}
+
+.l-mg-right\(1gut4\) {
+  margin-right: 4.34783%;
+}
+
+.l-mg-top\(0\) {
+  margin-top: 0 !important;
+}
+
+.l-mg-top\(1\/6\) {
+  margin-top: 4px;
+}
+
+.l-mg-top\(1\/4\) {
+  margin-top: 6px;
+}
+
+.l-mg-top\(1\/2\) {
+  margin-top: 12px !important;
+}
+
+.l-mg-top\(3\/4\) {
+  margin-top: 18px;
+}
+
+.l-mg-top\(1\) {
+  margin-top: 24px !important;
+}
+
+.l-mg-top\(1\+1\/4\) {
+  margin-top: 30px !important;
+}
+
+.l-mg-top\(1\+1\/2\) {
+  margin-top: 36px !important;
+}
+
+.l-mg-top\(2\) {
+  margin-top: 48px !important;
+}
+
+.l-mg-top\(3\) {
+  margin-top: 72px;
+}
+
+.l-mg-top\(3\+1\/2\) {
+  margin-top: 84px;
+}
+
+.l-mg-top\(4\) {
+  margin-top: 96px;
+}
+
+.l-pd-left\(1\/2\) {
+  padding-left: 10px;
+}
+
+.l-pd-left\(3\/4\) {
+  padding-left: 15px !important;
+}
+
+.l-pd-left\(1\) {
+  padding-left: 20px !important;
+}
+
+.l-pd-horiz\(1\/4\) {
+  padding: 0 5px;
+}
+
+.l-pd-horiz\(1\/2\) {
+  padding: 0 10px;
+}
+
+.l-width\(1of3\) {
+  width: 29.41176%;
+}
+
+.l-width\(2of3\) {
+  width: 64.70588%;
+}
+
+.l-width\(3of3\) {
+  width: 100%;
+}
+
+.l-width\(1of4\) {
+  width: 21.73913%;
+}
+
+.l-width\(2of4\) {
+  width: 47.82609%;
+}
+
+.l-width\(3of4\) {
+  width: 73.91304%;
+}
+
+.l-width\(4of4\) {
+  width: 100%;
+}
+
+.l-width\(1of6\) {
+  width: 14.28571%;
+}
+
+.l-width\(2of6\) {
+  width: 31.42857%;
+}
+
+.l-width\(3of6\) {
+  width: 48.57143%;
+}
+
+.l-width\(4of6\) {
+  width: 65.71429%;
+}
+
+.l-width\(5of6\) {
+  width: 82.85714%;
+}
+
+.l-width\(6of6\) {
+  width: 100%;
+}
+
+.l-width\(1of6\+1g\) {
+  width: 17.14286%;
+}
+
+.l-width\(2of6\+1g\) {
+  width: 34.28571%;
+}
+
+.l-width\(3of6\+1g\) {
+  width: 51.42857%;
+}
+
+.l-width\(4of6\+1g\) {
+  width: 68.57143%;
+}
+
+.l-width\(5of6\+1g\) {
+  width: 85.71429%;
+}
+
+.l-width\(6of6\+1g\) {
+  width: 102.85714%;
+}
+
+.l-width\(1of10\) {
+  width: 8.47458%;
+}
+
+.l-width\(2of10\) {
+  width: 18.64407%;
+}
+
+.l-width\(3of10\) {
+  width: 28.81356%;
+}
+
+.l-width\(4of10\) {
+  width: 38.98305%;
+}
+
+.l-width\(5of10\) {
+  width: 49.15254%;
+}
+
+.l-width\(6of10\) {
+  width: 59.32203%;
+}
+
+.l-width\(7of10\) {
+  width: 69.49153%;
+}
+
+.l-width\(8of10\) {
+  width: 79.66102%;
+}
+
+.l-width\(9of10\) {
+  width: 89.83051%;
+}
+
+.l-width\(10of10\) {
+  width: 100%;
+}
+
+.l-width\(1of10\+1g\) {
+  width: 10.16949%;
+}
+
+.l-width\(2of10\+1g\) {
+  width: 20.33898%;
+}
+
+.l-width\(3of10\+1g\) {
+  width: 30.50847%;
+}
+
+.l-width\(4of10\+1g\) {
+  width: 40.67797%;
+}
+
+.l-width\(5of10\+1g\) {
+  width: 50.84746%;
+}
+
+.l-width\(6of10\+1g\) {
+  width: 61.01695%;
+}
+
+.l-width\(7of10\+1g\) {
+  width: 71.18644%;
+}
+
+.l-width\(8of10\+1g\) {
+  width: 81.35593%;
+}
+
+.l-width\(9of10\+1g\) {
+  width: 91.52542%;
+}
+
+.l-width\(25\) {
+  width: 25% !important;
+}
+
+.l-width\(50\) {
+  width: 50% !important;
+}
+
+.l-width\(75\) {
+  width: 75% !important;
+}
+
+.l-width\(100\) {
+  width: 100% !important;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-left {
+  text-align: left !important;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.t-alert {
+  color: #fb454f;
+}
+
+.t-confirm {
+  color: #00b76f;
+}
+
+.t-delete, .m-overlay__close {
+  color: #a7b8be !important;
+}
+
+.t-delete:hover, .m-overlay__close:hover {
+  color: #fb454f !important;
+}
+
+.t-hot {
+  color: #ec4199;
+}
+
+.t-light {
+  color: #415258;
+}
+
+.t-lighter {
+  color: #6c8993 !important;
+}
+
+.t-lightest {
+  color: #a7b8be;
+}
+
+.t-regular {
+  color: #032530;
+}
+
+.t-callout-text {
+  line-height: 24px !important;
+}
+
+.t-body-text {
+  line-height: 21px !important;
+}
+
+.t-caption-text {
+  line-height: 18px !important;
+}
+
+.t-single-line-text {
+  line-height: 1em !important;
+}
+
+.t-default {
+  font-size: 16px;
+}
+
+.t-large {
+  font-size: 18px !important;
+}
+
+.t-small {
+  font-size: 14px !important;
+  line-height: 1em;
+}
+
+.t-smaller {
+  font-size: 12px !important;
+  line-height: 1em;
+}
+
+.t-smallest {
+  font-size: 10px !important;
+  line-height: 1em;
+}
+
+.t-thin, .m-card > a > span {
+  font-family: "Source Sans", sans-serif;
+  font-weight: 300;
+}
+
+.t-bold {
+  font-weight: 600;
+}
+
+.t-capitalize {
+  text-transform: capitalize;
+}
+
+.t-mono {
+  font-family: "Source Code", monospace;
+}
+
+.t-uppercase {
+  text-transform: uppercase;
+}
+
+.t-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.t-screen-reader-text {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+/*
+## Buttons
+Interact with buttons to view their `:hover`, `:focus` and `:active` states:
+```
+<a class="m-button l-mg-right(1/4)">Default</a>
+<a class="m-button m-button--primary l-mg-right(1/4)">Default + Primary</a>
+<a class="m-button" disabled="disabled">Disabled</a>
+```
+If even greater emphasis is needed, button’s size can be increased: 
+```
+<a class="m-button--large l-mg-right(1/4)">Large</a>
+<a class="m-button--large m-button--primary l-mg-right(1/4)">Large + Primary</a>
+<a class="m-button--large" disabled="disabled">Disabled</a>
+```
+*/
+.m-button, .m-button[disabled], .m-button--large {
+  background: #e2e7e9;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2UyZTdlOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7f7f7), color-stop(100%, #e2e7e9));
+  background-image: -webkit-linear-gradient(#f7f7f7, #e2e7e9);
+  background-image: -moz-linear-gradient(#f7f7f7, #e2e7e9);
+  background-image: -o-linear-gradient(#f7f7f7, #e2e7e9);
+  background-image: linear-gradient(#f7f7f7, #e2e7e9);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #c4d0d4;
+  color: #415258 !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  height: 30px;
+  line-height: 28px;
+  padding: 0 8px;
+  text-decoration: none;
+}
+
+.m-button:hover, .m-button--large:hover {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2UyZTdlOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e2e7e9));
+  background-image: -webkit-linear-gradient(#ffffff, #e2e7e9);
+  background-image: -moz-linear-gradient(#ffffff, #e2e7e9);
+  background-image: -o-linear-gradient(#ffffff, #e2e7e9);
+  background-image: linear-gradient(#ffffff, #e2e7e9);
+  color: #415258;
+}
+
+.m-button:focus, .m-button--large:focus {
+  -webkit-box-shadow: 0 0 4px white inset;
+  -moz-box-shadow: 0 0 4px white inset;
+  box-shadow: 0 0 4px white inset;
+  outline: none;
+}
+
+.m-button:active, .m-button--large:active {
+  background-image: none;
+  background-color: #e2e7e9;
+}
+
+[disabled].m-button, [disabled].m-button--large {
+  color: #6c8993 !important;
+  cursor: not-allowed !important;
+  text-shadow: none;
+}
+
+.m-button--large {
+  font-size: 16px !important;
+  height: 36px;
+  line-height: 34px;
+  padding: 0 15px;
+}
+
+.m-button--primary:not([disabled]) {
+  background: #00ace6;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYmJmYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwYTRkYiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00bbfa), color-stop(100%, #00a4db));
+  background-image: -webkit-linear-gradient(#00bbfa, #00a4db);
+  background-image: -moz-linear-gradient(#00bbfa, #00a4db);
+  background-image: -o-linear-gradient(#00bbfa, #00a4db);
+  background-image: linear-gradient(#00bbfa, #00a4db);
+  border-color: #0095c7;
+  color: white !important;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.m-button--primary:hover:not([disabled]) {
+  background: #00b4f0;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA1YzFmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwYTRkYiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #05c1ff), color-stop(100%, #00a4db));
+  background-image: -webkit-linear-gradient(#05c1ff, #00a4db);
+  background-image: -moz-linear-gradient(#05c1ff, #00a4db);
+  background-image: -o-linear-gradient(#05c1ff, #00a4db);
+  background-image: linear-gradient(#05c1ff, #00a4db);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-color: #008ebd;
+}
+
+.m-button--primary:active:not([disabled]) {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYTRkYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwYmJmYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00a4db), color-stop(100%, #00bbfa));
+  background-image: -webkit-linear-gradient(#00a4db, #00bbfa);
+  background-image: -moz-linear-gradient(#00a4db, #00bbfa);
+  background-image: -o-linear-gradient(#00a4db, #00bbfa);
+  background-image: linear-gradient(#00a4db, #00bbfa);
+}
+
+/*
+## Forms
+The most basic form element consists of a top aligned label and a 
+corresponding text input:
+
+```
+<div class="m-form__field l-mg-btm(0) l-width(50)">
+  <label class="m-form__label" for="label">Label</label>
+  <input class="m-form__input" id="label" type="text">
+</div>
+```
+
+Form errors are triggered differently by each application, but they 
+should be marked up consistently:
+
+```
+<div class="m-form__field--error l-mg-btm(0) l-width(50)">
+  <label class="m-form__label" for="error">Label</label>
+  <input class="m-form__input" id="error" type="text">
+  <div class="m-form__input__error">
+    <span>This is an error message.</span>
+  </div>
+</div>
+```
+
+Depending on space constraints it may be desirable to use infield 
+labels. In Surface, there are two ways to implement this:
+
+1. Use the browser’s native placeholder attribute (not supported in IE8)
+2. If IE8 support is required, use a JavaScript plug-in like [infield-label.js](/js/libs/jquery/infield-label.js) 
+
+Examples of both implementations are provided below:
+
+```
+<!-- Native browser implementation with placeholder attribute -->
+
+<div class="m-form__infield l-width(50)">
+  <input class="m-form__input" placeholder="Placeholder Label" type="text">
+</div>
+
+<!-- JavaScript implementation using infield-label.js -->
+
+<div class="m-form__infield l-mg-btm(0) l-width(50)">
+  <label class="m-form__label--infield" for="js">JavaScript Label</label>
+  <input class="m-form__input" id="js" type="text">
+</div>
+```
+
+Though not frequently used up until this point, Surface does support 
+left and right aligned field labeling, but [try and use 
+them sparingly](http://www.lukew.com/ff/entry.asp?504). Due to the difference in input 
+width, inline errors are tweaked slightly to support this layout method. 
+```
+
+<!-- Left aligned inline labels -->
+
+<div class="m-form__inline-field l-width(50)">
+  <label class="m-form__label--inline l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
+</div>
+
+<!-- Right aligned inline labels -->
+
+<div class="m-form__inline-field l-width(50)">
+  <label class="m-form__label--inline t-right l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
+</div>
+
+<!-- Inline error handling -->
+
+<div class="m-form__inline-field--error l-mg-btm(0) l-width(50)">
+  <label class="m-form__label--inline t-right l-width(25)" for="label">Label:</label>
+  <input class="m-form__input--inline l-width(75)" id="label" type="text">
+  <div class="m-form__input__error--inline">
+    <span>This is an error message.</span>
+  </div>
+</div>
+```
+
+By default, inputs are pretty large. Chances are, there will be 
+instances when you’ll want to use an input that is a little more space 
+efficient:
+
+```
+<div class="m-form__field l-mg-btm(0) l-width(50)">
+  <label class="m-form__label--narrow" for="narrow">Label</label>
+  <input class="m-form__input--narrow" id="narrow" type="text">
+</div>
+```
+
+One other feature to be aware of is the way Surface can handle password 
+inputs. Where appropriate, we can allow users to [mask and unmask 
+password attempts](/js/libs/jquery/surface-styleguide.js). For example:  
+
+```
+<div class="m-form__field l-mg-btm(0) l-width(50)">
+  <a href="#" class="js-masking-toggle m-form__input-toggle--visible-label">Show</a>
+  <label class="m-form__label" for="password">Password</label>
+  <input class="m-form__input--password" id="password" type="password">
+</div>
+```
+
+Because `<select>` elements are notoriously difficult to customize with 
+CSS alone, we keep things simple by default.
+
+```
+<div class="m-form__field l-mg-btm(0) l-width(25)">
+  <select class="m-form__input--select">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </select>
+</div>
+```
+
+However, Surface does provide a few styles for custom CSS dropdowns, 
+should you want to include them in your application. Keep in mind that this approach 
+will rely on a [bit of JavaScript](/js/libs/jquery/surface-styleguide.js) to function properly:
+
+```
+<!-- Default -->
+
+<div class="m-form__dropdown l-mg-btm(1) l-width(25)">
+  <span class="m-form__dropdown__selected"></span>
+  <ul>
+    <li><a href="#">Option 1</a></li>
+    <li><a href="#">Option 2</a></li>
+    <li><a href="#">Option 3</a></li>
+  </ul>
+</div>
+
+<!-- Narrow -->
+
+<div class="m-form__dropdown--narrow l-mg-btm(0) l-width(25)">
+  <span class="m-form__dropdown__selected"></span>
+  <ul>
+    <li><a href="#">Option 1</a></li>
+    <li><a href="#">Option 2</a></li>
+    <li><a href="#">Option 3</a></li>
+  </ul>
+</div>
+```
+
+You may wish to label groups of related inputs or call 
+out special instructions that govern the successful completion of a form:
+
+```
+<h3 class="m-form__legend l-mg-btm(0) l-width(75)">
+  This Title Describes Related Inputs 
+  <span>All fields required.</span>
+</h3>
+```
+
+Marking up form submission controls is straightforward: 
+
+```
+<div class="m-form__controls l-mg-btm(0)">
+  <input class="m-button--large m-button--primary" type="submit" 
+  value="Submit">
+  <p class="l-mg-left(1/4)">
+    By submitting, you agree to our terms of service.
+  </p>
+</div>
+```
+
+Finally, here’s an example of how you might assemble a form using the 
+pieces documented above as well as requisite layout classes.
+
+```
+<fieldset class="l-clearfix l-mg-btm(1/2) l-width(75)">
+  <h3 class="m-form__legend">
+    Personal Information
+    <span>All fields required.</span>
+  </h3>
+  <div class="m-form__field l-left l-mg-right(1gut4) l-width(2of4)">
+    <label class="m-form__label" for="first_name">First name</label>
+    <input class="m-form__input" id="first_name" type="text">
+  </div>
+  <div class="m-form__field l-left l-width(2of4)">
+    <label class="m-form__label" for="last_name">Last name</label>
+    <input class="m-form__input" id="last_name" type="text">
+  </div>
+  <div class="m-form__field l-left l-mg-right(1gut4) l-width(1of4) ">
+    <label class="m-form__label">Prefix</label>
+    <div class="m-form__dropdown l-mg-btm(0)">
+      <span class="m-form__dropdown__selected"></span>
+      <ul>
+        <li><a href="#">-- choose --</a></li>
+        <li><a href="#">Mr.</a></li>
+        <li><a href="#">Mrs.</a></li>
+        <li><a href="#">Ms.</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="m-form__field l-left l-width(3of4)">
+    <label class="m-form__label" for="email">Email address</label>
+    <input as="string" class="m-form__input" id="email" type="text">
+  </div>
+</fieldset>
+
+<div class="m-form__controls l-mg-btm(0)">
+  <input class="m-button--large m-button--primary" type="submit" value="Submit">
+  <a class="m-button--large l-mg-left(1/4)" href="#">Cancel</a>
+</div>
+```
+
+*/
+.m-form__field, .m-form__field--error, .m-form__infield--error, .m-form__inline-field--error, .m-form__infield,
+.m-form__controls, .m-form__inline-field {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.m-form__field > *, .m-form__field--error > *, .m-form__infield--error > *, .m-form__inline-field--error > *, .m-form__infield > *,
+.m-form__controls > *, .m-form__inline-field > * {
+  line-height: inherit;
+}
+
+.m-form__field--error, .m-form__infield--error, .m-form__inline-field--error {
+  color: #fb454f;
+  position: relative;
+}
+
+.m-form__infield, .m-form__infield--error,
+.m-form__controls {
+  height: 36px;
+  line-height: 36px;
+}
+
+.m-form__inline-field, .m-form__inline-field--error {
+  font-size: 0;
+}
+
+.m-form__controls > p {
+  color: #6c8993;
+  display: inline-block;
+  font-size: 14px;
+  padding-top: 2px;
+  white-space: nowrap;
+}
+
+.m-form__input, .m-form__input--inline, .m-form__input--narrow, .m-form__input--password, .m-form__input--search {
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.1s;
+  -webkit-transition-delay: 0s;
+  -moz-transition: all 0.1s 0s;
+  -o-transition: all 0.1s 0s;
+  transition: all 0.1s 0s;
+  border: 1px solid #c4d0d4;
+  font-size: 16px;
+  height: 36px;
+  line-height: 1em;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.ie8 .m-form__input, .ie8 .m-form__input--inline, .ie8 .m-form__input--narrow, .ie8 .m-form__input--password, .ie8 .m-form__input--search {
+  line-height: 1em;
+  padding-top: 10px;
+}
+
+.m-form__input:focus, .m-form__input--inline:focus, .m-form__input--narrow:focus, .m-form__input--password:focus, .m-form__input--search:focus {
+  border-color: #00a4db;
+  outline: 0;
+}
+
+.m-form__input--inline {
+  display: inline-block;
+}
+
+.m-form__input--narrow {
+  font-size: 14px;
+  height: 30px;
+  padding: 0 6px;
+}
+
+.m-form__input--search {
+  padding-left: 32px;
+}
+
+.m-form__input--select {
+  width: 100%;
+}
+
+.m-form__input-toggle, .m-form__input-toggle--visible-label {
+  font-size: 14px;
+  position: absolute;
+  top: 2px;
+  right: 10px;
+}
+
+.m-form__input-toggle--visible-label {
+  top: 32px;
+}
+
+.m-form__legend {
+  border-top: 1px solid #e2e7e9;
+  color: #ec4199;
+  margin-bottom: 24px;
+  padding-top: 8px;
+}
+.m-form__legend:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.s-has-errors .m-form__legend {
+  color: #a7b8be;
+}
+
+.m-form__legend > span {
+  color: #a7b8be;
+  font-size: 14px;
+  float: right;
+}
+
+.m-form__label, .m-form__label--narrow {
+  cursor: pointer;
+  display: block;
+  line-height: 1;
+  padding-bottom: 6px;
+  white-space: nowrap;
+}
+
+.m-form__label--infield {
+  color: #6c8993;
+  cursor: text;
+  padding-left: 10px;
+  position: absolute;
+}
+
+.m-form__label--inline {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  padding-right: 5px;
+}
+
+.m-form__label--narrow {
+  font-size: 14px;
+}
+
+::-webkit-input-placeholder {
+  color: #6c8993;
+  cursor: text;
+}
+
+.m-form__input::-webkit-input-placeholder, .m-form__input--inline::-webkit-input-placeholder, .m-form__input--narrow::-webkit-input-placeholder, .m-form__input--password::-webkit-input-placeholder, .m-form__input--search::-webkit-input-placeholder {
+  padding-top: 2px;
+}
+
+:-moz-placeholder {
+  color: #6c8993;
+  cursor: text;
+  padding: 0;
+}
+
+::-moz-placeholder {
+  color: #6c8993;
+  cursor: text;
+  padding: 0;
+}
+
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+:focus:-moz-placeholder {
+  opacity: 0.5;
+}
+
+:focus::-moz-placeholder {
+  opacity: 0.5;
+}
+
+.m-form__field--error > .m-form__input, .m-form__infield--error > .m-form__input, .m-form__inline-field--error > .m-form__input, .m-form__field--error > .m-form__input--inline, .m-form__infield--error > .m-form__input--inline, .m-form__inline-field--error > .m-form__input--inline, .m-form__field--error > .m-form__input--narrow, .m-form__infield--error > .m-form__input--narrow, .m-form__inline-field--error > .m-form__input--narrow, .m-form__field--error > .m-form__input--password, .m-form__infield--error > .m-form__input--password, .m-form__inline-field--error > .m-form__input--password, .m-form__field--error > .m-form__input--search, .m-form__infield--error > .m-form__input--search, .m-form__inline-field--error > .m-form__input--search,
+.m-form__field--error > .m-form__input--narrow,
+.m-form__infield--error > .m-form__input--narrow,
+.m-form__inline-field--error > .m-form__input--narrow {
+  border-color: #fc5e67;
+}
+
+.m-form__input__error, .m-form__input__error--inline {
+  opacity: 0;
+  padding: 5px 0 0 0;
+  position: absolute;
+  left: -10px;
+  bottom: -4px;
+  white-space: nowrap;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.m-form__input__error > span, .m-form__input__error--inline > span {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all ease 0.1s;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition: all ease 0.1s 0.1s;
+  -o-transition: all ease 0.1s 0.1s;
+  transition: all ease 0.1s 0.1s;
+  background: white;
+  border: 1px solid #c4d0d4;
+  display: block;
+  font-size: 14px;
+  line-height: 28px;
+  height: 30px;
+  padding: 0 8px;
+  position: absolute;
+  z-index: 100;
+}
+
+.m-form__input__error > span:before, .m-form__input__error--inline > span:before {
+  content: "";
+  display: block;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #b3c2c7;
+  height: 0;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 0;
+  z-index: 101;
+}
+
+.m-form__input__error > span:after, .m-form__input__error--inline > span:after {
+  content: "";
+  display: block;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid white;
+  height: 0;
+  position: absolute;
+  top: -9px;
+  left: 11px;
+  width: 0;
+  z-index: 102;
+}
+
+[class*="--error"] > .m-form__input:focus + .m-form__input__error, [class*="--error"] > .m-form__input--inline:focus + .m-form__input__error, [class*="--error"] > .m-form__input--narrow:focus + .m-form__input__error, [class*="--error"] > .m-form__input--password:focus + .m-form__input__error, [class*="--error"] > .m-form__input--search:focus + .m-form__input__error, [class*="--error"] > .m-form__input:focus + .m-form__input__error--inline, [class*="--error"] > .m-form__input--inline:focus + .m-form__input__error--inline, [class*="--error"] > .m-form__input--narrow:focus + .m-form__input__error--inline, [class*="--error"] > .m-form__input--password:focus + .m-form__input__error--inline, [class*="--error"] > .m-form__input--search:focus + .m-form__input__error--inline,
+[class*="--error"]:hover > .m-form__input__error,
+[class*="--error"]:hover > .m-form__input__error--inline {
+  opacity: 1;
+  visibility: visible;
+}
+
+.m-form__input__error--inline {
+  left: 18.5%;
+}
+
+.m-form__dropdown, .m-form__dropdown--narrow {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid #c4d0d4;
+  background: white;
+  line-height: 34px;
+  height: 36px;
+  padding: 0 8px;
+  position: relative;
+  width: 100%;
+}
+
+.m-form__dropdown--narrow {
+  font-size: 14px;
+  line-height: 28px;
+  height: 30px;
+  padding: 0 6px;
+}
+
+.m-form__dropdown:hover, .m-form__dropdown--narrow:hover {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.m-form__dropdown__selected {
+  color: #032530;
+  display: block !important;
+  margin-bottom: 0 !important;
+  position: relative;
+}
+
+.m-form__dropdown__selected:after {
+  color: #c4d0d4;
+  content: "\25BE";
+  font-size: 8px;
+  height: 1em;
+  line-height: 1em;
+  margin-top: -0.5em;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1em;
+}
+
+.m-form__dropdown > ul, .m-form__dropdown--narrow > ul {
+  -webkit-box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+  background: white;
+  border: 1px solid #00a4db;
+  border-top: none;
+  color: #032530;
+  opacity: 0;
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: 34px;
+  visibility: hidden;
+  line-height: 1em;
+  z-index: 10;
+}
+
+.m-form__dropdown--narrow > ul {
+  top: 28px;
+}
+
+.m-form__dropdown > ul li, .m-form__dropdown--narrow > ul li {
+  height: 36px;
+  line-height: 36px;
+  overflow: hidden;
+}
+
+.m-form__dropdown--narrow > ul li {
+  line-height: 30px;
+  height: 30px;
+}
+
+.m-form__dropdown > ul li a, .m-form__dropdown--narrow > ul li a {
+  color: #6c8993;
+  display: block;
+  padding: 0 6px;
+  position: relative;
+}
+
+.m-form__dropdown > ul li a.s-is-active, .m-form__dropdown--narrow > ul li a.s-is-active {
+  background: #00a4db;
+  color: white;
+}
+
+.m-form__dropdown:hover, .m-form__dropdown--narrow:hover {
+  border-color: #00a4db;
+  cursor: pointer;
+}
+
+.m-form__dropdown:hover > ul, .m-form__dropdown--narrow:hover > ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+.m-footer {
+  color: #c4d0d4;
+  font-size: 14px;
+  padding: 0 8px;
+  position: fixed;
+  bottom: 0;
+  text-align: right;
+  width: 100%;
+}
+
+.m-header {
+  background: #076888;
+  border-bottom: none;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+  z-index: 100;
+}
+
+.m-logo {
+  background: transparent url('/images/logo.svg?1361311979') no-repeat left 4px;
+  background-size: contain;
+  display: inline-block;
+  height: 0;
+  overflow: hidden;
+  margin-left: 10px;
+  padding: 30px 0 0 0 !important;
+  width: 75px;
+}
+
+.m-logo:hover {
+  background-color: transparent !important;
+}
+
+.ie8 .m-logo {
+  background: url('/images/logo.png?1362177039') no-repeat left -2px;
+}
+
+/* ## Icons
+
+Surface currently uses a font called [SS 
+Standard](http://symbolset.com/icons/standard) to display icons. The 
+really cool thing about this particular icon font is that it’s semantic. 
+That is, specific icons are mapped to whole words in addition to just 
+special Unicode glyphs. 
+
+The simplest way to add an icon within 
+Surface is to [look up the keyword for an 
+icon](/fonts/ss-standard/documentation.html) and then add the `.i-icon` 
+class to the element that contains the keyword: 
+
+```
+<p class="i-icon">Logout</p>
+```
+
+This strategy is best when an icon’s keyword closes matches the concept 
+you are trying to convey. That way, if the icon doesn’t show up for some 
+reason, the underlying text would still make sense (this benefit also holds true for those 
+using screen readers). 
+
+However, in situations where you want to use an icon with a keyword that 
+<em>does not</em> align nicely with the concept you are trying to 
+convey, you’ll want to approach the markup a bit differently: 
+
+```
+<p>
+  <span class="i-icon">&#xED50;</span>
+  <span class="t-screen-reader-text">Campaigns</span>
+</p>
+```
+
+In the example above, we used the Unicode glyph `&#xED50` to display a 
+“list” icon. But obviously, if we didn’t provide some alternate text, 
+things could get a bit cryptic for screen readers (or in situations 
+where the icon fails to render.) With a little additional markup we can 
+provide fallback text that will be readable by assistive 
+devices, but that will only be visible if CSS is turned off.  
+
+Situations may arise where you’d like to use an icon without 
+having it appear as content within the DOM. It’s outside the scope of 
+this document to explain the reasons for doing this, but here’s an 
+example of how you might use such a method:
+
+```
+<ul>
+  <li class="i-icon--before" data-icon="mail">Contact Us</li>
+</ul>
+```
+
+In the event that you’d like to add icon support to your own custom 
+element you can do so by using the `@extend` directive native to 
+SASS, which is documented [here](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend). 
+
+In this particular case, simply add the line `@extends .i-icon;` to your 
+custom element’s  CSS declaration block.
+
+*/
+.i-icon, .m-form__dropdown__selected:after, .i-icon--before:before, .m-notice > p:before, .m-notice--alert > p:before,
+.m-notice--confirm > p:before, .m-overlay__close {
+  cursor: pointer;
+  display: inline-block;
+  font-family: "SS Standard";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  padding-top: 2px !important;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+.i-icon--before {
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.i-icon--before:before {
+  content: attr(data-icon);
+  position: absolute;
+  left: 0;
+}
+
+/* ## Lists
+
+In Surface, unordered lists are marked up without a great deal of 
+fanfare: 
+
+```
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+
+By default, `line-height` for list items is inherited from the 
+`body` element, which is set to the equivalent of 1 baseline unit 
+(24px). This creates a pleasing default vertical rhythm. 
+
+If a greater degree of control is required, the line-height of default 
+list can be compressed. Vertical rhythm can then be modified through the use of layout classes, like 
+so:
+
+```
+<ul class="m-list--compressed">
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 1 Title</li>
+  <li class="l-mg-btm(1)">Item 1</li>
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 2 Title</li>
+  <li class="l-mg-btm(1)">Item 2</li>
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 3 Title</li>
+  <li class="l-mg-btm(1)">Item 3</li>
+  <li class="l-mg-btm(1/6) t-lighter t-small">Item 4 Title</li>
+  <li class="l-mg-btm(0)">Item 4</li>
+</ul>
+```
+
+For navigation menus, Surface provides a couple of slightly different 
+options for tabs. The first option is the more subtle of the two:
+
+```
+<div class="l-width(75)" style="border: 1px solid #e2e7e9;">
+  <ul class="m-tabs">
+    <li><a href="#">Item 1</a></li>
+    <li class="s-is-active"><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+  </ul>
+</div>
+
+<!-- The following <div> is for demonstrative purposes only -->
+
+<div class="l-width(75)" style="border:1px solid #e2e7e9; border-top:none; height: 20px;"></div>
+```
+
+While the second option provides a little shading to help the active tab 
+stand out a little more from those that surround it:
+
+```
+<div class="l-width(75)" style="border: 1px solid #e2e7e9;">
+  <ul class="m-tabs--shaded">
+    <li><a href="#">Item 1</a></li>
+    <li class="s-is-active"><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+  </ul>
+</div>
+
+<!-- The following <div> is for demonstrative purposes only -->
+
+<div class="l-width(75)" style="background:#f0f3f4;border:1px solid #e2e7e9;border-top:none;height: 20px;"></div>
+```
+
+*/
+.m-list-horiz:after, .m-tabs:after, .m-tabs--shaded:after, .m-nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.m-list-horiz > li, .m-tabs > li, .m-tabs--shaded > li, .m-nav > li {
+  float: left;
+  margin-right: 20px;
+}
+
+.m-list-horiz li:last-child, .m-tabs li:last-child, .m-tabs--shaded li:last-child, .m-nav li:last-child {
+  margin-right: 0;
+}
+
+.m-list--compressed {
+  line-height: 1;
+}
+
+.m-list--compressed > li {
+  margin-bottom: 6px;
+}
+
+.m-list--compressed > li:last-child {
+  margin-bottom: 0;
+}
+
+.m-tabs > li, .m-tabs--shaded > li {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 1px;
+  color: #6c8993;
+  cursor: pointer;
+  margin: 0 !important;
+  position: relative;
+  white-space: nowrap;
+}
+
+.m-tabs > li a, .m-tabs--shaded > li a {
+  color: #6c8993;
+  display: inline-block;
+  line-height: 48px;
+  padding: 0 15px;
+}
+.m-tabs > li a:hover, .m-tabs--shaded > li a:hover {
+  color: #032530;
+}
+
+.m-tabs > li.s-is-active, .m-tabs--shaded > li.s-is-active {
+  background: transparent;
+  border-color: #e2e7e9;
+  color: #032530;
+}
+.m-tabs > li.s-is-active:first-child, .m-tabs--shaded > li.s-is-active:first-child {
+  border-left-color: transparent;
+}
+
+.m-tabs > li.s-is-active:after, .m-tabs--shaded > li.s-is-active:after {
+  content: "";
+  width: 100%;
+  border-bottom: 1px solid white;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+
+.m-tabs > li.s-is-active a, .m-tabs--shaded > li.s-is-active a {
+  color: #032530;
+}
+
+.m-tabs--shaded li.s-is-active {
+  background-color: #f0f3f4;
+}
+
+.m-tabs--shaded > li.s-is-active:after {
+  border-color: #f0f3f4;
+}
+
+.m-nav {
+  line-height: 30px;
+  height: 30px;
+}
+
+.m-nav > li {
+  line-height: 30px;
+  height: 30px;
+  margin: 0 !important;
+  position: relative;
+}
+
+.m-nav.l-left > li:not(:last-child) {
+  border-right: 1px solid #3d7a8f;
+}
+
+.m-nav.l-right > li {
+  border-left: 1px solid #3d7a8f;
+}
+
+.m-nav > li > a {
+  color: white;
+  display: block;
+  font-size: 14px;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.m-nav > li > a:hover {
+  background-color: #065c79;
+}
+
+.m-nav__sub-menu {
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  width: 220px;
+}
+
+.m-nav__sub-menu > li:first-child:before {
+  content: '';
+  height: 50%;
+  position: absolute;
+  left: 0;
+  top: -19px;
+  width: 100%;
+  z-index: -1;
+}
+
+/* ## Notices
+Surface provides styles for various types of global messages like 
+alerts, confirmation messages and notices. Messages will appear just 
+below your application’s header and will be styled in way that is consistent with it’s type.  
+
+The default type of message is just a simple 
+notice which will disappear after 10 seconds (the JS that handles the 
+fade has been turned off for this demo). For example: 
+
+```
+<div class="m-header l-mg-btm(1/2)">
+  <div class="m-notice-window">
+    <div class="m-notice">
+      <p>This is a basic system notice.</p>
+    </div>
+  </div>
+</div>
+```
+
+Like default system messages, confirmation messages will disappear after 
+a short period of time. They do get styled a little differently, 
+however:
+
+```
+<div class="m-header l-mg-btm(1/2)">
+  <div class="m-notice-window">
+    <div class="m-notice--confirm">
+      <p>This is a system confirmation.</p>
+    </div>
+  </div>
+</div>
+```
+
+The following is an example of an alert. Unlike default system messages 
+and confirmation messages, alerts will not automatically disappear and 
+need to be manually dismissed.
+
+```
+<div class="m-header l-mg-btm(1/2)">
+  <div class="m-notice-window">
+    <div class="m-notice--alert">
+      <p>This is a system alert.<a href="#">Dismiss</a></p>
+    </div>
+  </div>
+</div>
+```
+
+*/
+.m-notice-window {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  line-height: 0;
+  height: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+.m-notice, .m-notice--alert,
+.m-notice--confirm {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  background: white;
+  border: 5px solid white;
+  display: inline-block;
+  line-height: 0;
+  position: relative;
+  top: -18px;
+}
+
+.m-notice > p, .m-notice--alert > p,
+.m-notice--confirm > p {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  background: #fae7ac;
+  border: 1px solid #f7d97c;
+  display: inline-block;
+  font-size: 14px;
+  height: 30px;
+  line-height: 26px;
+  overflow: hidden;
+  padding: 0 10px;
+  position: relative;
+}
+
+.m-notice > p:before, .m-notice--alert > p:before,
+.m-notice--confirm > p:before {
+  display: none;
+  font-size: 16px;
+  position: absolute;
+  left: 10px;
+  top: -1px;
+}
+
+.m-notice > p > a, .m-notice--alert > p > a,
+.m-notice--confirm > p > a {
+  color: #a7b8be;
+  display: none;
+  padding-left: 8px;
+  text-decoration: underline;
+}
+
+.m-notice > p > a:hover, .m-notice--alert > p > a:hover,
+.m-notice--confirm > p > a:hover {
+  color: #032530;
+}
+
+.m-notice--alert > p,
+.m-notice--confirm > p {
+  color: white;
+  padding-left: 32px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.m-notice--alert > p:before,
+.m-notice--confirm > p:before {
+  display: block;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.m-notice--alert > p {
+  background: #fb454f;
+  border-color: #fa1320;
+}
+
+.m-notice--alert > p:before {
+  content: '\26A0';
+}
+
+.m-notice--alert > p > a {
+  color: #c4d0d4;
+  display: inline;
+}
+
+.m-notice--alert > p > a:hover {
+  color: white;
+}
+
+.m-notice--confirm > p {
+  background: #00b76f;
+  border-color: #00ad69;
+}
+
+.m-notice--confirm > p:before {
+  content: '\2713';
+}
+
+.m-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0;
+  /* Removes extra space added by inline block */
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.m-overlay__container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  text-align: center;
+  width: 100%;
+}
+
+.m-overlay__container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.m-overlay__content {
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  background: white;
+  border: 1px solid #6c8993;
+  display: inline-block;
+  font-size: 1rem;
+  max-height: 100%;
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+  z-index: 1001;
+}
+
+.m-overlay__content--primary,
+.m-overlay__content--secondary {
+  padding: 20px;
+}
+.m-overlay__content--primary:after,
+.m-overlay__content--secondary:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.m-overlay__content--secondary {
+  background: #e2e7e9;
+  border-top: 1px solid #c4d0d4;
+}
+
+.m-overlay__close {
+  position: absolute;
+  right: 9px;
+  top: 6px;
+}
+
+.m-card {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZhZmFmYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #fafafa));
+  background-image: -webkit-linear-gradient(#ffffff, #fafafa);
+  background-image: -moz-linear-gradient(#ffffff, #fafafa);
+  background-image: -o-linear-gradient(#ffffff, #fafafa);
+  background-image: linear-gradient(#ffffff, #fafafa);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: all ease 0.1s;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition: all ease 0.1s 0.1s;
+  -o-transition: all ease 0.1s 0.1s;
+  transition: all ease 0.1s 0.1s;
+  border: 1px solid #c4d0d4;
+  padding: 20px !important;
+  margin-right: 20px;
+  position: relative;
+  text-shadow: 0 1px 0px white;
+  width: 100%;
+}
+
+.m-card:hover {
+  -webkit-box-shadow: 0 1px 4px rgba(0, 164, 219, 0.25);
+  -moz-box-shadow: 0 1px 4px rgba(0, 164, 219, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 164, 219, 0.25);
+  border-color: #00a4db;
+  cursor: pointer;
+}
+
+.m-card > a {
+  color: #032530;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.m-card > a > span {
+  font-size: 32px;
+  line-height: 1em;
+  margin-top: -0.4em;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+}
+
+.m-tooltip, .m-tooltip--condensed, .m-tooltip--left-arrow,
+.m-tooltip--right-arrow,
+.m-tooltip--no-arrow {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  -webkit-transition: all ease 0.1s;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition: all ease 0.1s 0.1s;
+  -o-transition: all ease 0.1s 0.1s;
+  transition: all ease 0.1s 0.1s;
+  background: white;
+  border: 1px solid #c4d0d4;
+  color: #6c8993;
+  position: absolute;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.m-trigger:hover .m-tooltip, .m-trigger:hover .m-tooltip--condensed, .m-trigger:hover .m-tooltip--left-arrow,
+.m-trigger:hover .m-tooltip--right-arrow,
+.m-trigger:hover .m-tooltip--no-arrow,
+.m-tooltip:hover,
+.m-tooltip--condensed:hover,
+.m-tooltip--left-arrow:hover,
+.m-tooltip--right-arrow:hover,
+.m-tooltip--no-arrow:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.m-tooltip > li, .m-tooltip--condensed > li, .m-tooltip--left-arrow > li,
+.m-tooltip--right-arrow > li,
+.m-tooltip--no-arrow > li {
+  border-top: 1px solid #e2e7e9;
+  line-height: 1em;
+  padding: 10px;
+}
+
+.m-tooltip > li:first-child, .m-tooltip--condensed > li:first-child, .m-tooltip--left-arrow > li:first-child,
+.m-tooltip--right-arrow > li:first-child,
+.m-tooltip--no-arrow > li:first-child {
+  border: none;
+}
+
+.m-tooltip > li:first-child:before, .m-tooltip--condensed > li:first-child:before, .m-tooltip--left-arrow > li:first-child:before,
+.m-tooltip--right-arrow > li:first-child:before,
+.m-tooltip--no-arrow > li:first-child:before {
+  content: '';
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: -19px;
+  width: 100%;
+  z-index: -1;
+}
+
+.m-tooltip:before, .m-tooltip--condensed:before, .m-tooltip--left-arrow:before,
+.m-tooltip--right-arrow:before,
+.m-tooltip--no-arrow:before {
+  content: "";
+  display: block;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #b3c2c7;
+  height: 0;
+  margin-left: -10px;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 0;
+  z-index: 101;
+}
+
+.m-tooltip:after, .m-tooltip--condensed:after, .m-tooltip--left-arrow:after,
+.m-tooltip--right-arrow:after,
+.m-tooltip--no-arrow:after {
+  content: "";
+  display: block;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid white;
+  height: 0;
+  margin-left: -9px;
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 0;
+  z-index: 102;
+}
+
+.m-tooltip--condensed > li {
+  border: none;
+  padding: 10px 10px 0;
+}
+
+.m-tooltip--condensed > li:last-child {
+  padding-bottom: 10px;
+}
+
+.m-tooltip--left-arrow:before,
+.m-tooltip--left-arrow:after {
+  margin: 0;
+}
+
+.m-tooltip--left-arrow:before {
+  left: 20px;
+}
+
+.m-tooltip--left-arrow:after {
+  left: 21px;
+}
+
+.m-tooltip--right-arrow:before,
+.m-tooltip--right-arrow:after {
+  left: auto;
+  margin: 0;
+}
+
+.m-tooltip--right-arrow:before {
+  right: 20px;
+}
+
+.m-tooltip--right-arrow:after {
+  right: 21px;
+}
+
+.m-tooltip--no-arrow:before,
+.m-tooltip--no-arrow:after {
+  display: none;
+}
+
+.m-trigger {
+  position: relative;
+}
+
+.m-nav .m-trigger > a {
+  cursor: pointer;
+}
+
+.m-nav .m-trigger:hover > a {
+  background: #075e7c;
+}

@@ -1,124 +1,70 @@
 // ==========================================================================
-// Base
+// Variables
 // ==========================================================================
 
-// DESC:
+// Compass default settings
 
-// This file contains basic styles that provide supplemental, application
-// specific defaults which are more useful than the generic browser
-// defaults found in _reset.scss
+$legacy-support-for-ie        : false;
+$experimental-support-for-svg : true;
 
-// TOC:
+// Compass Vertical Rhythm Module default settings
 
-// [?1] INITIALIZERS
-// [?2] ELEMENTS
-// [?3] PROPRIETARY
+$base-font-size        : 16px;
+$base-line-height      : 24px;
+$relative-font-sizing  : false;
+
+// Modular Scale default settings
+
+$ratio                 : major_second();
+$base-size             : $base-font-size;
+$round_pixels          : true;
+
+// Susy default settings
+
+$container-style       : fluid;
+$container-width       : 1220px;
+$container-min-width   : 1220px;
+$total-columns         : 10;
+$column-width          : 100px;
+$gutter-width          : 20px;
+$grid-unit-width       : $column-width + $gutter-width;
+$grid-padding          : $gutter-width;
+
+// Colors
+
+$grayscale-0           : hsl(195, 15%, 90%);
+$grayscale-1           : hsl(195, 15%, 80%);
+$grayscale-2           : hsl(195, 15%, 70%);
+$grayscale-3           : hsl(195, 15%, 50%);
+$grayscale-4           : hsl(195, 15%, 30%);
+$grayscale-5           : hsl(195, 90%, 10%);
+
+$centro-alert-1        : rgb(251, 69,79);
+$centro-alert-2        : rgb(250, 231, 172);
+
+$centro-brand-1a       : hsl(195, 90%, 28%);
+$centro-brand-1b       : hsl(192, 100%, 28%);
+$centro-brand-1c       : hsl(191, 59%, 80%);
+
+$centro-brand-2a       : hsl(195, 100%, 29%);
+$centro-brand-2b       : hsl(195, 100%, 43%);
+$centro-brand-2c       : hsl(195, 75%, 70%);
+
+$centro-brand-3a       : hsl(323, 100%, 30%);
+$centro-brand-3b       : hsl(320, 84%, 42%);
+$centro-brand-3c       : hsl(329, 82%, 59%);
+
+$centro-brand-4a       : hsl(16, 2%, 50%);
+$centro-brand-4b       : hsl(216, 3%, 63%);
+$centro-brand-4c       : hsl(220, 3%, 78%);
+
+$centro-confirm-1      : hsl(101, 48%, 69%);
+$centro-confirm-2      : rgb(0, 183, 111);
 
 // ==========================================================================
+// Plugins
+// ==========================================================================
 
-// [?1] INITIALIZERS
-// Just a little compass voodo to establish a consistent box model and a
-// global line-height.
-
-@include border-box-sizing;
-@include establish-baseline;
-
-// [?2] ELEMENTS
-// Supplemental overrides for generic browser defaults found in _reset.scss
-
-a:link,
-a:visited {
-  outline: none;
-  color: $centro-brand-2b;
-  text-decoration: none;
-}
-
-a:hover {
-  color: $centro-brand-2a;
-}
-
-body,
-html {
-  height: 100%;
-}
-
-body {
-  color: $grayscale-5;
-  font-family: "Source Sans", sans-serif;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-button,
-input {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-dl,
-dd,
-dt {
-  margin: 0;
-}
-
-fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-  margin: 0;
-}
-
-h1 {
-  @include adjust-font-size-to(modular-scale(6), 2);
-}
-
-h3 {
-  @include adjust-font-size-to(modular-scale(2), 1);
-  font-weight: 400;
-}
-
-h4 {
-  font-size: modular-scale(-1);
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-input[disabled] {
-  cursor: not-allowed;
-}
-
-mark {
-  background: transparent;
-  color: $centro-brand-2b;
-  font-weight: 600;
-}
-
-p {
-  margin: 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-// [?3] PROPRIETARY
-// Browser specific overrides.
-
-// Remove IE10 input icons.
-
-::-ms-clear,
-::-ms-reveal {
-  display: none;
-}
+@import "compass";
+@import "susy";
+@import "modular-scale";
