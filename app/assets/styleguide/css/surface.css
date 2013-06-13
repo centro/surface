@@ -1216,8 +1216,8 @@ pieces documented above as well as requisite layout classes.
   position: relative;
 }
 
-.m-form__field > *, .m-form__field--error > *, .m-form__infield--error > *, .m-form__inline-field--error > *, .m-form__infield > *,
-.m-form__controls > *, .m-form__inline-field > * {
+.m-form__field > p, .m-form__field--error > p, .m-form__infield--error > p, .m-form__inline-field--error > p, .m-form__infield > p,
+.m-form__controls > p, .m-form__inline-field > p {
   line-height: inherit;
 }
 
@@ -1292,7 +1292,7 @@ pieces documented above as well as requisite layout classes.
 .m-form__input-toggle, .m-form__input-toggle--visible-label {
   font-size: 14px;
   position: absolute;
-  top: 2px;
+  top: 1px;
   right: 10px;
 }
 
@@ -1868,23 +1868,6 @@ stand out a little more from those that surround it:
 
 .m-nav > li > a:hover {
   background-color: #065c79;
-}
-
-.m-nav__sub-menu {
-  opacity: 0;
-  position: absolute;
-  visibility: hidden;
-  width: 220px;
-}
-
-.m-nav__sub-menu > li:first-child:before {
-  content: '';
-  height: 50%;
-  position: absolute;
-  left: 0;
-  top: -19px;
-  width: 100%;
-  z-index: -1;
 }
 
 /* ## Notices

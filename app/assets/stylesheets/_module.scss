@@ -318,7 +318,7 @@ pieces documented above as well as requisite layout classes.
   position: relative;
 }
 
-.m-form__field > * {
+.m-form__field > p {
   line-height: inherit;
 }
 
@@ -409,7 +409,7 @@ pieces documented above as well as requisite layout classes.
 .m-form__input-toggle {
   font-size: modular-scale(-1);
   position: absolute;
-    top: 2px;
+    top: 1px;
     right: $gutter-width / 2;
 }
 
@@ -994,24 +994,24 @@ stand out a little more from those that surround it:
    background-color: hsl(195, 90%, 25%);
 }
 
-.m-nav__sub-menu {
-  @include opacity(0);
-  position: absolute;
-  visibility: hidden;
-  width: ($column-width * 2) + $gutter-width;
-}
-
-// Account for :hover gap between trigger and target.
-
-.m-nav__sub-menu > li:first-child:before {
- content: '';
- height: 50%;
- position: absolute;
-  left: 0;
-  top: -19px;
- width: 100%;
- z-index: -1;
-}
+// .m-nav__sub-menu {
+//   @include opacity(0);
+//   position: absolute;
+//   visibility: hidden;
+//   width: ($column-width * 2) + $gutter-width;
+// }
+// 
+// // Account for :hover gap between trigger and target.
+// 
+// .m-nav__sub-menu > li:first-child:before {
+//  content: '';
+//  height: 50%;
+//  position: absolute;
+//   left: 0;
+//   top: -19px;
+//  width: 100%;
+//  z-index: -1;
+// }
 
 /* ## Notices
 Surface provides styles for various types of global messages like 
