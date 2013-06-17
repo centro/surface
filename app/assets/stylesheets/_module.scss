@@ -15,7 +15,7 @@
 // FOOTER
 // HEADER
 // Icons
-// LISTS
+// Lists
 // NAVIGATION
 // Notices
 // UTILITIES
@@ -1159,7 +1159,7 @@ need to be manually dismissed.
 }
 
 /* 
-## Overlay
+## Overlays
 
 Surface contains a couple of different options for Overlays. Both 
 options are vertically centered by default and allow developers to set 
@@ -1282,7 +1282,21 @@ In such situations, the divided overlay comes in handy:
 
 // [?9] UTILITIES
 
-// Card
+/* 
+
+## Cards
+
+In Surface, ‟Cards” don’t yet play a major role, but the do find limited 
+use as big, stylish links on the Applications tab in Auth. However, with a little 
+creativity, I’m sure they could be used elsewhere. 
+
+```
+<div class="l-height(8) l-width(25) m-card">
+  <span class="m-card__background" style="bottom:-0.3em;right:-0.15em">&#x2753;</span>
+  <a href="#"><span>Help</span></a>
+</div>
+```
+*/
 
 .m-card {
   @include background-image(linear-gradient(white, hsl(0, 0, 98%)));
@@ -1291,6 +1305,7 @@ In such situations, the divided overlay comes in handy:
   border: 1px solid $grayscale-1;
   padding: $gutter-width !important;
   margin-right: $gutter-width;
+  overflow: hidden;
   position: relative;
   text-shadow: 0 1px 0px white;
   width: 100%;
@@ -1316,11 +1331,22 @@ In such situations, the divided overlay comes in handy:
   @extend .t-thin;
   font-size: modular-scale(6);
   line-height: 1em;
-  margin-top: -0.4em;
+  margin-top: -0.5em;
   position: absolute;
     left: 0;
     top: 50%;
   width: 100%;
+}
+
+.m-card__background {
+  @extend .i-icon;
+  color: $grayscale-0;
+  line-height: 1em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 160px;
+  z-index: 0;
 }
 
 // Tooltip
