@@ -17,7 +17,7 @@
 // Icons
 // LISTS
 // NAVIGATION
-// NOTICES
+// Notices
 // UTILITIES
 
 // ========================================================================== 
@@ -844,34 +844,26 @@ For navigation menus, Surface provides a couple of slightly different
 options for tabs. The first option is the more subtle of the two:
 
 ```
-<div class="l-width(75)" style="border: 1px solid #e2e7e9;">
+<div style="border: 1px solid #e2e7e9;">
   <ul class="m-tabs">
     <li><a href="#">Item 1</a></li>
     <li class="s-is-active"><a href="#">Item 2</a></li>
     <li><a href="#">Item 3</a></li>
   </ul>
 </div>
-
-<!-- The following <div> is for demonstrative purposes only -->
-
-<div class="l-width(75)" style="border:1px solid #e2e7e9; border-top:none; height: 20px;"></div>
 ```
 
 While the second option provides a little shading to help the active tab 
 stand out a little more from those that surround it:
 
 ```
-<div class="l-width(75)" style="border: 1px solid #e2e7e9;">
+<div style="border: 1px solid #e2e7e9;">
   <ul class="m-tabs--shaded">
     <li><a href="#">Item 1</a></li>
     <li class="s-is-active"><a href="#">Item 2</a></li>
     <li><a href="#">Item 3</a></li>
   </ul>
 </div>
-
-<!-- The following <div> is for demonstrative purposes only -->
-
-<div class="l-width(75)" style="background:#f0f3f4;border:1px solid #e2e7e9;border-top:none;height: 20px;"></div>
 ```
 
 */
@@ -1166,7 +1158,67 @@ need to be manually dismissed.
   content: '\2713';
 }
 
-// Overlay
+/* 
+## Overlay
+
+Surface contains a couple of different options for Overlays. Both 
+options are vertically centered by default and allow developers to set 
+an arbitrary width using layout classes. Here’s an example of how to 
+implement a basic overlay: 
+
+```
+<a href="#" data-overlay="#basic" class="m-overlay--trigger">Click to open basic overlay &rarr;</a>
+<div id="basic" class="m-overlay">
+  <div class="m-overlay__container">
+    <div class="m-overlay__content l-width(4of10)">
+      <a class="m-overlay__close d-modal-close">close</a>
+      <div class="m-overlay__content--main">
+        <h1 class="t-single-line-text t-thin l-mg-btm(1)">Basic Overlay</h1>
+        <p class="l-mg-btm(1)">
+          Sierra leone bologi wakame okra desert raisin watercress shallot daikon jícama
+          tomato bitterleaf chicory pea. Squash melon ricebean bitterleaf jícama broccoli 
+          radicchio collard greens okra bell pepper caulie radish.
+        </p>
+        <p>
+          Water chestnut bush tomato carrot fava bean brussels sprout desert raisin 
+          courgette silver beet pea. Corn winter purslane fennel radicchio scallion 
+          spinach bush tomato tomato. Summer purslane earthnut pea maize welsh onion sierra
+          leone bologi endive.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+Sometimes it’s helpful to visually separate content within an overlay. 
+In such situations, the divided overlay comes in handy:
+
+```
+<a href="#" data-overlay="#divided" class="m-overlay--trigger">Click to open divided overlay &rarr;</a>
+<div id="divided" class="m-overlay">
+  <div class="m-overlay__container">
+    <div class="m-overlay__content l-width(4of10)">
+      <a class="m-overlay__close d-modal-close">close</a>
+      <div class="m-overlay__content--main">
+        <h1 class="t-single-line-text t-thin l-mg-btm(1)">Divided Overlay</h1>
+        <p>
+          Sierra leone bologi wakame okra desert raisin watercress shallot daikon jícama
+          tomato bitterleaf chicory pea. Squash melon ricebean bitterleaf jícama broccoli 
+          radicchio collard greens okra bell pepper caulie radish.
+        </p>
+      </div>
+      <div class="m-overlay__content--footer">
+        <input class="l-left m-form__input l-width(75)" type="text" placeholder="Leave a comment…">
+        <p class="l-width(25) l-right">
+          <button class="l-right m-button--large m-button--primary">Comment</button>
+        <p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
 
 .m-overlay {
   background: rgba(0,0,0,0.3);
@@ -1209,13 +1261,13 @@ need to be manually dismissed.
   z-index: 1001;
 }
 
-.m-overlay__content--primary,
-.m-overlay__content--secondary {
+.m-overlay__content--main,
+.m-overlay__content--footer {
   @include pie-clearfix;
   padding: $gutter-width;
 }
 
-.m-overlay__content--secondary {
+.m-overlay__content--footer {
   background: $grayscale-0;
   border-top: 1px solid $grayscale-1;
 }

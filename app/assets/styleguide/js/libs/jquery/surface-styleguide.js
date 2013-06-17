@@ -27,6 +27,13 @@ $(function() {
     return false;
   })
 
+  // Toggle overlay visibility
+  
+  $('div.m-overlay').hide();
+
+  showOverlay();
+  hideOverlay();
+
  });
 
 // Toggle masked/unmasked password fields. 
@@ -61,5 +68,30 @@ var unmaskPassword = function () {
     return false;
 
   }); 
+
+}
+
+var showOverlay = function () {
+
+  $('.m-overlay--trigger').click(function() {
+    var whichOverlay = $(this).attr('data-overlay');
+    console.log(whichOverlay);
+    $('div' + whichOverlay + '').show();
+    return false;
+  });
+
+}
+
+var hideOverlay = function () {
+
+  $('.m-overlay__close').click(function() {
+    $('div.m-overlay').hide();
+  });
+
+  $(document).bind('keydown', function(e) {
+    if (e.which == 27) {
+      $('div.m-overlay').hide();
+    }
+  });
 
 }
