@@ -1349,7 +1349,73 @@ creativity, I’m sure they could be used elsewhere.
   z-index: 0;
 }
 
-// Tooltip
+/* 
+
+## Tooltips
+
+By default, Surface tooltips use centered arrows. In the case of the 
+default, the system relies on JS to determine the positioning of 
+the tooltip relative to its trigger. If needed, widths are set inline as they will 
+vary depending on the application: 
+
+```
+<div class="m-trigger">
+  <a class="m-trigger__text" href="javascript:void(0)">Hover to show <b>default</b> &rarr;</a>
+  <div class="l-pd(1/2) m-tooltip" style="width: 300px;">
+    <p class="t-caption-text t-small">
+      Default tooltips have centered arrows and usually require custom 
+      styles.
+    <p>
+  </div>
+</div>
+```
+
+Depending on space or contextual constraints, it may be neccessary to 
+override the default alignment of the tooltip. There are a few options 
+in this case. Left-aligned trigger are useful when tooltips are used 
+toward the left edge of the page:
+
+```
+<div class="m-trigger">
+  <a class="m-trigger__text" href="javascript:void(0)">Hover to show <b>left-aligned</b> tooltip &rarr;</a>
+  <div class="l-pd(1/2) m-tooltip--left-arrow" style="width: 300px;">
+    <p class="t-caption-text t-small">
+      Left-aligned tooltips have arrows that align flush to the left of 
+      their respective triggers. 
+    <p>
+  </div>
+</div>
+```
+
+Right-aligned tooltips come in hand when they are used toward the right 
+edge of the page:
+
+```
+<div class="m-trigger">
+  <a class="m-trigger__text" href="javascript:void(0)">Hover to show <b>right-aligned</b> tooltip &rarr;</a>
+  <div class="l-pd(1/2) m-tooltip--right-arrow" style="width: 300px;">
+    <p class="t-caption-text t-small">
+      Right-aligned tooltips have arrows that align flush to the right of 
+      their respective triggers. 
+    <p>
+  </div>
+</div>
+```
+
+Floated tooltips are a stylistic choice, but can come in handy when 
+space is limited or when a slightly different placement is desired:
+
+```
+<div class="m-trigger">
+  <a class="m-trigger__text" href="javascript:void(0)">Hover to show a <b>floating</b> tooltip &rarr;</a>
+  <div class="l-pd(1/4) m-tooltip--no-arrow">
+    <p class="t-small">
+      Floated tooltips lack arrows.
+    <p>
+  </div>
+</div>
+```
+*/
 
 .m-tooltip {
   @include box-shadow(0 3px 6px rgba(black, 0.1));
@@ -1379,7 +1445,7 @@ creativity, I’m sure they could be used elsewhere.
   border: none;
 }
 
-.m-tooltip > li:first-child:before {
+.m-tooltip > :first-child:before {
  content: '';
  height: 20px;
  position: absolute;
@@ -1451,6 +1517,10 @@ creativity, I’m sure they could be used elsewhere.
   left: 21px;
 }
 
+.m-tooltip--right-arrow {
+  right: 0;
+}
+
 .m-tooltip--right-arrow:before,
 .m-tooltip--right-arrow:after {
   left: auto;
@@ -1473,11 +1543,17 @@ creativity, I’m sure they could be used elsewhere.
 // Triggers
 
 .m-trigger {
+  display: inline-block;
   position: relative;
 }
 
-.m-nav .m-trigger > a {
+.m-trigger > a {
+  @include transition(color ease 0.1s 0.1s);
   cursor: pointer;
+}
+
+.m-trigger:hover > a {
+  color: $centro-brand-2a; 
 }
 
 .m-nav .m-trigger:hover > a {

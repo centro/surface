@@ -29,10 +29,14 @@ $(function() {
 
   // Toggle overlay visibility
   
-  $('div.m-overlay').hide();
+  $('[class$="m-overlay"]').hide();
 
   showOverlay();
   hideOverlay();
+
+  // Automatically position tooltip relative to its respective trigger.
+
+  positionTooltip();
 
  });
 
@@ -85,13 +89,36 @@ var showOverlay = function () {
 var hideOverlay = function () {
 
   $('.m-overlay__close').click(function() {
-    $('div.m-overlay').hide();
+    $('[class$="m-overlay"]').hide();
   });
 
   $(document).bind('keydown', function(e) {
     if (e.which == 27) {
-      $('div.m-overlay').hide();
+      $('[class$="m-overlay"]').hide();
     }
+  });
+
+}
+
+var positionTooltip = function () {
+
+  $('[class$="m-tooltip"]').each(function(index) {
+
+    var triggerWidth = $(this).siblings('.m-trigger__text').width();
+    var tooltipWidth = $(this).outerWidth()
+    var horizTooltipOffset = ((tooltipWidth - triggerWidth) / 2) * -1;
+
+    $(this).css("left", horizTooltipOffset + "px")
+
+  });
+
+  $('[class*="m-tooltip"]').each(function(index) {
+
+    var triggerHeight = $(this).siblings('.m-trigger__text').height();
+    var vertTooltipOffset = triggerHeight + 12;
+
+    $(this).css("top", vertTooltipOffset + "px")
+
   });
 
 }
