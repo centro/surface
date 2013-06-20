@@ -146,7 +146,7 @@ body {
 .kalei-comments > p,
 .kalei-comments> ol {
   line-height: 1.5;
-  width: 50%;
+  width: 60%;
 }
 
 .kalei-comments > pre + p {
@@ -301,22 +301,6 @@ body .codedemo {
   margin: 0;
   padding: 0;
 }
-body .codedemo::after {
-  content: "Example";
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  padding: 3px 7px;
-  font-size: 12px;
-  font-weight: bold;
-  background-color: #444;
-  color: #ebebeb;
-  -webkit-border-radius: 0 3px 0 3px;
-  -moz-border-radius: 0 3px 0 3px;
-  font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-radius: 0 3px 0 3px;
-}
-
 
 .kalei-styleguide-menu-stylesheets {
   color: #fff;
@@ -353,52 +337,6 @@ body .codedemo::after {
 .kalei-styleguide-menu-link.active {
   background: #444;
   color: #ebebeb;
-}
-
-.kalei-styleguide-menu-link:hover:after,
-.kalei-styleguide-menu-link.active:after {
-  content:"";
-  position:absolute;
-  bottom:-13px; /* value = - border-top-width - border-bottom-width */
-  right:0; /* value = (:before left) + (:before border-left) - (:after border-left) */
-  border-width:13px 13px 0;
-  border-style:solid;
-  border-color:#fff transparent;
-  /* reduce the damage in FF3.0 */
-  display:block;
-  width:0;
-}
-.kalei-styleguide-menu-link:hover:before,
-.kalei-styleguide-menu-link.active:before {
-  content:"";
-  position:absolute;
-  bottom:-13px; /* value = - border-top-width - border-bottom-width */
-  right:0; /* value = (:before left) + (:before border-left) - (:after border-left) */
-  border-width:13px 13px 0;
-  border-style:solid;
-  border-color:#fff transparent;
-  /* reduce the damage in FF3.0 */
-  display:block;
-  width:0;
-}
-
-
-
-.kalei-styleguide-menu-link:hover:before,
-.kalei-styleguide-menu-link.active:before {
-  top:14px; /* value = (:before top) + (:before border-top) - (:after border-top) */
-  bottom:auto;
-  right:-1px; /* value = - border-left-width - border-right-width */
-  border-width:6px 5px 6px 0px;
-  border-color:transparent #ccc;
-}
-.kalei-styleguide-menu-link:hover:after,
-.kalei-styleguide-menu-link.active:after {
-  top:15px; /* value = (:before top) + (:before border-top) - (:after border-top) */
-  bottom:auto;
-  right:-2px; /* value = - border-left-width - border-right-width */
-  border-width:5px 5px 5px 0px;
-  border-color:transparent #f7f7f7;
 }
 
 .kalei-sheet-submenu li.active {

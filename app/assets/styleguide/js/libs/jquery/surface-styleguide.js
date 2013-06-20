@@ -27,6 +27,17 @@ $(function() {
     return false;
   })
 
+  // Toggle overlay visibility
+  
+  $('[class$="m-overlay"]').hide();
+
+  showOverlay();
+  hideOverlay();
+
+  // Automatically position tooltip relative to its respective trigger.
+
+  positionTooltip();
+
  });
 
 // Toggle masked/unmasked password fields. 
@@ -61,5 +72,53 @@ var unmaskPassword = function () {
     return false;
 
   }); 
+
+}
+
+var showOverlay = function () {
+
+  $('.m-overlay--trigger').click(function() {
+    var whichOverlay = $(this).attr('data-overlay');
+    console.log(whichOverlay);
+    $('div' + whichOverlay + '').show();
+    return false;
+  });
+
+}
+
+var hideOverlay = function () {
+
+  $('.m-overlay__close').click(function() {
+    $('[class$="m-overlay"]').hide();
+  });
+
+  $(document).bind('keydown', function(e) {
+    if (e.which == 27) {
+      $('[class$="m-overlay"]').hide();
+    }
+  });
+
+}
+
+var positionTooltip = function () {
+
+  $('[class$="m-tooltip"]').each(function(index) {
+
+    var triggerWidth = $(this).siblings('.m-trigger__text').width();
+    var tooltipWidth = $(this).outerWidth()
+    var horizTooltipOffset = ((tooltipWidth - triggerWidth) / 2) * -1;
+
+    $(this).css("left", horizTooltipOffset + "px")
+
+  });
+
+  $('[class*="m-tooltip"]').each(function(index) {
+
+    var triggerHeight = $(this).siblings('.m-trigger__text').height();
+    var vertTooltipOffset = triggerHeight + 12;
+
+    $(this).css("top", vertTooltipOffset + "px")
+
+  });
 
 }

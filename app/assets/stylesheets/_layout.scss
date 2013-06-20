@@ -221,6 +221,18 @@
 // Baseline/Gutter units are passed to padding classes as arguments, such that
 // (1) equals a value of 24/20px, (1/2) 12/10px and so on.
 
+.l-pd\(1\/4\) {
+  padding: $gutter-width / 4;
+}
+
+.l-pd\(1\/2\) {
+  padding: $gutter-width / 2;
+}
+
+.l-pd\(1\) {
+  padding: $gutter-width;
+}
+
 // Left
 
 .l-pd-left\(1\/2\) {

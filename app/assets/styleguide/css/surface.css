@@ -577,6 +577,18 @@ ul {
   margin-top: 96px;
 }
 
+.l-pd\(1\/4\) {
+  padding: 5px;
+}
+
+.l-pd\(1\/2\) {
+  padding: 10px;
+}
+
+.l-pd\(1\) {
+  padding: 20px;
+}
+
 .l-pd-left\(1\/2\) {
   padding-left: 10px;
 }
@@ -1661,7 +1673,7 @@ custom element’s  CSS declaration block.
 
 */
 .i-icon, .m-form__dropdown__selected:after, .i-icon--before:before, .m-notice > p:before, .m-notice--alert > p:before,
-.m-notice--confirm > p:before, .m-overlay__close {
+.m-notice--confirm > p:before, .m-overlay__close, .m-card__background {
   cursor: pointer;
   display: inline-block;
   font-family: "SS Standard";
@@ -1729,34 +1741,26 @@ For navigation menus, Surface provides a couple of slightly different
 options for tabs. The first option is the more subtle of the two:
 
 ```
-<div class="l-width(75)" style="border: 1px solid #e2e7e9;">
+<div style="border: 1px solid #e2e7e9;">
   <ul class="m-tabs">
     <li><a href="#">Item 1</a></li>
     <li class="s-is-active"><a href="#">Item 2</a></li>
     <li><a href="#">Item 3</a></li>
   </ul>
 </div>
-
-<!-- The following <div> is for demonstrative purposes only -->
-
-<div class="l-width(75)" style="border:1px solid #e2e7e9; border-top:none; height: 20px;"></div>
 ```
 
 While the second option provides a little shading to help the active tab 
 stand out a little more from those that surround it:
 
 ```
-<div class="l-width(75)" style="border: 1px solid #e2e7e9;">
+<div style="border: 1px solid #e2e7e9;">
   <ul class="m-tabs--shaded">
     <li><a href="#">Item 1</a></li>
     <li class="s-is-active"><a href="#">Item 2</a></li>
     <li><a href="#">Item 3</a></li>
   </ul>
 </div>
-
-<!-- The following <div> is for demonstrative purposes only -->
-
-<div class="l-width(75)" style="background:#f0f3f4;border:1px solid #e2e7e9;border-top:none;height: 20px;"></div>
 ```
 
 */
@@ -2025,6 +2029,67 @@ need to be manually dismissed.
   content: '\2713';
 }
 
+/* 
+## Overlays
+
+Surface contains a couple of different options for Overlays. Both 
+options are vertically centered by default and allow developers to set 
+an arbitrary width using layout classes. Here’s an example of how to 
+implement a basic overlay: 
+
+```
+<a href="#" data-overlay="#basic" class="m-overlay--trigger">Click to open basic overlay &rarr;</a>
+<div id="basic" class="m-overlay">
+  <div class="m-overlay__container">
+    <div class="m-overlay__content l-width(4of10)">
+      <a class="m-overlay__close d-modal-close">close</a>
+      <div class="m-overlay__content--main">
+        <h1 class="t-single-line-text t-thin l-mg-btm(1)">Basic Overlay</h1>
+        <p class="l-mg-btm(1)">
+          Sierra leone bologi wakame okra desert raisin watercress shallot daikon jícama
+          tomato bitterleaf chicory pea. Squash melon ricebean bitterleaf jícama broccoli 
+          radicchio collard greens okra bell pepper caulie radish.
+        </p>
+        <p>
+          Water chestnut bush tomato carrot fava bean brussels sprout desert raisin 
+          courgette silver beet pea. Corn winter purslane fennel radicchio scallion 
+          spinach bush tomato tomato. Summer purslane earthnut pea maize welsh onion sierra
+          leone bologi endive.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+Sometimes it’s helpful to visually separate content within an overlay. 
+In such situations, the divided overlay comes in handy:
+
+```
+<a href="#" data-overlay="#divided" class="m-overlay--trigger">Click to open divided overlay &rarr;</a>
+<div id="divided" class="m-overlay">
+  <div class="m-overlay__container">
+    <div class="m-overlay__content l-width(4of10)">
+      <a class="m-overlay__close d-modal-close">close</a>
+      <div class="m-overlay__content--main">
+        <h1 class="t-single-line-text t-thin l-mg-btm(1)">Divided Overlay</h1>
+        <p>
+          Sierra leone bologi wakame okra desert raisin watercress shallot daikon jícama
+          tomato bitterleaf chicory pea. Squash melon ricebean bitterleaf jícama broccoli 
+          radicchio collard greens okra bell pepper caulie radish.
+        </p>
+      </div>
+      <div class="m-overlay__content--footer">
+        <input class="l-left m-form__input l-width(75)" type="text" placeholder="Leave a comment…">
+        <p class="l-width(25) l-right">
+          <button class="l-right m-button--large m-button--primary">Comment</button>
+        <p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
 .m-overlay {
   background: rgba(0, 0, 0, 0.3);
   font-size: 0;
@@ -2071,18 +2136,18 @@ need to be manually dismissed.
   z-index: 1001;
 }
 
-.m-overlay__content--primary,
-.m-overlay__content--secondary {
+.m-overlay__content--main,
+.m-overlay__content--footer {
   padding: 20px;
 }
-.m-overlay__content--primary:after,
-.m-overlay__content--secondary:after {
+.m-overlay__content--main:after,
+.m-overlay__content--footer:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.m-overlay__content--secondary {
+.m-overlay__content--footer {
   background: #e2e7e9;
   border-top: 1px solid #c4d0d4;
 }
@@ -2093,6 +2158,21 @@ need to be manually dismissed.
   top: 6px;
 }
 
+/* 
+
+## Cards
+
+In Surface, ‟Cards” don’t yet play a major role, but the do find limited 
+use as big, stylish links on the Applications tab in Auth. However, with a little 
+creativity, I’m sure they could be used elsewhere. 
+
+```
+<div class="l-height(8) l-width(25) m-card">
+  <span class="m-card__background" style="bottom:-0.3em;right:-0.15em">&#x2753;</span>
+  <a href="#"><span>Help</span></a>
+</div>
+```
+*/
 .m-card {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZhZmFmYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -2114,6 +2194,7 @@ need to be manually dismissed.
   border: 1px solid #c4d0d4;
   padding: 20px !important;
   margin-right: 20px;
+  overflow: hidden;
   position: relative;
   text-shadow: 0 1px 0px white;
   width: 100%;
@@ -2140,13 +2221,90 @@ need to be manually dismissed.
 .m-card > a > span {
   font-size: 32px;
   line-height: 1em;
-  margin-top: -0.4em;
+  margin-top: -0.5em;
   position: absolute;
   left: 0;
   top: 50%;
   width: 100%;
 }
 
+.m-card__background {
+  color: #e2e7e9;
+  line-height: 1em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 160px;
+  z-index: 0;
+}
+
+/* 
+
+## Tooltips
+
+By default, Surface tooltips use centered arrows. In the case of the 
+default, the system relies on JS to determine the positioning of 
+the tooltip relative to its trigger. If needed, widths are set inline as they will 
+vary depending on the application: 
+
+```
+<div class="m-trigger">
+  <a class="m-trigger__text" href="javascript:void(0)">Hover to show <b>default</b> &rarr;</a>
+  <div class="l-pd(1/2) m-tooltip" style="width: 300px;">
+    <p class="t-caption-text t-small">
+      Default tooltips have centered arrows and usually require custom 
+      styles.
+    <p>
+  </div>
+</div>
+```
+
+Depending on space or contextual constraints, it may be neccessary to 
+override the default alignment of the tooltip. There are a few options 
+in this case. Left-aligned trigger are useful when tooltips are used 
+toward the left edge of the page:
+
+```
+<div class="m-trigger">
+  <a class="m-trigger__text" href="javascript:void(0)">Hover to show <b>left-aligned</b> tooltip &rarr;</a>
+  <div class="l-pd(1/2) m-tooltip--left-arrow" style="width: 300px;">
+    <p class="t-caption-text t-small">
+      Left-aligned tooltips have arrows that align flush to the left of 
+      their respective triggers. 
+    <p>
+  </div>
+</div>
+```
+
+Right-aligned tooltips come in hand when they are used toward the right 
+edge of the page:
+
+```
+<div class="m-trigger">
+  <a class="m-trigger__text" href="javascript:void(0)">Hover to show <b>right-aligned</b> tooltip &rarr;</a>
+  <div class="l-pd(1/2) m-tooltip--right-arrow" style="width: 300px;">
+    <p class="t-caption-text t-small">
+      Right-aligned tooltips have arrows that align flush to the right of 
+      their respective triggers. 
+    <p>
+  </div>
+</div>
+```
+
+Floated tooltips are a stylistic choice, but can come in handy when 
+space is limited or when a slightly different placement is desired:
+
+```
+<div class="m-trigger">
+  <a class="m-trigger__text" href="javascript:void(0)">Hover to show a <b>floating</b> tooltip &rarr;</a>
+  <div class="l-pd(1/4) m-tooltip--no-arrow">
+    <p class="t-small">
+      Floated tooltips lack arrows.
+    <p>
+  </div>
+</div>
+```
+*/
 .m-tooltip, .m-tooltip--condensed, .m-tooltip--left-arrow,
 .m-tooltip--right-arrow,
 .m-tooltip--no-arrow {
@@ -2193,9 +2351,9 @@ need to be manually dismissed.
   border: none;
 }
 
-.m-tooltip > li:first-child:before, .m-tooltip--condensed > li:first-child:before, .m-tooltip--left-arrow > li:first-child:before,
-.m-tooltip--right-arrow > li:first-child:before,
-.m-tooltip--no-arrow > li:first-child:before {
+.m-tooltip > :first-child:before, .m-tooltip--condensed > :first-child:before, .m-tooltip--left-arrow > :first-child:before,
+.m-tooltip--right-arrow > :first-child:before,
+.m-tooltip--no-arrow > :first-child:before {
   content: '';
   height: 20px;
   position: absolute;
@@ -2261,6 +2419,10 @@ need to be manually dismissed.
   left: 21px;
 }
 
+.m-tooltip--right-arrow {
+  right: 0;
+}
+
 .m-tooltip--right-arrow:before,
 .m-tooltip--right-arrow:after {
   left: auto;
@@ -2281,11 +2443,21 @@ need to be manually dismissed.
 }
 
 .m-trigger {
+  display: inline-block;
   position: relative;
 }
 
-.m-nav .m-trigger > a {
+.m-trigger > a {
+  -webkit-transition: color ease 0.1s;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition: color ease 0.1s 0.1s;
+  -o-transition: color ease 0.1s 0.1s;
+  transition: color ease 0.1s 0.1s;
   cursor: pointer;
+}
+
+.m-trigger:hover > a {
+  color: #006f94;
 }
 
 .m-nav .m-trigger:hover > a {

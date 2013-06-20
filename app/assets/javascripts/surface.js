@@ -94,10 +94,12 @@ var unmaskPassword = function () {
 
 var hideMaskingToggles = function () {
 
-  var maskingToggle =  $('.js-masking-toggle');
+  var maskingToggle = $('.js-masking-toggle');
   var maskingToggleErrorMsg = $('.js-masking-toggle--error-msg');
 
   maskingToggle.hide();
   maskingToggleErrorMsg.hide();
 
 }
+
+
