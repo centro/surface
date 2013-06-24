@@ -975,7 +975,7 @@ stand out a little more from those that surround it:
 }
 
 .m-nav > li > a {
-  @include link-colors(white);
+  @include link-colors(white !important);
   display: block;
   font-size: modular-scale(-1);
   height: $base-line-height + 6;
