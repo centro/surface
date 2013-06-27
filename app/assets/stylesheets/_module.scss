@@ -225,7 +225,7 @@ will rely on a [bit of JavaScript](/js/libs/jquery/surface-styleguide.js) to fun
 ```
 <!-- Default -->
 
-<div class="m-form__dropdown l-mg-btm(1) l-width(25)">
+<div class="m-form__dropdown l-mg-btm(1) l-width(25)" tabindex="0">
   <span class="m-form__dropdown__selected"></span>
   <ul>
     <li><a href="#">Option 1</a></li>
@@ -660,15 +660,18 @@ pieces documented above as well as requisite layout classes.
   color: white;
 }
 
-.m-form__dropdown:hover {
+.m-form__dropdown:hover,
+.m-form__dropdown:focus {
+  outline: 0;
   border-color: $centro-brand-2b;
   cursor: pointer;
 }
 
-.m-form__dropdown:hover > ul {
+.m-form__dropdown:focus > ul {
   opacity: 1;
   visibility:visible;
 }
+
 // [?3] FOOTER
 // This implementation of the footer currently serves as a debugging
 // line inside of luxo.
