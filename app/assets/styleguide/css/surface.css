@@ -589,6 +589,14 @@ ul {
   padding: 20px;
 }
 
+.l-pd-btm\(1\/6\) {
+  padding-bottom: 4px !important;
+}
+
+.l-pd-btm\(1\/4\) {
+  padding-bottom: 6px !important;
+}
+
 .l-pd-left\(1\/2\) {
   padding-left: 10px;
 }

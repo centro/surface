@@ -233,6 +233,16 @@
   padding: $gutter-width;
 }
 
+// Bottom
+
+.l-pd-btm\(1\/6\) {
+  padding-bottom: $base-line-height / 6 !important;
+}
+
+.l-pd-btm\(1\/4\) {
+  padding-bottom: $base-line-height / 4 !important;
+}
+
 // Left
 
 .l-pd-left\(1\/2\) {
