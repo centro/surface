@@ -146,9 +146,6 @@
 
 .t-truncate {
   @include ellipsis;
-  display: inline-block;
-  line-height: 1.25;
-  width: 100%;
 }
 
 // [?7] SPECIAL
