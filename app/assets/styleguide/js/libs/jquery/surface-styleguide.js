@@ -17,15 +17,19 @@ $(function() {
   $('[class*="m-form__dropdown"]').each( function () {
     $(this).find('li:first a').addClass('s-is-active');
     $(this).find('span').text($(this).find('li:first a').text());
-  })
+  });
 
   $('[class*="m-form__dropdown"] li a').click(function() { 
     var optionText = $(this).text();
+    var test = $(this);
     $(this).parents('[class*="m-form__dropdown"]').find('a').removeClass();
     $(this).addClass('s-is-active');
-    $(this).parents('[class*="m-form__dropdown"]').find('span').text(optionText);
+    setTimeout(function() { 
+      test.parents('[class*="m-form__dropdown"]').blur(); 
+      test.parents('[class*="m-form__dropdown"]').find('span').text(optionText);
+    }, 150);
     return false;
-  })
+  });
 
   // Toggle overlay visibility
   
@@ -38,7 +42,7 @@ $(function() {
 
   positionTooltip();
 
- });
+});
 
 // Toggle masked/unmasked password fields. 
 
@@ -121,4 +125,8 @@ var positionTooltip = function () {
 
   });
 
+}
+
+var blurDropdown = function () {
+  setTimeout(function() { $('[class*="m-form__dropdown"]').blur(); }, 100);
 }

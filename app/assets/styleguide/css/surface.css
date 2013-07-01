@@ -891,6 +891,9 @@ ul {
   -ms-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
+  display: inline-block;
+  line-height: 1.25;
+  width: 100%;
 }
 
 .t-screen-reader-text {
@@ -1137,7 +1140,7 @@ will rely on a [bit of JavaScript](/js/libs/jquery/surface-styleguide.js) to fun
 ```
 <!-- Default -->
 
-<div class="m-form__dropdown l-mg-btm(1) l-width(25)">
+<div class="m-form__dropdown l-mg-btm(1) l-width(25)" tabindex="0">
   <span class="m-form__dropdown__selected"></span>
   <ul>
     <li><a href="#">Option 1</a></li>
@@ -1565,12 +1568,15 @@ pieces documented above as well as requisite layout classes.
   color: white;
 }
 
-.m-form__dropdown:hover, .m-form__dropdown--narrow:hover {
+.m-form__dropdown:hover, .m-form__dropdown--narrow:hover,
+.m-form__dropdown:focus,
+.m-form__dropdown--narrow:focus {
   border-color: #00a4db;
   cursor: pointer;
+  outline: none;
 }
 
-.m-form__dropdown:hover > ul, .m-form__dropdown--narrow:hover > ul {
+.m-form__dropdown:focus > ul, .m-form__dropdown--narrow:focus > ul {
   opacity: 1;
   visibility: visible;
 }
@@ -1863,7 +1869,7 @@ stand out a little more from those that surround it:
 }
 
 .m-nav > li > a {
-  color: white;
+  color: white !important;
   display: block;
   font-size: 14px;
   height: 30px;
