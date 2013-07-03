@@ -664,6 +664,9 @@ pieces documented above as well as requisite layout classes.
   padding: 0 6px; 
   position: relative;
   &:hover {
+    color: $grayscale-5;
+  }
+  &.s-is-active {
     background: $centro-brand-2b;
     color: white;
   }
