@@ -591,10 +591,6 @@ pieces documented above as well as requisite layout classes.
   padding: 0 6px;
 }
 
-.m-form__dropdown:hover {
-  @include box-shadow(none);
-}
-
 .m-form__dropdown__selected {
   color: $grayscale-5;
   display: block !important;
@@ -658,14 +654,13 @@ pieces documented above as well as requisite layout classes.
   color: white;
 }
 
-.m-form__dropdown:hover,
 .m-form__dropdown:focus {
   border-color: $centro-brand-2b;
   cursor: pointer;
   outline: none;
 }
 
-.m-form__dropdown:focus > ul {
+.m-form__dropdown.s-is-open > ul {
   opacity: 1;
   visibility:visible;
 }
