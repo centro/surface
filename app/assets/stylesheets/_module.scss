@@ -451,6 +451,7 @@ pieces documented above as well as requisite layout classes.
   cursor: text;
   padding-left: 10px;
   position: absolute;
+  visibility: hidden;
 }
 
 .m-form__label--inline {
