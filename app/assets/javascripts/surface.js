@@ -1,5 +1,5 @@
 //= require hashgrid 
-//= require jquery.infieldlabel
+//= require jquery.placeholder
 
 $(function() {
 
@@ -15,13 +15,7 @@ $(function() {
 
   // Function calls.
 
-  if (!$.support.opacity) {
-    $('.m-form__label--infield').inFieldLabels({labelClass: '', fadeDuration: 100, fadeOpacity: 1});
-    hideMaskingToggles();
-  } else {
-    $('.m-form__label--infield').inFieldLabels({labelClass: '', fadeDuration: 100});
-    unmaskPassword();
-  }
+  $('input, textarea').placeholder();
 
  });
 
