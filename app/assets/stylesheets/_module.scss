@@ -543,7 +543,8 @@ pieces documented above as well as requisite layout classes.
   border-bottom: none;
   height: $base-line-height + 6px;
   line-height: $base-line-height + 6px;
-  position: relative;
+  position: absolute;
+  width: 100%;
   z-index: 100;
 }
 
