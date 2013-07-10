@@ -544,6 +544,7 @@ pieces documented above as well as requisite layout classes.
   height: $base-line-height + 6px;
   line-height: $base-line-height + 6px;
   position: absolute;
+    top: 0;
   width: 100%;
   z-index: 100;
 }
