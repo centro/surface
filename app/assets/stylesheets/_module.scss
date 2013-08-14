@@ -396,6 +396,10 @@ pieces documented above as well as requisite layout classes.
   white-space: nowrap;
 }
 
+.m-form__label--dropdown {
+  margin-right: $gutter-width / 4;
+}
+
 .m-form__label--infield {
   color: $grayscale-3; 
   cursor: text;
