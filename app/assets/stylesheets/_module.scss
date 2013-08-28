@@ -1080,7 +1080,7 @@ In such situations, the divided overlay comes in handy:
 */
 
 .m-overlay {
-  background: rgba(0,0,0,0.3);
+  background: rgba(255,255,255,0.8);
   font-size: 0; /* Removes extra space added by inline block */
   height: 100%;
   position: fixed;
@@ -1108,9 +1108,9 @@ In such situations, the divided overlay comes in handy:
 }
 
 .m-overlay__content {
-  @include box-shadow(0 4px 8px rgba(black, 0.25));
+  @include box-shadow(0 4px 8px rgba($grayscale-3, 0.25));
   background: white;
-  border: 1px solid $grayscale-3;
+  border: 1px solid $grayscale-1;
   display: inline-block;
   font-size: 1rem;
   max-height: 100%;
@@ -1120,10 +1120,15 @@ In such situations, the divided overlay comes in handy:
   z-index: 1001;
 }
 
+.m-overlay__content--header,
 .m-overlay__content--main,
 .m-overlay__content--footer {
   @include pie-clearfix;
   padding: $gutter-width;
+}
+
+.m-overlay__content--header + .m-overlay__content--main {
+  padding-top: 0;
 }
 
 .m-overlay__content--footer {
