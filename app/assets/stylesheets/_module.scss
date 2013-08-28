@@ -270,6 +270,50 @@ pieces documented above as well as requisite layout classes.
   line-height: inherit;
 }
 
+.m-form__field--create-msg {
+  margin-bottom: 0;
+  position: relative;
+
+  .m-form__input,
+  .m-form__dropdown,
+  .m-form__input--textarea { 
+    @include box-shadow(none);
+    border-width: 1px 0;
+    font-size: modular-scale(-1);
+    padding-left: $gutter-width * 4.5;
+
+    &:focus {
+      border-width: 1px 0;
+    }
+  }
+
+  .m-form__input--textarea {
+    min-height: $base-line-height * 8;
+  }
+
+  .s-needs-left-border,
+  .s-needs-left-border:focus {
+    border-left-width: 1px;
+  }
+
+  label {
+    color: $grayscale-3;
+    display: block;
+    font-size: modular-scale(-1);
+    line-height: 1;
+    padding: 0;
+    position: absolute;
+      top: 11px;
+    text-align: right;
+    width: $gutter-width * 4;
+    z-index: 1;
+  }
+
+  &:nth-of-type(3) { top:-1px; }
+  &:nth-of-type(4) { top:-2px; }
+
+}
+
 .m-form__field--error {
   @extend .m-form__field;
   color: $centro-alert-1;
@@ -316,6 +360,7 @@ pieces documented above as well as requisite layout classes.
   height: $base-line-height * 1.5;
   line-height: 1em; 
   padding: 0 ($gutter-width / 2);
+  resize: none;
   width: 100%;
 }
 
@@ -352,6 +397,12 @@ pieces documented above as well as requisite layout classes.
 
 .m-form__input--select {
   width: 100%;
+}
+
+.m-form__input--textarea {
+  @extend .m-form__input;
+  color: $grayscale-5;
+  padding: $gutter-width;
 }
 
 .m-form__input-toggle {
@@ -441,17 +492,9 @@ pieces documented above as well as requisite layout classes.
   padding: 0;
 }
 
-:focus::-webkit-input-placeholder {
-  opacity: 0.5;
-}
-
-:focus:-moz-placeholder {
-  opacity: 0.5;
-}
-
-:focus::-moz-placeholder {
-  opacity: 0.5;
-}
+:focus::-webkit-input-placeholder { opacity: 0.5; }
+:focus:-moz-placeholder { opacity: 0.5; }
+:focus::-moz-placeholder { opacity: 0.5; }
 
 // Errors
 
@@ -470,6 +513,8 @@ pieces documented above as well as requisite layout classes.
  visibility: hidden;
  z-index: 100;
 }
+
+.m-form__field--error > label { color: $centro-alert-1 !important; }
 
 .m-form__input__error > span {
   @include box-shadow(0 3px 6px rgba(black, 0.1));
@@ -1079,6 +1124,11 @@ In such situations, the divided overlay comes in handy:
 ```
 */
 
+// The following class is added to the primary HTML container when the overlay is 
+// visible. It adds a subtle blur affect to the background in WebKit browsers.
+
+.s-modal-open { -webkit-filter: blur(1.5px); }
+
 .m-overlay {
   background: rgba(255,255,255,0.8);
   font-size: 0; /* Removes extra space added by inline block */
@@ -1114,6 +1164,7 @@ In such situations, the divided overlay comes in handy:
   display: inline-block;
   font-size: 1rem;
   max-height: 100%;
+  overflow-y: auto;
   position: relative;
   text-align: left;
   vertical-align: middle;
