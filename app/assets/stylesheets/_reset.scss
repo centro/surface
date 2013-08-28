@@ -369,6 +369,10 @@ h1 {
   @include adjust-font-size-to(modular-scale(6), 2);
 }
 
+h2 {
+  @include adjust-font-size-to(modular-scale(4), 1);
+}
+
 h3 {
   @include adjust-font-size-to(modular-scale(2), 1);
   font-weight: 400;
