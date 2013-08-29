@@ -1133,7 +1133,10 @@ In such situations, the divided overlay comes in handy:
 // The following class is added to the primary HTML container when the overlay is 
 // visible. It adds a subtle blur affect to the background in WebKit browsers.
 
-.s-modal-open { -webkit-filter: blur(1.5px); }
+.s-modal-open { 
+  -webkit-filter: blur(1px); 
+  -webkit-transform: translate3d(0, 0, 0);
+}
 
 .m-overlay {
   background: rgba(255,255,255,0.8);
