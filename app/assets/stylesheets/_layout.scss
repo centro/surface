@@ -353,8 +353,124 @@
   width: columns(5,6) + gutter(6);
 }
 
-.l-width\(6of6\+1g\) {
-  width: columns(6,6) + gutter(6);
+// Root 7
+
+.l-width\(1of7\) {
+  width: columns(1, 7);
+}
+
+.l-width\(2of7\) {
+  width: columns(2,7);
+}
+
+.l-width\(3of7\) {
+  width: columns(3,7);
+}
+
+.l-width\(4of7\) {
+  width: columns(4,7);
+}
+
+.l-width\(5of7\) {
+  width: columns(5,7);
+}
+
+.l-width\(6of7\) {
+  width: columns(6,7);
+}
+
+.l-width\(7of7\) {
+  width: columns(7,7);
+}
+
+// Root 7, w/ gutter
+
+.l-width\(1of7\+1g\) {
+  width: columns(1,7) + gutter(7);
+}
+
+.l-width\(2of7\+1g\) {
+  width: columns(2,7) + gutter(7);
+}
+
+.l-width\(3of7\+1g\) {
+  width: columns(3,7) + gutter(7);
+}
+
+.l-width\(4of7\+1g\) {
+  width: columns(4,7) + gutter(7);
+}
+
+.l-width\(5of7\+1g\) {
+  width: columns(5,7) + gutter(7);
+}
+
+.l-width\(6of7\+1g\) {
+  width: columns(6,7) + gutter(7);
+}
+
+// Root 8
+
+.l-width\(1of8\) {
+  width: columns(1, 8);
+}
+
+.l-width\(2of8\) {
+  width: columns(2,8);
+}
+
+.l-width\(3of8\) {
+  width: columns(3,8);
+}
+
+.l-width\(4of8\) {
+  width: columns(4,8);
+}
+
+.l-width\(5of8\) {
+  width: columns(5,8);
+}
+
+.l-width\(6of8\) {
+  width: columns(6,8);
+}
+
+.l-width\(7of8\) {
+  width: columns(7,8);
+}
+
+.l-width\(8of8\) {
+  width: columns(8,8);
+}
+
+// Root 8, w/ gutter
+
+.l-width\(1of8\+1g\) {
+  width: columns(1,8) + gutter(8);
+}
+
+.l-width\(2of8\+1g\) {
+  width: columns(2,8) + gutter(8);
+}
+
+.l-width\(3of8\+1g\) {
+  width: columns(3,8) + gutter(8);
+}
+
+.l-width\(4of8\+1g\) {
+  width: columns(4,8) + gutter(8);
+}
+
+.l-width\(5of8\+1g\) {
+  width: columns(5,8) + gutter(8);
+}
+
+.l-width\(6of8\+1g\) {
+  width: columns(6,8) + gutter(8);
+}
+
+.l-width\(7of8\+1g\) {
+  width: columns(7,8) + gutter(8);
 }
 
 // Root 10
@@ -439,8 +555,28 @@
 
 // Percentages
 
+.l-width\(10\) {
+  width: 10% !important;
+}
+
+.l-width\(12\.5\) {
+  width: 12.5% !important;
+}
+
+.l-width\(15\) {
+  width: 15% !important;
+}
+
 .l-width\(25\) {
   width: 25% !important;
+}
+
+.l-width\(30\) {
+  width: 30% !important;
+}
+
+.l-width\(35\) {
+  width: 35% !important;
 }
 
 .l-width\(50\) {

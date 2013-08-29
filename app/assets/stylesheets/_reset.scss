@@ -338,7 +338,8 @@ body {
 }
 
 button,
-input {
+input,
+textarea {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }

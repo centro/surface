@@ -274,65 +274,51 @@ pieces documented above as well as requisite layout classes.
   margin-bottom: 0;
   position: relative;
   
-  &.m-form__field--error { z-index: 1; }
-
   .m-form__input,
   .m-form__dropdown,
   .m-form__input--textarea { 
     @include box-shadow(none);
-    border-color: $grayscale-0;
-    border-width: 1px 0;
+    border-color: $grayscale-0 !important;
+    border-width: 1px 0 0 0 !important;
     font-size: modular-scale(-1);
     padding-left: $gutter-width * 4.5;
-
-    &:focus { border-width: 1px 0; }
-  }
-
-  .m-form__dropdown {
-    border-color: $grayscale-0 !important;
-
-    ul {
-      border-top-width: 1px;
-      background: transparent;
-      padding-top: 34px;
-      top: -1px;
-      left: 83px;
-    }
-
-    li { background: white; }
-
   }
 
   .m-form__input--textarea {
     line-height: 1.5;
-    min-height: $base-line-height * 10;
+    min-height: $base-line-height * 8;
     padding-left: $gutter-width;
   }
 
-  .s-needs-left-border,
-  .s-needs-left-border:focus {
-    border-left-width: 1px;
-  }
-
-  label {
-    color: $grayscale-3;
-    display: block;
-    font-size: modular-scale(-1);
-    line-height: 1;
-    padding: 0;
-    position: absolute;
-      top: 11px;
-    text-align: right;
-    width: $gutter-width * 4;
-    z-index: 1;
-  }
-
-  &:nth-of-type(3) { top:-1px; }
-  &:nth-of-type(4) { top:-2px; }
-
- .m-form__input__error { left: $gutter-width * 3.5; }
-
 }
+
+.m-form__field--create-msg label {
+  color: $grayscale-3;
+  display: block;
+  font-size: modular-scale(-1);
+  line-height: 1;
+  padding: 0;
+  position: absolute;
+  top: 11px;
+  text-align: right;
+  width: $gutter-width * 4;
+  z-index: 1;
+}
+
+.m-form__field--create-msg .m-form__dropdown { border-color: $grayscale-0 !important; }
+
+.m-form__field--create-msg .m-form__dropdown ul {
+  border-top-width: 1px;
+  background: transparent;
+  padding-top: 34px;
+  top: -1px;
+  left: 83px;
+}
+
+.m-form__field--create-msg .s-needs-left-border,
+.m-form__field--create-msg .s-needs-left-border:focus  { border-left-width: 1px !important; }
+
+.m-form__field--create-msg .m-form__input__error { left: $gutter-width * 3.5; }
 
 .m-form__field--error {
   @extend .m-form__field;
@@ -1184,11 +1170,15 @@ In such situations, the divided overlay comes in handy:
   display: inline-block;
   font-size: 1rem;
   max-height: 100%;
-  // overflow-y: auto;
   position: relative;
   text-align: left;
   vertical-align: middle;
   z-index: 1001;
+}
+
+.m-overlay__content--scrollable {
+  @extend .m-overlay__content;
+  overflow-y: auto;
 }
 
 .m-overlay__content--header,
@@ -1282,6 +1272,53 @@ creativity, I’m sure they could be used elsewhere.
   right: 0;
   font-size: 160px;
   z-index: 0;
+}
+
+
+// Table
+
+.m-table {
+  border-collapse: collapse;
+  width: 100%;
+  position: relative;
+  table-layout: fixed;
+}
+
+.m-table caption {
+  color: $grayscale-2;
+  font-size: 12px;
+  line-height: 1;
+  padding-right: $gutter-width * .75; 
+  position: absolute;
+    bottom: (- $base-line-height);
+    right: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.m-table th {
+  @include ellipsis;
+  background: lighten($grayscale-0, 5%);
+  border-color: $grayscale-0;
+  border-style: solid;
+  border-width: 1px 0;
+  color: $grayscale-4;
+  font-weight: 400;
+  line-height: 30px;
+  padding-right: $gutter-width * .75;
+  white-space: nowrap;
+}
+
+.m-table th:first-child,
+.m-table td:first-child {
+  padding-left: $gutter-width;
+}
+
+.m-table td {
+  border-bottom: 1px solid $grayscale-0;
+  padding: ($gutter-width / 2) ($gutter-width * .75) ($gutter-width / 2) 0;
+  line-height: 1.25;
+  vertical-align: top;
 }
 
 /* 
