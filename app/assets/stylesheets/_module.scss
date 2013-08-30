@@ -286,7 +286,7 @@ pieces documented above as well as requisite layout classes.
 
   .m-form__input--textarea {
     line-height: 1.5;
-    min-height: $base-line-height * 8;
+    height: 100%;
     padding-left: $gutter-width;
   }
 
@@ -1133,10 +1133,10 @@ In such situations, the divided overlay comes in handy:
 // The following class is added to the primary HTML container when the overlay is 
 // visible. It adds a subtle blur affect to the background in WebKit browsers.
 
-.s-modal-open { 
-  -webkit-filter: blur(1px); 
-  -webkit-transform: translate3d(0, 0, 0);
-}
+// .s-modal-open { 
+//   -webkit-filter: blur(1px); 
+//   -webkit-transform: translate3d(0, 0, 0);
+// }
 
 .m-overlay {
   background: rgba(255,255,255,0.8);
@@ -1151,7 +1151,6 @@ In such situations, the divided overlay comes in handy:
 
 .m-overlay__container {
   @include box-sizing(border-box);
-  overflow: hidden;
   position: absolute;
     top: 10%;
     bottom: 10%;
@@ -1181,7 +1180,7 @@ In such situations, the divided overlay comes in handy:
 
 .m-overlay__content--scrollable {
   @extend .m-overlay__content;
-  overflow-y: auto;
+  height: 100%;
 }
 
 .m-overlay__content--header,
@@ -1287,24 +1286,12 @@ creativity, I’m sure they could be used elsewhere.
   table-layout: fixed;
 }
 
-.m-table caption {
-  color: $grayscale-2;
-  font-size: 12px;
-  line-height: 1;
-  padding-right: $gutter-width * .75; 
-  position: absolute;
-    bottom: (- $base-line-height);
-    right: 0;
-  text-align: right;
-  white-space: nowrap;
-}
-
 .m-table th {
   @include ellipsis;
   background: lighten($grayscale-0, 5%);
   border-color: $grayscale-0;
   border-style: solid;
-  border-width: 1px 0;
+  border-width: 0 0 1px 0;
   color: $grayscale-4;
   font-weight: 400;
   line-height: 30px;
@@ -1323,6 +1310,8 @@ creativity, I’m sure they could be used elsewhere.
   line-height: 1.25;
   vertical-align: top;
 }
+
+.m-table tr:last-child td { border-bottom-color: transparent; }
 
 /* 
 
