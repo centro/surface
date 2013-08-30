@@ -1133,11 +1133,6 @@ In such situations, the divided overlay comes in handy:
 // The following class is added to the primary HTML container when the overlay is 
 // visible. It adds a subtle blur affect to the background in WebKit browsers.
 
-// .s-modal-open { 
-//   -webkit-filter: blur(1px); 
-//   -webkit-transform: translate3d(0, 0, 0);
-// }
-
 .m-overlay {
   background: rgba(255,255,255,0.8);
   font-size: 0; /* Removes extra space added by inline block */
@@ -1176,11 +1171,6 @@ In such situations, the divided overlay comes in handy:
   text-align: left;
   vertical-align: middle;
   z-index: 1001;
-}
-
-.m-overlay__content--scrollable {
-  @extend .m-overlay__content;
-  height: 100%;
 }
 
 .m-overlay__content--header,
