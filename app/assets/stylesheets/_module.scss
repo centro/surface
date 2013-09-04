@@ -1270,10 +1270,15 @@ creativity, I’m sure they could be used elsewhere.
 // Table
 
 .m-table {
+  border: none !important;
   border-collapse: collapse;
   width: 100%;
   position: relative;
   table-layout: fixed;
+}
+
+.m-table thead {
+  background: lighten($grayscale-0, 5%);
 }
 
 .m-table th {
@@ -1286,12 +1291,11 @@ creativity, I’m sure they could be used elsewhere.
   font-weight: 400;
   line-height: 30px;
   padding-right: $gutter-width * .75;
-  white-space: nowrap;
 }
 
 .m-table th:first-child,
 .m-table td:first-child {
-  padding-left: $gutter-width;
+  padding-left: $gutter-width !important;
 }
 
 .m-table td {
