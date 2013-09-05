@@ -1401,6 +1401,7 @@ space is limited or when a slightly different placement is desired:
 .m-tooltip {
   @include box-shadow(0 3px 6px rgba(black, 0.1));
   @include opacity(0);
+  @include transition(all linear 0s 0.1s);
   background: white;
   border: 1px solid $grayscale-1;
   color: $grayscale-3;
