@@ -305,14 +305,39 @@ pieces documented above as well as requisite layout classes.
   z-index: 1;
 }
 
-.m-form__field--create-msg .m-form__dropdown { border-color: $grayscale-0 !important; }
+.m-form__field--create-msg .m-form__dropdown { 
+  border-color: $grayscale-0 !important; 
+  padding-left: ($gutter-width * 4.5) - 8;
+  padding-right: 0;
+}
+
+.m-form__field--create-msg .m-form__dropdown__selected {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+  padding: 0 8px;
+  position: relative;
+  top: -1px;
+  left: 1px;
+  &:after { right: 8px; }
+}
+
+.m-form__field--create-msg .s-is-open .m-form__dropdown__selected {
+  border-color: $centro-brand-2b;
+}
 
 .m-form__field--create-msg .m-form__dropdown ul {
-  border-top-width: 1px;
-  background: transparent;
-  padding-top: 34px;
-  top: -1px;
+  background:
+    linear-gradient(white 30%, rgba(white ,0)),
+    radial-gradient(farthest-side at 50% 0, rgba(black,0.2), rgba(black,0));
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: 100% 36px, 110% 6px;
+  background-attachment: local, scroll;
+  background-position: center top;
   left: 83px;
+  max-height: ($base-line-height * 20) - 12;
+  overflow-y: scroll;
 }
 
 .m-form__field--create-msg .s-needs-left-border,
@@ -1270,7 +1295,6 @@ creativity, I’m sure they could be used elsewhere.
 // Table
 
 .m-table {
-  border: none !important;
   border-collapse: collapse;
   width: 100%;
   position: relative;
