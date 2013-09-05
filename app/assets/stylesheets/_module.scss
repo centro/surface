@@ -327,9 +327,8 @@ pieces documented above as well as requisite layout classes.
 }
 
 .m-form__field--create-msg .m-form__dropdown ul {
-  background:
-    linear-gradient(white 30%, rgba(white ,0)),
-    radial-gradient(farthest-side at 50% 0, rgba(black,0.2), rgba(black,0));
+  @include background(linear-gradient(white 30%, rgba(white ,0)),
+                      radial-gradient(farthest-side at 50% 0, rgba(black,0.2), rgba(black,0)));
   background-repeat: no-repeat;
   background-color: white;
   background-size: 100% 36px, 100% 6px;
