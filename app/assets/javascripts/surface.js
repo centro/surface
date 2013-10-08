@@ -13,6 +13,10 @@ $(function() {
 
   $('.m-notice--confirm, .m-notice--notice').delay(10000).fadeOut('slow');
 
+  // Call toggle masked/unmasked password fields function. 
+
+  unmaskPassword();
+
   // Function calls.
 
   $('input, textarea').placeholder();
