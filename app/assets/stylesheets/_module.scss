@@ -589,7 +589,7 @@ pieces documented above as well as requisite layout classes.
   z-index: 102;
 }
 
-[class*="--error"] > .m-form__input:focus + .m-form__input__error {
+[class*="--error"] > input[class*="m-form__input"]:focus + .m-form__input__error {
   @include opacity(1);
   visibility: visible;
 }
