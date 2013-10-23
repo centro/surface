@@ -10,7 +10,7 @@ $(function() {
   });
 
   $('.nav a').click(function() {
-    $('.nav').removeClass('is-active');
+    $('.nav a').removeClass('is-active');
     $('.header > a').removeClass('is-active');
     $(this).addClass('is-active');
   });

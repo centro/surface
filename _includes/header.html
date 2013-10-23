@@ -1,15 +1,23 @@
 <div class="header">
-
-  <a class="home-link is-active" href="/">Surface Styleguide</a>
+  {% if page.tags contains 'top-level' %}
+    <a class="home-link is-active" href="/">Surface Styleguide</a>
+  {% else %}
+    <a class="home-link" href="/">Surface Styleguide</a>
+  {% endif %}
 
   <ul class="nav">
-    <li><a href="/base-styles.html">Base</a></li>
-    <li><a href="/reset-styles.html">Reset</a></li>
-    <li><a href="/fonts-styles.html">Fonts</a></li>
-    <li><a href="/hashgrid-styles.html">Hashgrid</a></li>
-    <li><a href="/layout-styles.html">Layout</a></li>
-    <li><a href="/text-styles.html">Text</a></li>
-    <li><a href="/module-styles.html">Module</a></li>
+    {% for pages in site.pages %}
+      {% unless pages.tags contains 'ignore' %}
+        <li>
+          {% if page.url == /page.category.html %}
+            <a class="is-active" href="/{{ pages.category }}.html">{{ pages.category }}</a>
+          {% else %}
+            <a href="/{{ pages.category }}.html">{{ pages.category }}</a>
+          {% endif %}
+        </li>
+      {% endunless %}
+    {% endfor %}
   </ul>
 
+  <p>{{ page.url }} /{{ page.category }}.html</p>
 </div>
