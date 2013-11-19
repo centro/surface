@@ -84,23 +84,23 @@ If even greater emphasis is needed, button’s size can be increased:
 }
 
 .m-button--primary:not([disabled]) {
-  background: lighten($centro-brand-2b, 2%);
-  @include background-image(linear-gradient(lighten($centro-brand-2b, 6%), $centro-brand-2b));
-  border-color:  darken($centro-brand-2b, 4%);
+  background: lighten($centro-brand-1b, 2%);
+  @include background-image(linear-gradient(lighten($centro-brand-1b, 6%), $centro-brand-1b));
+  border-color:  darken($centro-brand-1b, 4%);
   color: white !important;
   font-weight: 600;
   text-shadow: 0 1px 1px rgba(black, 0.2);
 }
 
 .m-button--primary:hover:not([disabled]) {
-  background: lighten($centro-brand-2b, 4%);
-  @include background-image(linear-gradient(lighten($centro-brand-2b, 8%), $centro-brand-2b));
+  background: lighten($centro-brand-1b, 4%);
+  @include background-image(linear-gradient(lighten($centro-brand-1b, 8%), $centro-brand-1b));
   @include box-shadow(0 1px 2px rgba(black, 0.2));
-  border-color:  darken($centro-brand-2b, 6%);
+  border-color:  darken($centro-brand-1b, 6%);
 }
 
 .m-button--primary:active:not([disabled]) {
-  @include background-image(linear-gradient($centro-brand-2b, lighten($centro-brand-2b, 6%)));
+  @include background-image(linear-gradient($centro-brand-1b, lighten($centro-brand-1b, 6%)));
 }
 
 /*
@@ -323,7 +323,7 @@ pieces documented above as well as requisite layout classes.
 }
 
 .m-form__field--create-msg .s-is-open .m-form__dropdown__selected {
-  border-color: $centro-brand-2b;
+  border-color: $centro-brand-1b;
 }
 
 .m-form__field--create-msg .m-form__dropdown ul {
@@ -401,7 +401,7 @@ pieces documented above as well as requisite layout classes.
 }
 
 .m-form__input:focus {
-  border-color: $centro-brand-2b; 
+  border-color: $centro-brand-1b; 
   outline: 0;
 }
 
@@ -453,7 +453,7 @@ pieces documented above as well as requisite layout classes.
 .m-form__legend {
   @include pie-clearfix;
   border-top: 1px solid $grayscale-0;
-  color: $centro-brand-3c;
+  color: $centro-brand-2c;
   margin-bottom: $base-line-height;
   padding-top: $base-line-height / 3;
 }
@@ -1253,8 +1253,8 @@ creativity, I’m sure they could be used elsewhere.
 }
 
 .m-card:hover {
-  @include box-shadow(0 1px 4px rgba($centro-brand-2b, 0.25));
-  border-color: $centro-brand-2b;
+  @include box-shadow(0 1px 4px rgba($centro-brand-1b, 0.25));
+  border-color: $centro-brand-1b;
   cursor: pointer;
 }
 
@@ -1534,7 +1534,7 @@ space is limited or when a slightly different placement is desired:
 }
 
 .m-trigger:hover > a {
-  color: $centro-brand-2a; 
+  color: $centro-brand-1a; 
 }
 
 .m-nav .m-trigger:hover > a {
