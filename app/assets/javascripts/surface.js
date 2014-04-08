@@ -20,19 +20,6 @@ $(function() {
   // Function calls.
 
   $('input, textarea').placeholder();
-
-  // Remove yellow background Chrome adds to autofilled fields 
-  // http://stackoverflow.com/questions/2920306/google-chrome-form-autofill-and-its-yellow-background
-
-  if(navigator.userAgent.toLowerCase().indexOf("chrome") >= 0 || navigator.userAgent.toLowerCase().indexOf("safari") >= 0){
-    window.setInterval(function(){
-      $('input:-webkit-autofill').each(function(){
-        var clone = $(this).clone(true, true);
-        $(this).after(clone).remove();
-      });
-    }, 20);
-  }
-
  });
 
 // Toggle masked/unmasked password fields. 
