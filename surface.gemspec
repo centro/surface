@@ -12,8 +12,8 @@ Gem::Specification.new do |gem|
 
   gem.files         = `git ls-files`.split($/)
   gem.require_paths = ["lib"]
-  
-  gem.add_dependency(%q<compass-rails>)
-  gem.add_dependency(%q<susy>)
-  gem.add_dependency(%q<modular-scale>)
+
+  gem.add_dependency(%q<compass-rails>, '~> 1.0.0')
+  gem.add_dependency(%q<susy>,          '~> 1.0.0')
+  gem.add_dependency(%q<modular-scale>, '~> 1.0.0')
 end
